@@ -20,7 +20,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window.rootViewController = UINavigationController(rootViewController: ViewController())
         self.window = window
         window.makeKeyAndVisible()
-        
-        
+        window.overrideUserInterfaceStyle = .dark
     }
 }
