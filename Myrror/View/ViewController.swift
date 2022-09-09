@@ -109,7 +109,7 @@ class ViewController: UIViewController {
     }
     
     @objc func navigate() {
-        let nextPage = NewReflectionViewController()
+        let nextPage = ChooseTopicViewController()
         self.navigationController?.pushViewController(nextPage, animated: true)
     }
 }
