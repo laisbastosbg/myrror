@@ -18,34 +18,87 @@ class ChooseTopicViewController: UIViewController {
         return label
     }()
     
-    lazy var chooseButton: UIButton = {
+    lazy var option1Button: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("O que eu aprendi", for: .normal)
         button.configuration = .filled()
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .body)
+        button.addTarget(self, action: #selector(self.navigate), for: .touchUpInside)
         return button
+    }()
+    
+    lazy var option2Button: UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("O que não gostei", for: .normal)
+        button.configuration = .filled()
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .body)
+        button.addTarget(self, action: #selector(self.navigate), for: .touchUpInside)
+        return button
+    }()
+    
+    lazy var option3Button: UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("O que posso melhorar", for: .normal)
+        button.configuration = .filled()
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .body)
+        button.addTarget(self, action: #selector(self.navigate), for: .touchUpInside)
+        return button
+    }()
+    
+    lazy var buttonStack: UIStackView = {
+        let stack = UIStackView()
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.axis = .vertical
+        stack.distribution = .equalCentering
+        stack.alignment = .center
+        return stack
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(named: "Primary")
         view.addSubview(pageTitle)
-        view.addSubview(chooseButton)
-        
+        view.addSubview(buttonStack)
+        buttonStack.addArrangedSubview(option1Button)
+        buttonStack.addArrangedSubview(option2Button)
+        buttonStack.addArrangedSubview(option3Button)
+        setupConstraints()
+    }
+    
+    func setupConstraints() {
         NSLayoutConstraint.activate([
             pageTitle.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             pageTitle.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             pageTitle.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             
-            chooseButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            chooseButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            chooseButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 48),
-            chooseButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -48),
-            chooseButton.heightAnchor.constraint(equalToConstant: 48),
+            buttonStack.topAnchor.constraint(equalTo: pageTitle.bottomAnchor, constant: 80),
+            buttonStack.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -80),
+            buttonStack.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            buttonStack.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            
+            option1Button.leadingAnchor.constraint(equalTo: buttonStack.leadingAnchor, constant: 48),
+            option1Button.trailingAnchor.constraint(equalTo: buttonStack.trailingAnchor, constant: -48),
+            option1Button.heightAnchor.constraint(equalToConstant: 48),
+            
+            option2Button.leadingAnchor.constraint(equalTo: buttonStack.leadingAnchor, constant: 48),
+            option2Button.trailingAnchor.constraint(equalTo: buttonStack.trailingAnchor, constant: -48),
+            option2Button.heightAnchor.constraint(equalToConstant: 48),
+            
+            option3Button.leadingAnchor.constraint(equalTo: buttonStack.leadingAnchor, constant: 48),
+            option3Button.trailingAnchor.constraint(equalTo: buttonStack.trailingAnchor, constant: -48),
+            option3Button.heightAnchor.constraint(equalToConstant: 48),
         ])
-        
+    }
+    
+    @objc func navigate() {
+        let nextPage = NewReflectionViewController()
+        self.navigationController?.pushViewController(nextPage, animated: true)
     }
 
 }
