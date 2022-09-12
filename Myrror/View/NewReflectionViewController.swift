@@ -21,7 +21,7 @@ class NewReflectionViewController: UIViewController {
         navigationController?.navigationBar.items?[0].backBarButtonItem = UIBarButtonItem(title: "Voltar", style: .plain, target: nil, action: nil)
         
         view.addSubview(confirmationButton)
-        configConfirmatioButton()
+        configConfirmationButton()
         
         view.addSubview(reflectionText)
         configReflectionText()
@@ -36,7 +36,7 @@ class NewReflectionViewController: UIViewController {
     
     let reflectionText : UITextField = {
         let textField = UITextField()
-//        textField.frame = CGRect(x: 10, y: 10, width: 30, height: 10)
+        textField.frame = CGRect(x: 10, y: 10, width: 30, height: 10)
         textField.backgroundColor = .systemFill
         textField.layer.cornerRadius = 8
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -102,7 +102,7 @@ class NewReflectionViewController: UIViewController {
         return button
     }()
     
-    func configConfirmatioButton () {
+    func configConfirmationButton () {
         NSLayoutConstraint.activate([
             confirmationButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             confirmationButton.centerYAnchor.constraint(equalTo: view.bottomAnchor, constant: -150),
