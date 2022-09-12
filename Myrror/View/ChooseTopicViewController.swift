@@ -96,8 +96,9 @@ class ChooseTopicViewController: UIViewController {
         ])
     }
     
-    @objc func navigate() {
+    @objc func navigate(sender: UIButton) {
         let nextPage = NewReflectionViewController()
+        nextPage.selectedTopic = sender.currentTitle!
         self.navigationController?.pushViewController(nextPage, animated: true)
     }
 
