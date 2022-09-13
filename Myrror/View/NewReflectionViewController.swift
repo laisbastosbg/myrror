@@ -32,22 +32,30 @@ class NewReflectionViewController: UIViewController {
         view.addSubview(backgroundView)
         configBackgroundView()
         
+//        view.addSubview(angryEmojiButton)
+//        configAngryEmojiButton()
+        
+        
+        
     }
     
-    let reflectionText : UITextField = {
-        let textField = UITextField()
-        textField.frame = CGRect(x: 10, y: 10, width: 30, height: 10)
-        textField.backgroundColor = .systemFill
-        textField.layer.cornerRadius = 8
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        return textField
+    let reflectionText : UITextView = {
+        let textView = UITextView()
+        textView.frame = CGRect(x: 10, y: 10, width: 30, height: 10)
+        textView.contentInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        textView.font = UIFont.preferredFont(forTextStyle: .body)
+        textView.textAlignment = .justified
+        textView.backgroundColor = .systemFill
+        textView.layer.cornerRadius = 8
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        return textView
     }()
     
     func configReflectionText() {
         NSLayoutConstraint.activate([
             reflectionText.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            reflectionText.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
-            reflectionText.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+            reflectionText.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 18),
+            reflectionText.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -18),
             reflectionText.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
             reflectionText.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor, constant: -100)
         ])
@@ -69,19 +77,33 @@ class NewReflectionViewController: UIViewController {
         ])
     }
     
-    let backgroundView : UIView = {
-        let background = UIView()
-        background.backgroundColor = .systemFill
-        background.layer.cornerRadius = 8
-        background.translatesAutoresizingMaskIntoConstraints = false
-        return background
+    let backgroundView : UIStackView = {
+        let stackView = UIStackView()
+        stackView.distribution = .fillEqually
+        stackView.backgroundColor = .systemFill
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        // MARK: Não esquecer de configurar!!!
+        for _ in 1...5 {
+            let child = UIButton()
+            if let image = UIImage(systemName: "circle.fill") {
+                child.setImage(image, for: .normal)
+            }
+//            child.layer.borderWidth = 1
+//            child.layer.borderColor = UIColor.orange.cgColor
+            stackView.addArrangedSubview(child)
+            child.translatesAutoresizingMaskIntoConstraints = false
+            child.widthAnchor.constraint(equalTo: child.heightAnchor).isActive = true
+        }
+        
+        return stackView
     }()
     
     func configBackgroundView() {
         NSLayoutConstraint.activate([
             backgroundView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            backgroundView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
-            backgroundView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+            backgroundView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 18),
+            backgroundView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -18),
             backgroundView.topAnchor.constraint(equalTo: subTitle.bottomAnchor, constant: 35),
             backgroundView.heightAnchor.constraint(equalToConstant: 50)
             
@@ -111,5 +133,16 @@ class NewReflectionViewController: UIViewController {
             confirmationButton.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
+    
+    let angryEmojiButton : UIButton = {
+        let button = UIButton(type: .custom)
+        if let image = UIImage(systemName: "circle.fill") {
+            button.setImage(image, for: .normal)
+        }
+        button.setTitle("Emoji", for: .disabled)
+        button.translatesAutoresizingMaskIntoConstraints = false
+
+        return button
+    }()
 
 }
