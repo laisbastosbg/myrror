@@ -50,7 +50,7 @@ class UnitTestNewReflectionViewController: XCTestCase {
         let background = sut.backgroundView
 
         XCTAssertEqual(background.backgroundColor, UIColor.systemFill)
-        XCTAssertEqual(background.layer.cornerRadius, 8)
+        XCTAssertEqual(background.layer.cornerRadius, 0)
         XCTAssertFalse(background.translatesAutoresizingMaskIntoConstraints)
 
 
