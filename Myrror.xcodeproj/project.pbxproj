@@ -13,7 +13,10 @@
 		0B45266628CA0EEC00D4083C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B45266528CA0EEC00D4083C /* Assets.xcassets */; };
 		0B45266928CA0EEC00D4083C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B45266728CA0EEC00D4083C /* LaunchScreen.storyboard */; };
 		0B45267528CA369100D4083C /* NewReflectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B45267428CA369100D4083C /* NewReflectionViewController.swift */; };
+		65C9D9F7188D33A4E870D2F9 /* Pods_Myrror.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A67F735F3DC35C15FA26D8 /* Pods_Myrror.framework */; };
 		ED19590128CB8539004E7045 /* ChooseTopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED19590028CB8539004E7045 /* ChooseTopicViewController.swift */; };
+		ED75100728D22268000207F2 /* EmojiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED75100628D22268000207F2 /* EmojiViewController.swift */; };
+		ED75101428D22529000207F2 /* puto.json in Resources */ = {isa = PBXBuildFile; fileRef = ED75101328D22529000207F2 /* puto.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +28,12 @@
 		0B45266828CA0EEC00D4083C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0B45266A28CA0EEC00D4083C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B45267428CA369100D4083C /* NewReflectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReflectionViewController.swift; sourceTree = "<group>"; };
+		2EC86285561FB4DED73E8FB7 /* Pods-Myrror.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Myrror.release.xcconfig"; path = "Target Support Files/Pods-Myrror/Pods-Myrror.release.xcconfig"; sourceTree = "<group>"; };
+		7973B5507D8F7CD0CE4F9537 /* Pods-Myrror.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Myrror.debug.xcconfig"; path = "Target Support Files/Pods-Myrror/Pods-Myrror.debug.xcconfig"; sourceTree = "<group>"; };
+		A9A67F735F3DC35C15FA26D8 /* Pods_Myrror.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Myrror.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED19590028CB8539004E7045 /* ChooseTopicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTopicViewController.swift; sourceTree = "<group>"; };
+		ED75100628D22268000207F2 /* EmojiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiViewController.swift; sourceTree = "<group>"; };
+		ED75101328D22529000207F2 /* puto.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = puto.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +41,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65C9D9F7188D33A4E870D2F9 /* Pods_Myrror.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		022E324D1FE7AD01839DC39A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7973B5507D8F7CD0CE4F9537 /* Pods-Myrror.debug.xcconfig */,
+				2EC86285561FB4DED73E8FB7 /* Pods-Myrror.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		0B45265028CA0EEA00D4083C = {
 			isa = PBXGroup;
 			children = (
 				0B45265B28CA0EEA00D4083C /* Myrror */,
 				0B45265A28CA0EEA00D4083C /* Products */,
+				022E324D1FE7AD01839DC39A /* Pods */,
+				47970496DD16FE59B194B9BC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +78,7 @@
 		0B45265B28CA0EEA00D4083C /* Myrror */ = {
 			isa = PBXGroup;
 			children = (
+				ED75101328D22529000207F2 /* puto.json */,
 				0B45267328CA292A00D4083C /* ViewModel */,
 				0B45267228CA292200D4083C /* View */,
 				0B45267128CA291700D4083C /* Model */,
@@ -83,6 +104,7 @@
 				0B45266028CA0EEA00D4083C /* ViewController.swift */,
 				0B45267428CA369100D4083C /* NewReflectionViewController.swift */,
 				ED19590028CB8539004E7045 /* ChooseTopicViewController.swift */,
+				ED75100628D22268000207F2 /* EmojiViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -94,6 +116,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		47970496DD16FE59B194B9BC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A9A67F735F3DC35C15FA26D8 /* Pods_Myrror.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -101,10 +131,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0B45266D28CA0EEC00D4083C /* Build configuration list for PBXNativeTarget "Myrror" */;
 			buildPhases = (
+				560E7AEE0BB845B99C155CEE /* [CP] Check Pods Manifest.lock */,
 				0B45265528CA0EEA00D4083C /* Sources */,
 				0B45265628CA0EEA00D4083C /* Frameworks */,
 				0B45265728CA0EEA00D4083C /* Resources */,
 				0B45267028CA249B00D4083C /* ShellScript */,
+				CCF23567C710BBA1FD6F8B62 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -153,6 +185,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED75101428D22529000207F2 /* puto.json in Resources */,
 				0B45266928CA0EEC00D4083C /* LaunchScreen.storyboard in Resources */,
 				0B45266628CA0EEC00D4083C /* Assets.xcassets in Resources */,
 			);
@@ -178,6 +211,45 @@
 			shellPath = /bin/sh;
 			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint Myrror/*\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
+		560E7AEE0BB845B99C155CEE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Myrror-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CCF23567C710BBA1FD6F8B62 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Myrror/Pods-Myrror-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Myrror/Pods-Myrror-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Myrror/Pods-Myrror-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -188,6 +260,7 @@
 				0B45267528CA369100D4083C /* NewReflectionViewController.swift in Sources */,
 				0B45266128CA0EEA00D4083C /* ViewController.swift in Sources */,
 				0B45265D28CA0EEA00D4083C /* AppDelegate.swift in Sources */,
+				ED75100728D22268000207F2 /* EmojiViewController.swift in Sources */,
 				ED19590128CB8539004E7045 /* ChooseTopicViewController.swift in Sources */,
 				0B45265F28CA0EEA00D4083C /* SceneDelegate.swift in Sources */,
 			);
@@ -323,6 +396,7 @@
 		};
 		0B45266E28CA0EEC00D4083C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7973B5507D8F7CD0CE4F9537 /* Pods-Myrror.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -351,6 +425,7 @@
 		};
 		0B45266F28CA0EEC00D4083C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2EC86285561FB4DED73E8FB7 /* Pods-Myrror.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
