@@ -13,7 +13,7 @@ class ChooseTopicViewController: UIViewController {
        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Sobre o que você gostaria de refletir?"
-        label.font = UIFont.preferredFont(forTextStyle: .largeTitle)
+        label.font = UIFont.systemFont(ofSize: 32, weight: .bold)
         label.numberOfLines = 2
         return label
     }()
@@ -62,6 +62,9 @@ class ChooseTopicViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationController?.navigationBar.items?[0].backBarButtonItem = UIBarButtonItem(title: "Voltar", style: .plain, target: nil, action: nil)
+        
         view.backgroundColor = UIColor(named: "Primary")
         view.addSubview(pageTitle)
         view.addSubview(buttonStack)

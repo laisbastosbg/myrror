@@ -21,7 +21,7 @@ class ViewController: UIViewController {
         let today = "\(day) de \(month)"
         
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.preferredFont(forTextStyle: .largeTitle)
+        label.font = UIFont.systemFont(ofSize: 32, weight: .bold)
         label.text = today
         label.textColor = UIColor(named: "TextColor")
         
@@ -70,7 +70,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.items?[0].backBarButtonItem = UIBarButtonItem(title: "Voltar", style: .plain, target: nil, action: nil)
         
+//        navigationController?.navigationBar.prefersLargeTitles = true
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: calendarButton)
         view.addSubview(navigationButton)
         view.addSubview(pageTitle)
         view.addSubview(calendarButton)
@@ -81,6 +84,9 @@ class ViewController: UIViewController {
         
         setupConstraints()
     }
+    
+//    override func viewDidAppear(_ animated: Bool) {
+//    }
     
     func setupConstraints() {
         NSLayoutConstraint.activate([

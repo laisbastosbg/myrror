@@ -8,16 +8,17 @@
 import UIKit
 
 class NewReflectionViewController: UIViewController {
-    var navigationTitle : String = "O que aprendi?"
+    var navigationTitle : String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(named: "Primary")
         
-        self.title = navigationTitle
-        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.items?[1].backBarButtonItem = UIBarButtonItem(title: "Voltar", style: .plain, target: nil, action: nil)
         
-        navigationController?.navigationBar.items?[0].backBarButtonItem = UIBarButtonItem(title: "Voltar", style: .plain, target: nil, action: nil)
+        
+        view.addSubview(pageTitle)
+        configPageTitle()
         
         view.addSubview(confirmationButton)
         configConfirmationButton()
@@ -33,9 +34,23 @@ class NewReflectionViewController: UIViewController {
         
 //        view.addSubview(angryEmojiButton)
 //        configAngryEmojiButton()
-        
-        
-        
+    }
+    
+    lazy var pageTitle : UILabel = {
+       let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = navigationTitle
+        label.font = UIFont.systemFont(ofSize: 32, weight: .bold)
+        label.numberOfLines = 2
+        return label
+    }()
+    
+    func configPageTitle() {
+        NSLayoutConstraint.activate([
+            pageTitle.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            pageTitle.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            pageTitle.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
+        ])
     }
     
     let reflectionText : UITextView = {
