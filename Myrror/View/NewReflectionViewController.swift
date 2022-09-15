@@ -106,16 +106,20 @@ class NewReflectionViewController: UIViewController {
         stackView.addGestureRecognizer(tapRecognizer)
         stackView.isUserInteractionEnabled = true
         
+        let emojisName : [String] = ["angry", "sad2", "indifferent", "happy2", "confident"]
+        
+        
         // MARK: Não esquecer de configurar!!!
-        for _ in 1...5 {
+        for i in 0...4 {
             let animationView = AnimationView()
             
-            animationView.animation = Animation.named("angry")
+            animationView.animation = Animation.named(emojisName[i])
             animationView.contentMode = .scaleAspectFit
-            animationView.loopMode = .playOnce
+            animationView.loopMode = .loop
+            animationView.play()
 
-            animationView.layer.borderWidth = 1
-            animationView.layer.borderColor = UIColor.orange.cgColor
+//            animationView.layer.borderWidth = 1
+//            animationView.layer.borderColor = UIColor.orange.cgColor
             
             stackView.addArrangedSubview(animationView)
             animationView.translatesAutoresizingMaskIntoConstraints = false

@@ -10,7 +10,7 @@ import Lottie
 class EmojiViewController: UIViewController {
 
     let animationView = AnimationView()
-    var emojiName : String = ""
+    var emojiName : String = "sad2"
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -16,10 +16,13 @@
 		65C9D9F7188D33A4E870D2F9 /* Pods_Myrror.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A67F735F3DC35C15FA26D8 /* Pods_Myrror.framework */; };
 		ED19590128CB8539004E7045 /* ChooseTopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED19590028CB8539004E7045 /* ChooseTopicViewController.swift */; };
 		ED75100728D22268000207F2 /* EmojiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED75100628D22268000207F2 /* EmojiViewController.swift */; };
-		ED75101428D22529000207F2 /* sad.json in Resources */ = {isa = PBXBuildFile; fileRef = ED75101328D22529000207F2 /* sad.json */; };
 		FF5EF8CB28D342B600C6DEA8 /* UnitTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5EF8BA28D3422600C6DEA8 /* UnitTestViewController.swift */; };
 		FF5EF8CC28D342B600C6DEA8 /* UnitTestNewReflectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5EF8BB28D3422600C6DEA8 /* UnitTestNewReflectionViewController.swift */; };
-		FFF5D27128D29ABD00757785 /* angry.json in Resources */ = {isa = PBXBuildFile; fileRef = FFF5D27028D29ABD00757785 /* angry.json */; };
+		FF5EF8F128D357F100C6DEA8 /* sad2.json in Resources */ = {isa = PBXBuildFile; fileRef = FF5EF8EE28D357F100C6DEA8 /* sad2.json */; };
+		FF5EF8F328D3580E00C6DEA8 /* happy2.json in Resources */ = {isa = PBXBuildFile; fileRef = FF5EF8F228D3580E00C6DEA8 /* happy2.json */; };
+		FF5EF8F528D3581700C6DEA8 /* angry.json in Resources */ = {isa = PBXBuildFile; fileRef = FF5EF8F428D3581700C6DEA8 /* angry.json */; };
+		FF5EF8F728D3582300C6DEA8 /* confident.json in Resources */ = {isa = PBXBuildFile; fileRef = FF5EF8F628D3582300C6DEA8 /* confident.json */; };
+		FF5EF8F928D3582E00C6DEA8 /* indifferent.json in Resources */ = {isa = PBXBuildFile; fileRef = FF5EF8F828D3582E00C6DEA8 /* indifferent.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,12 +63,15 @@
 		A9A67F735F3DC35C15FA26D8 /* Pods_Myrror.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Myrror.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED19590028CB8539004E7045 /* ChooseTopicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTopicViewController.swift; sourceTree = "<group>"; };
 		ED75100628D22268000207F2 /* EmojiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiViewController.swift; sourceTree = "<group>"; };
-		ED75101328D22529000207F2 /* sad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sad.json; sourceTree = "<group>"; };
 		FF5EF8B028D3417D00C6DEA8 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = ../Pods/Pods.xcodeproj; sourceTree = "<group>"; };
 		FF5EF8BA28D3422600C6DEA8 /* UnitTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitTestViewController.swift; sourceTree = "<group>"; };
 		FF5EF8BB28D3422600C6DEA8 /* UnitTestNewReflectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitTestNewReflectionViewController.swift; sourceTree = "<group>"; };
 		FF5EF8C228D342AB00C6DEA8 /* MyrrorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyrrorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FFF5D27028D29ABD00757785 /* angry.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = angry.json; sourceTree = "<group>"; };
+		FF5EF8EE28D357F100C6DEA8 /* sad2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sad2.json; sourceTree = "<group>"; };
+		FF5EF8F228D3580E00C6DEA8 /* happy2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = happy2.json; sourceTree = "<group>"; };
+		FF5EF8F428D3581700C6DEA8 /* angry.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = angry.json; sourceTree = "<group>"; };
+		FF5EF8F628D3582300C6DEA8 /* confident.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = confident.json; sourceTree = "<group>"; };
+		FF5EF8F828D3582E00C6DEA8 /* indifferent.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = indifferent.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,8 +126,11 @@
 			isa = PBXGroup;
 			children = (
 				FF5EF8B028D3417D00C6DEA8 /* Pods.xcodeproj */,
-				ED75101328D22529000207F2 /* sad.json */,
-				FFF5D27028D29ABD00757785 /* angry.json */,
+				FF5EF8EE28D357F100C6DEA8 /* sad2.json */,
+				FF5EF8F628D3582300C6DEA8 /* confident.json */,
+				FF5EF8F828D3582E00C6DEA8 /* indifferent.json */,
+				FF5EF8F428D3581700C6DEA8 /* angry.json */,
+				FF5EF8F228D3580E00C6DEA8 /* happy2.json */,
 				0B45267328CA292A00D4083C /* ViewModel */,
 				0B45267228CA292200D4083C /* View */,
 				0B45267128CA291700D4083C /* Model */,
@@ -294,10 +303,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED75101428D22529000207F2 /* sad.json in Resources */,
+				FF5EF8F128D357F100C6DEA8 /* sad2.json in Resources */,
 				0B45266928CA0EEC00D4083C /* LaunchScreen.storyboard in Resources */,
+				FF5EF8F728D3582300C6DEA8 /* confident.json in Resources */,
+				FF5EF8F928D3582E00C6DEA8 /* indifferent.json in Resources */,
+				FF5EF8F528D3581700C6DEA8 /* angry.json in Resources */,
 				0B45266628CA0EEC00D4083C /* Assets.xcassets in Resources */,
-				FFF5D27128D29ABD00757785 /* angry.json in Resources */,
+				FF5EF8F328D3580E00C6DEA8 /* happy2.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
