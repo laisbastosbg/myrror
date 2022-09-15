@@ -14,7 +14,7 @@ class UnitTestNewReflectionViewController: XCTestCase {
 
     func testNavigationTitle() throws {
 
-        XCTAssertEqual(sut.navigationTitle, "O que aprendi?")
+        XCTAssertEqual(sut.navigationTitle, "")
     }
 
     func testConfirmationButton() throws {
@@ -34,6 +34,8 @@ class UnitTestNewReflectionViewController: XCTestCase {
         XCTAssertFalse(textField.translatesAutoresizingMaskIntoConstraints)
         XCTAssertEqual(textField.layer.cornerRadius, 8)
         XCTAssertEqual(textField.frame, CGRect(x: 10, y: 10, width: 30, height: 10))
+        XCTAssertEqual(textField.textAlignment,NSTextAlignment.justified)
+        XCTAssertEqual(textField.contentInset,UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5))
     }
 
     func testSubTitle() throws {
@@ -50,9 +52,17 @@ class UnitTestNewReflectionViewController: XCTestCase {
         let background = sut.backgroundView
 
         XCTAssertEqual(background.backgroundColor, UIColor.systemFill)
-        XCTAssertEqual(background.layer.cornerRadius, 0)
+        XCTAssertEqual(background.layer.cornerRadius, 8)
         XCTAssertFalse(background.translatesAutoresizingMaskIntoConstraints)
+    }
 
+    func testPageTitle() throws {
 
+        let pageTitle = sut.pageTitle
+
+        XCTAssertEqual(pageTitle.text, "")
+        XCTAssertEqual(pageTitle.numberOfLines, 2)
+        XCTAssertEqual(pageTitle.font, UIFont.systemFont(ofSize: 32, weight: .bold))
+        XCTAssertFalse(pageTitle.translatesAutoresizingMaskIntoConstraints)
     }
 }
