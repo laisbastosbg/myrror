@@ -18,11 +18,11 @@
 		ED75100728D22268000207F2 /* EmojiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED75100628D22268000207F2 /* EmojiViewController.swift */; };
 		FF5EF8CB28D342B600C6DEA8 /* UnitTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5EF8BA28D3422600C6DEA8 /* UnitTestViewController.swift */; };
 		FF5EF8CC28D342B600C6DEA8 /* UnitTestNewReflectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5EF8BB28D3422600C6DEA8 /* UnitTestNewReflectionViewController.swift */; };
-		FF5EF8F128D357F100C6DEA8 /* sad2.json in Resources */ = {isa = PBXBuildFile; fileRef = FF5EF8EE28D357F100C6DEA8 /* sad2.json */; };
-		FF5EF8F328D3580E00C6DEA8 /* happy2.json in Resources */ = {isa = PBXBuildFile; fileRef = FF5EF8F228D3580E00C6DEA8 /* happy2.json */; };
-		FF5EF8F528D3581700C6DEA8 /* angry.json in Resources */ = {isa = PBXBuildFile; fileRef = FF5EF8F428D3581700C6DEA8 /* angry.json */; };
-		FF5EF8F728D3582300C6DEA8 /* confident.json in Resources */ = {isa = PBXBuildFile; fileRef = FF5EF8F628D3582300C6DEA8 /* confident.json */; };
-		FF5EF8F928D3582E00C6DEA8 /* indifferent.json in Resources */ = {isa = PBXBuildFile; fileRef = FF5EF8F828D3582E00C6DEA8 /* indifferent.json */; };
+		FF5EF8F128D357F100C6DEA8 /* triste.json in Resources */ = {isa = PBXBuildFile; fileRef = FF5EF8EE28D357F100C6DEA8 /* triste.json */; };
+		FF5EF8F328D3580E00C6DEA8 /* feliz.json in Resources */ = {isa = PBXBuildFile; fileRef = FF5EF8F228D3580E00C6DEA8 /* feliz.json */; };
+		FF5EF8F528D3581700C6DEA8 /* raiva.json in Resources */ = {isa = PBXBuildFile; fileRef = FF5EF8F428D3581700C6DEA8 /* raiva.json */; };
+		FF5EF8F728D3582300C6DEA8 /* confiante.json in Resources */ = {isa = PBXBuildFile; fileRef = FF5EF8F628D3582300C6DEA8 /* confiante.json */; };
+		FF5EF8F928D3582E00C6DEA8 /* indiferente.json in Resources */ = {isa = PBXBuildFile; fileRef = FF5EF8F828D3582E00C6DEA8 /* indiferente.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,11 +67,11 @@
 		FF5EF8BA28D3422600C6DEA8 /* UnitTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitTestViewController.swift; sourceTree = "<group>"; };
 		FF5EF8BB28D3422600C6DEA8 /* UnitTestNewReflectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitTestNewReflectionViewController.swift; sourceTree = "<group>"; };
 		FF5EF8C228D342AB00C6DEA8 /* MyrrorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyrrorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FF5EF8EE28D357F100C6DEA8 /* sad2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sad2.json; sourceTree = "<group>"; };
-		FF5EF8F228D3580E00C6DEA8 /* happy2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = happy2.json; sourceTree = "<group>"; };
-		FF5EF8F428D3581700C6DEA8 /* angry.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = angry.json; sourceTree = "<group>"; };
-		FF5EF8F628D3582300C6DEA8 /* confident.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = confident.json; sourceTree = "<group>"; };
-		FF5EF8F828D3582E00C6DEA8 /* indifferent.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = indifferent.json; sourceTree = "<group>"; };
+		FF5EF8EE28D357F100C6DEA8 /* triste.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = triste.json; sourceTree = "<group>"; };
+		FF5EF8F228D3580E00C6DEA8 /* feliz.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = feliz.json; sourceTree = "<group>"; };
+		FF5EF8F428D3581700C6DEA8 /* raiva.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = raiva.json; sourceTree = "<group>"; };
+		FF5EF8F628D3582300C6DEA8 /* confiante.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = confiante.json; sourceTree = "<group>"; };
+		FF5EF8F828D3582E00C6DEA8 /* indiferente.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = indiferente.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,11 +126,11 @@
 			isa = PBXGroup;
 			children = (
 				FF5EF8B028D3417D00C6DEA8 /* Pods.xcodeproj */,
-				FF5EF8EE28D357F100C6DEA8 /* sad2.json */,
-				FF5EF8F628D3582300C6DEA8 /* confident.json */,
-				FF5EF8F828D3582E00C6DEA8 /* indifferent.json */,
-				FF5EF8F428D3581700C6DEA8 /* angry.json */,
-				FF5EF8F228D3580E00C6DEA8 /* happy2.json */,
+				FF5EF8EE28D357F100C6DEA8 /* triste.json */,
+				FF5EF8F628D3582300C6DEA8 /* confiante.json */,
+				FF5EF8F828D3582E00C6DEA8 /* indiferente.json */,
+				FF5EF8F428D3581700C6DEA8 /* raiva.json */,
+				FF5EF8F228D3580E00C6DEA8 /* feliz.json */,
 				0B45267328CA292A00D4083C /* ViewModel */,
 				0B45267228CA292200D4083C /* View */,
 				0B45267128CA291700D4083C /* Model */,
@@ -303,13 +303,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF5EF8F128D357F100C6DEA8 /* sad2.json in Resources */,
+				FF5EF8F128D357F100C6DEA8 /* triste.json in Resources */,
 				0B45266928CA0EEC00D4083C /* LaunchScreen.storyboard in Resources */,
-				FF5EF8F728D3582300C6DEA8 /* confident.json in Resources */,
-				FF5EF8F928D3582E00C6DEA8 /* indifferent.json in Resources */,
-				FF5EF8F528D3581700C6DEA8 /* angry.json in Resources */,
+				FF5EF8F728D3582300C6DEA8 /* confiante.json in Resources */,
+				FF5EF8F928D3582E00C6DEA8 /* indiferente.json in Resources */,
+				FF5EF8F528D3581700C6DEA8 /* raiva.json in Resources */,
 				0B45266628CA0EEC00D4083C /* Assets.xcassets in Resources */,
-				FF5EF8F328D3580E00C6DEA8 /* happy2.json in Resources */,
+				FF5EF8F328D3580E00C6DEA8 /* feliz.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

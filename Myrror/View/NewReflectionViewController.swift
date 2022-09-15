@@ -30,11 +30,9 @@ class NewReflectionViewController: UIViewController {
         view.addSubview(subTitle)
         configSubTitle()
         
+        configTapGesture()
         view.addSubview(backgroundView)
         configBackgroundView()
-        
-//        view.addSubview(angryEmojiButton)
-//        configAngryEmojiButton()
     }
     
     lazy var pageTitle : UILabel = {
@@ -92,22 +90,14 @@ class NewReflectionViewController: UIViewController {
         ])
     }
     
-    let backgroundView : UIStackView = {
+     let backgroundView : UIStackView = {
         let stackView = UIStackView()
         stackView.layer.cornerRadius = 8
-        stackView.distribution = .fillEqually
+        stackView.distribution = .equalCentering
         stackView.backgroundColor = .systemFill
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
-        
-        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(emojiTapped(sender:)))
-        tapRecognizer.numberOfTapsRequired = 1
-        tapRecognizer.numberOfTouchesRequired = 1
-        stackView.addGestureRecognizer(tapRecognizer)
-        stackView.isUserInteractionEnabled = true
-        
-        let emojisName : [String] = ["angry", "sad2", "indifferent", "happy2", "confident"]
-        
+        let emojisName : [String] = ["raiva", "triste", "indiferente", "feliz", "confiante"]
         
         // MARK: Não esquecer de configurar!!!
         for i in 0...4 {
@@ -115,28 +105,35 @@ class NewReflectionViewController: UIViewController {
             
             animationView.animation = Animation.named(emojisName[i])
             animationView.contentMode = .scaleAspectFit
-            animationView.loopMode = .loop
-            animationView.play()
-
-//            animationView.layer.borderWidth = 1
-//            animationView.layer.borderColor = UIColor.orange.cgColor
+            animationView.loopMode = .playOnce
+            animationView.accessibilityLabel = emojisName[i]
+            animationView.isAccessibilityElement = true
             
             stackView.addArrangedSubview(animationView)
             animationView.translatesAutoresizingMaskIntoConstraints = false
             animationView.widthAnchor.constraint(equalTo: animationView.heightAnchor).isActive = true
+            stackView.isUserInteractionEnabled = true
         }
         
         return stackView
     }()
+
+    func configTapGesture(){
+        for emoji in backgroundView.arrangedSubviews {
+            let tapRecognizer = UITapGestureRecognizer(target: self,
+                                                       action: #selector(handleEmojiTap(sender: )))
+            tapRecognizer.numberOfTapsRequired = 1
+            tapRecognizer.numberOfTouchesRequired = 1
+            emoji.addGestureRecognizer(tapRecognizer)
+            emoji.isUserInteractionEnabled = true
+        }
+    }
     
-    @objc func emojiTapped(sender: UITapGestureRecognizer) {
-        print("TA AQUIII!!!")
-//        if sender.state == .ended {
-//            print("UIImageView tapped")
-//        }
-//        if sender.state == .began {
-//            print("TA AQUIIIII!!!")
-//        }
+    @objc func handleEmojiTap(sender: UITapGestureRecognizer) {
+        guard let animationView = sender.view as? AnimationView else { return }
+        if sender.state == .ended {
+            animationView.play()
+        }
     }
     
     func configBackgroundView() {
@@ -172,16 +169,5 @@ class NewReflectionViewController: UIViewController {
             confirmationButton.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
-    
-    let angryEmojiButton : UIButton = {
-        let button = UIButton(type: .custom)
-        if let image = UIImage(systemName: "circle.fill") {
-            button.setImage(image, for: .normal)
-        }
-        button.setTitle("Emoji", for: .disabled)
-        button.translatesAutoresizingMaskIntoConstraints = false
-
-        return button
-    }()
 
 }
