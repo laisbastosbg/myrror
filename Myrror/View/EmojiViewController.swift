@@ -10,21 +10,26 @@ import Lottie
 class EmojiViewController: UIViewController {
 
     let animationView = AnimationView()
+    var emojiName : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupAnimation()
-        // Do any additional setup after loading the view.
     }
     
     private func setupAnimation() {
-        animationView.animation = Animation.named("puto")
+        animationView.animation = Animation.named(emojiName)
         animationView.frame = view.bounds
-        animationView.backgroundColor = .white
+        animationView.backgroundColor = .clear
         animationView.contentMode = .scaleAspectFit
         animationView.loopMode = .loop
         animationView.play()
         view.addSubview(animationView)
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        animationView.backgroundColor = .systemGray
+        animationView.play(toFrame: 75)
     }
 
     /*

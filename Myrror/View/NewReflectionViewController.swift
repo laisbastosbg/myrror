@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Lottie
 
 class NewReflectionViewController: UIViewController {
     var navigationTitle : String = ""
@@ -93,25 +94,46 @@ class NewReflectionViewController: UIViewController {
     
     let backgroundView : UIStackView = {
         let stackView = UIStackView()
+        stackView.layer.cornerRadius = 8
         stackView.distribution = .fillEqually
         stackView.backgroundColor = .systemFill
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
+        
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(emojiTapped(sender:)))
+        tapRecognizer.numberOfTapsRequired = 1
+        tapRecognizer.numberOfTouchesRequired = 1
+        stackView.addGestureRecognizer(tapRecognizer)
+        stackView.isUserInteractionEnabled = true
+        
         // MARK: Não esquecer de configurar!!!
         for _ in 1...5 {
-            let child = UIButton()
-            if let image = UIImage(systemName: "circle.fill") {
-                child.setImage(image, for: .normal)
-            }
-//            child.layer.borderWidth = 1
-//            child.layer.borderColor = UIColor.orange.cgColor
-            stackView.addArrangedSubview(child)
-            child.translatesAutoresizingMaskIntoConstraints = false
-            child.widthAnchor.constraint(equalTo: child.heightAnchor).isActive = true
+            let animationView = AnimationView()
+            
+            animationView.animation = Animation.named("angry")
+            animationView.contentMode = .scaleAspectFit
+            animationView.loopMode = .playOnce
+
+            animationView.layer.borderWidth = 1
+            animationView.layer.borderColor = UIColor.orange.cgColor
+            
+            stackView.addArrangedSubview(animationView)
+            animationView.translatesAutoresizingMaskIntoConstraints = false
+            animationView.widthAnchor.constraint(equalTo: animationView.heightAnchor).isActive = true
         }
         
         return stackView
     }()
+    
+    @objc func emojiTapped(sender: UITapGestureRecognizer) {
+        print("TA AQUIII!!!")
+//        if sender.state == .ended {
+//            print("UIImageView tapped")
+//        }
+//        if sender.state == .began {
+//            print("TA AQUIIIII!!!")
+//        }
+    }
     
     func configBackgroundView() {
         NSLayoutConstraint.activate([
@@ -119,7 +141,7 @@ class NewReflectionViewController: UIViewController {
             backgroundView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 18),
             backgroundView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -18),
             backgroundView.topAnchor.constraint(equalTo: subTitle.bottomAnchor, constant: 35),
-            backgroundView.heightAnchor.constraint(equalToConstant: 50)
+            backgroundView.heightAnchor.constraint(equalToConstant: 70)
         ])
     }
     

@@ -16,8 +16,35 @@
 		65C9D9F7188D33A4E870D2F9 /* Pods_Myrror.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A67F735F3DC35C15FA26D8 /* Pods_Myrror.framework */; };
 		ED19590128CB8539004E7045 /* ChooseTopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED19590028CB8539004E7045 /* ChooseTopicViewController.swift */; };
 		ED75100728D22268000207F2 /* EmojiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED75100628D22268000207F2 /* EmojiViewController.swift */; };
-		ED75101428D22529000207F2 /* puto.json in Resources */ = {isa = PBXBuildFile; fileRef = ED75101328D22529000207F2 /* puto.json */; };
+		ED75101428D22529000207F2 /* sad.json in Resources */ = {isa = PBXBuildFile; fileRef = ED75101328D22529000207F2 /* sad.json */; };
+		FF5EF8CB28D342B600C6DEA8 /* UnitTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5EF8BA28D3422600C6DEA8 /* UnitTestViewController.swift */; };
+		FF5EF8CC28D342B600C6DEA8 /* UnitTestNewReflectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5EF8BB28D3422600C6DEA8 /* UnitTestNewReflectionViewController.swift */; };
+		FFF5D27128D29ABD00757785 /* angry.json in Resources */ = {isa = PBXBuildFile; fileRef = FFF5D27028D29ABD00757785 /* angry.json */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FF5EF8B528D3417D00C6DEA8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF5EF8B028D3417D00C6DEA8 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 51BA97E8B5085EFFB47BC9C0B785CEA7;
+			remoteInfo = "lottie-ios";
+		};
+		FF5EF8B728D3417D00C6DEA8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF5EF8B028D3417D00C6DEA8 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D85DD9D7B233037CEE3C827B44259E8B;
+			remoteInfo = "Pods-Myrror";
+		};
+		FF5EF8C628D342AB00C6DEA8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0B45265128CA0EEA00D4083C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0B45265828CA0EEA00D4083C;
+			remoteInfo = Myrror;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0B45265928CA0EEA00D4083C /* Myrror.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Myrror.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -33,7 +60,12 @@
 		A9A67F735F3DC35C15FA26D8 /* Pods_Myrror.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Myrror.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED19590028CB8539004E7045 /* ChooseTopicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTopicViewController.swift; sourceTree = "<group>"; };
 		ED75100628D22268000207F2 /* EmojiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiViewController.swift; sourceTree = "<group>"; };
-		ED75101328D22529000207F2 /* puto.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = puto.json; sourceTree = "<group>"; };
+		ED75101328D22529000207F2 /* sad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sad.json; sourceTree = "<group>"; };
+		FF5EF8B028D3417D00C6DEA8 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = ../Pods/Pods.xcodeproj; sourceTree = "<group>"; };
+		FF5EF8BA28D3422600C6DEA8 /* UnitTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitTestViewController.swift; sourceTree = "<group>"; };
+		FF5EF8BB28D3422600C6DEA8 /* UnitTestNewReflectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitTestNewReflectionViewController.swift; sourceTree = "<group>"; };
+		FF5EF8C228D342AB00C6DEA8 /* MyrrorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyrrorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFF5D27028D29ABD00757785 /* angry.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = angry.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +74,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				65C9D9F7188D33A4E870D2F9 /* Pods_Myrror.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF5EF8BF28D342AB00C6DEA8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				0B45265B28CA0EEA00D4083C /* Myrror */,
+				FF5EF8C328D342AB00C6DEA8 /* MyrrorTests */,
 				0B45265A28CA0EEA00D4083C /* Products */,
 				022E324D1FE7AD01839DC39A /* Pods */,
 				47970496DD16FE59B194B9BC /* Frameworks */,
@@ -71,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				0B45265928CA0EEA00D4083C /* Myrror.app */,
+				FF5EF8C228D342AB00C6DEA8 /* MyrrorTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -78,7 +119,9 @@
 		0B45265B28CA0EEA00D4083C /* Myrror */ = {
 			isa = PBXGroup;
 			children = (
-				ED75101328D22529000207F2 /* puto.json */,
+				FF5EF8B028D3417D00C6DEA8 /* Pods.xcodeproj */,
+				ED75101328D22529000207F2 /* sad.json */,
+				FFF5D27028D29ABD00757785 /* angry.json */,
 				0B45267328CA292A00D4083C /* ViewModel */,
 				0B45267228CA292200D4083C /* View */,
 				0B45267128CA291700D4083C /* Model */,
@@ -124,6 +167,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FF5EF8B128D3417D00C6DEA8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FF5EF8B628D3417D00C6DEA8 /* lottie-ios */,
+				FF5EF8B828D3417D00C6DEA8 /* Pods-Myrror */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FF5EF8C328D342AB00C6DEA8 /* MyrrorTests */ = {
+			isa = PBXGroup;
+			children = (
+				FF5EF8BA28D3422600C6DEA8 /* UnitTestViewController.swift */,
+				FF5EF8BB28D3422600C6DEA8 /* UnitTestNewReflectionViewController.swift */,
+			);
+			path = MyrrorTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,6 +208,24 @@
 			productReference = 0B45265928CA0EEA00D4083C /* Myrror.app */;
 			productType = "com.apple.product-type.application";
 		};
+		FF5EF8C128D342AB00C6DEA8 /* MyrrorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF5EF8C828D342AB00C6DEA8 /* Build configuration list for PBXNativeTarget "MyrrorTests" */;
+			buildPhases = (
+				FF5EF8BE28D342AB00C6DEA8 /* Sources */,
+				FF5EF8BF28D342AB00C6DEA8 /* Frameworks */,
+				FF5EF8C028D342AB00C6DEA8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FF5EF8C728D342AB00C6DEA8 /* PBXTargetDependency */,
+			);
+			name = MyrrorTests;
+			productName = MyrrorTests;
+			productReference = FF5EF8C228D342AB00C6DEA8 /* MyrrorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -154,11 +233,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1340;
+				LastSwiftUpdateCheck = 1400;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
 					0B45265828CA0EEA00D4083C = {
 						CreatedOnToolsVersion = 13.4.1;
+					};
+					FF5EF8C128D342AB00C6DEA8 = {
+						CreatedOnToolsVersion = 14.0;
+						TestTargetID = 0B45265828CA0EEA00D4083C;
 					};
 				};
 			};
@@ -173,21 +256,55 @@
 			mainGroup = 0B45265028CA0EEA00D4083C;
 			productRefGroup = 0B45265A28CA0EEA00D4083C /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = FF5EF8B128D3417D00C6DEA8 /* Products */;
+					ProjectRef = FF5EF8B028D3417D00C6DEA8 /* Pods.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				0B45265828CA0EEA00D4083C /* Myrror */,
+				FF5EF8C128D342AB00C6DEA8 /* MyrrorTests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		FF5EF8B628D3417D00C6DEA8 /* lottie-ios */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			name = "lottie-ios";
+			path = Lottie.framework;
+			remoteRef = FF5EF8B528D3417D00C6DEA8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FF5EF8B828D3417D00C6DEA8 /* Pods-Myrror */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			name = "Pods-Myrror";
+			path = Pods_Myrror.framework;
+			remoteRef = FF5EF8B728D3417D00C6DEA8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		0B45265728CA0EEA00D4083C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED75101428D22529000207F2 /* puto.json in Resources */,
+				ED75101428D22529000207F2 /* sad.json in Resources */,
 				0B45266928CA0EEC00D4083C /* LaunchScreen.storyboard in Resources */,
 				0B45266628CA0EEC00D4083C /* Assets.xcassets in Resources */,
+				FFF5D27128D29ABD00757785 /* angry.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF5EF8C028D342AB00C6DEA8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,7 +383,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FF5EF8BE28D342AB00C6DEA8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF5EF8CC28D342B600C6DEA8 /* UnitTestNewReflectionViewController.swift in Sources */,
+				FF5EF8CB28D342B600C6DEA8 /* UnitTestViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FF5EF8C728D342AB00C6DEA8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0B45265828CA0EEA00D4083C /* Myrror */;
+			targetProxy = FF5EF8C628D342AB00C6DEA8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0B45266728CA0EEC00D4083C /* LaunchScreen.storyboard */ = {
@@ -452,6 +586,46 @@
 			};
 			name = Release;
 		};
+		FF5EF8C928D342AB00C6DEA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NTS86MKTBV;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.beatrizlds.MyrrorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Myrror.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Myrror";
+			};
+			name = Debug;
+		};
+		FF5EF8CA28D342AB00C6DEA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NTS86MKTBV;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.beatrizlds.MyrrorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Myrror.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Myrror";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -469,6 +643,15 @@
 			buildConfigurations = (
 				0B45266E28CA0EEC00D4083C /* Debug */,
 				0B45266F28CA0EEC00D4083C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF5EF8C828D342AB00C6DEA8 /* Build configuration list for PBXNativeTarget "MyrrorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF5EF8C928D342AB00C6DEA8 /* Debug */,
+				FF5EF8CA28D342AB00C6DEA8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
