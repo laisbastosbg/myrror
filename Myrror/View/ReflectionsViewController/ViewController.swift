@@ -21,6 +21,14 @@ class ViewController: UIViewController {
         screen?.previousMonthButton.addTarget(self, action: #selector(previousMonth), for: .touchUpInside)
         screen?.nextMonthButton.addTarget(self, action: #selector(nextMonth), for: .touchUpInside)
         screen?.navigationButton.addTarget(self, action: #selector(self.navigate), for: .touchUpInside)
+        
+        let swipeNext = UISwipeGestureRecognizer(target: self, action: #selector(nextMonth))
+        swipeNext.direction = .left
+        screen?.calendarContainer.addGestureRecognizer(swipeNext)
+        
+        let swipePrevious = UISwipeGestureRecognizer(target: self, action: #selector(previousMonth))
+        swipePrevious.direction = .right
+        screen?.calendarContainer.addGestureRecognizer(swipePrevious)
     }
     
     override func viewDidLoad() {
