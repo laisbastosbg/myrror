@@ -54,7 +54,7 @@ class ViewController: UIViewController {
         guard let screen = screen else {
             return
         }
-
+        
         
         collectionView.register(CalendarCollectionViewCell.self, forCellWithReuseIdentifier: CalendarCollectionViewCell.identifier)
         collectionView.dataSource = self
@@ -62,7 +62,7 @@ class ViewController: UIViewController {
         
         screen.calendarContainer.addSubview(collectionView)
         collectionView.backgroundColor = .clear
-        collectionView.frame = CGRect(x: 0, y: 55, width: view.bounds.width, height: screen.bounds.height/2)
+        collectionView.frame = CGRect(x: 0, y: 55, width: view.bounds.width, height: (screen.bounds.width/8*6)+2)
     }
     
     func setMonthView() {
@@ -71,6 +71,8 @@ class ViewController: UIViewController {
         let daysInMonth = CalendarHelper().daysInMonth(date: selectedDate)
         let firstDayOfMonth = CalendarHelper().firstOfMonth(date: selectedDate)
         let startingSpaces = CalendarHelper().weekDay(date: firstDayOfMonth)
+        print("firstDayOfMonth: \(firstDayOfMonth)")
+        print("startingSpaces: \(startingSpaces)")
         
         var count: Int = 1
         
@@ -87,16 +89,29 @@ class ViewController: UIViewController {
     }
     
     @objc func previousMonth() {
+        let haptics = UIImpactFeedbackGenerator(style: .soft)
+        haptics.impactOccurred(intensity: 0.5)
+        self.collectionView?.frame = CGRect(x: -self.view.bounds.width, y: 55, width: self.view.bounds.width, height: (self.view.bounds.width/8*6)+2)
+        
+        UIView.animate(withDuration: 1) {
+            self.collectionView?.frame = CGRect(x: 0, y: 55, width: self.view.bounds.width, height: (self.view.bounds.width/8*6)+2)
+        }
         selectedDate = CalendarHelper().minusMonth(date: selectedDate)
-        print(selectedDate)
         setMonthView()
     }
     
     @objc func nextMonth() {
+        let haptics = UIImpactFeedbackGenerator(style: .soft)
+        haptics.impactOccurred(intensity: 0.5)
+        self.collectionView?.frame = CGRect(x: self.view.bounds.width, y: 55, width: self.view.bounds.width, height: (self.view.bounds.width/8*6)+2)
+        
+        UIView.animate(withDuration: 1) {
+            self.collectionView?.frame = CGRect(x: 0, y: 55, width: self.view.bounds.width, height: (self.view.bounds.width/8*6)+2)
+        }
         selectedDate = CalendarHelper().plusMonth(date: selectedDate)
         setMonthView()
     }
-
+    
     
     func setupConstraints() {
         NSLayoutConstraint.activate([
@@ -132,3 +147,25 @@ extension ViewController: UICollectionViewDelegate {
     }
 }
 
+extension ViewController: UICollectionViewDelegateFlowLayout {
+        func collectionView(_ collectionView: UICollectionView,
+                            layout collectionViewLayout: UICollectionViewLayout,
+                            sizeForItemAt indexPath: IndexPath) -> CGSize {
+            guard let screen = screen else {
+                fatalError("no")
+            }
+            return CGSize(width: screen.bounds.width/8, height: screen.bounds.width/8)
+        }
+
+        func collectionView(_ collectionView: UICollectionView,
+                            layout collectionViewLayout: UICollectionViewLayout,
+                            minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+            return 1.0
+        }
+
+        func collectionView(_ collectionView: UICollectionView, layout
+            collectionViewLayout: UICollectionViewLayout,
+                            minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+            return 1.0
+        }
+    }

@@ -28,6 +28,7 @@ class CalendarCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+//        self.contentView.backgroundColor = .white
         self.contentView.addSubview(dayOfMonth)
         self.contentView.addSubview(moodOfTheDay)
         setConstraints()
