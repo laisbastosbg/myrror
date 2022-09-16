@@ -20,9 +20,14 @@
 		FF5EF8CC28D342B600C6DEA8 /* UnitTestNewReflectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5EF8BB28D3422600C6DEA8 /* UnitTestNewReflectionViewController.swift */; };
 		FF5EF8F128D357F100C6DEA8 /* triste.json in Resources */ = {isa = PBXBuildFile; fileRef = FF5EF8EE28D357F100C6DEA8 /* triste.json */; };
 		FF5EF8F328D3580E00C6DEA8 /* feliz.json in Resources */ = {isa = PBXBuildFile; fileRef = FF5EF8F228D3580E00C6DEA8 /* feliz.json */; };
-		FF5EF8F528D3581700C6DEA8 /* raiva.json in Resources */ = {isa = PBXBuildFile; fileRef = FF5EF8F428D3581700C6DEA8 /* raiva.json */; };
+		FF5EF8F528D3581700C6DEA8 /* desesperado.json in Resources */ = {isa = PBXBuildFile; fileRef = FF5EF8F428D3581700C6DEA8 /* desesperado.json */; };
 		FF5EF8F728D3582300C6DEA8 /* confiante.json in Resources */ = {isa = PBXBuildFile; fileRef = FF5EF8F628D3582300C6DEA8 /* confiante.json */; };
 		FF5EF8F928D3582E00C6DEA8 /* indiferente.json in Resources */ = {isa = PBXBuildFile; fileRef = FF5EF8F828D3582E00C6DEA8 /* indiferente.json */; };
+		FF5EF8FB28D49B7A00C6DEA8 /* confiante-cinza.json in Resources */ = {isa = PBXBuildFile; fileRef = FF5EF8FA28D49B7A00C6DEA8 /* confiante-cinza.json */; };
+		FF5EF8FD28D49F2F00C6DEA8 /* feliz-cinza.json in Resources */ = {isa = PBXBuildFile; fileRef = FF5EF8FC28D49F2F00C6DEA8 /* feliz-cinza.json */; };
+		FF5EF8FF28D49F7200C6DEA8 /* indiferente-cinza.json in Resources */ = {isa = PBXBuildFile; fileRef = FF5EF8FE28D49F7200C6DEA8 /* indiferente-cinza.json */; };
+		FF5EF90128D49F9E00C6DEA8 /* triste-cinza.json in Resources */ = {isa = PBXBuildFile; fileRef = FF5EF90028D49F9E00C6DEA8 /* triste-cinza.json */; };
+		FF5EF90328D49FC400C6DEA8 /* desesperado-cinza.json in Resources */ = {isa = PBXBuildFile; fileRef = FF5EF90228D49FC400C6DEA8 /* desesperado-cinza.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,9 +74,14 @@
 		FF5EF8C228D342AB00C6DEA8 /* MyrrorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyrrorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF5EF8EE28D357F100C6DEA8 /* triste.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = triste.json; sourceTree = "<group>"; };
 		FF5EF8F228D3580E00C6DEA8 /* feliz.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = feliz.json; sourceTree = "<group>"; };
-		FF5EF8F428D3581700C6DEA8 /* raiva.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = raiva.json; sourceTree = "<group>"; };
+		FF5EF8F428D3581700C6DEA8 /* desesperado.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = desesperado.json; sourceTree = "<group>"; };
 		FF5EF8F628D3582300C6DEA8 /* confiante.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = confiante.json; sourceTree = "<group>"; };
 		FF5EF8F828D3582E00C6DEA8 /* indiferente.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = indiferente.json; sourceTree = "<group>"; };
+		FF5EF8FA28D49B7A00C6DEA8 /* confiante-cinza.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "confiante-cinza.json"; sourceTree = "<group>"; };
+		FF5EF8FC28D49F2F00C6DEA8 /* feliz-cinza.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "feliz-cinza.json"; sourceTree = "<group>"; };
+		FF5EF8FE28D49F7200C6DEA8 /* indiferente-cinza.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "indiferente-cinza.json"; sourceTree = "<group>"; };
+		FF5EF90028D49F9E00C6DEA8 /* triste-cinza.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "triste-cinza.json"; sourceTree = "<group>"; };
+		FF5EF90228D49FC400C6DEA8 /* desesperado-cinza.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "desesperado-cinza.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,10 +137,15 @@
 			children = (
 				FF5EF8B028D3417D00C6DEA8 /* Pods.xcodeproj */,
 				FF5EF8EE28D357F100C6DEA8 /* triste.json */,
+				FF5EF90028D49F9E00C6DEA8 /* triste-cinza.json */,
 				FF5EF8F628D3582300C6DEA8 /* confiante.json */,
+				FF5EF8FA28D49B7A00C6DEA8 /* confiante-cinza.json */,
 				FF5EF8F828D3582E00C6DEA8 /* indiferente.json */,
-				FF5EF8F428D3581700C6DEA8 /* raiva.json */,
+				FF5EF8FE28D49F7200C6DEA8 /* indiferente-cinza.json */,
+				FF5EF8F428D3581700C6DEA8 /* desesperado.json */,
+				FF5EF90228D49FC400C6DEA8 /* desesperado-cinza.json */,
 				FF5EF8F228D3580E00C6DEA8 /* feliz.json */,
+				FF5EF8FC28D49F2F00C6DEA8 /* feliz-cinza.json */,
 				0B45267328CA292A00D4083C /* ViewModel */,
 				0B45267228CA292200D4083C /* View */,
 				0B45267128CA291700D4083C /* Model */,
@@ -305,9 +320,14 @@
 			files = (
 				FF5EF8F128D357F100C6DEA8 /* triste.json in Resources */,
 				0B45266928CA0EEC00D4083C /* LaunchScreen.storyboard in Resources */,
+				FF5EF90128D49F9E00C6DEA8 /* triste-cinza.json in Resources */,
 				FF5EF8F728D3582300C6DEA8 /* confiante.json in Resources */,
+				FF5EF8FF28D49F7200C6DEA8 /* indiferente-cinza.json in Resources */,
 				FF5EF8F928D3582E00C6DEA8 /* indiferente.json in Resources */,
-				FF5EF8F528D3581700C6DEA8 /* raiva.json in Resources */,
+				FF5EF8F528D3581700C6DEA8 /* desesperado.json in Resources */,
+				FF5EF8FD28D49F2F00C6DEA8 /* feliz-cinza.json in Resources */,
+				FF5EF8FB28D49B7A00C6DEA8 /* confiante-cinza.json in Resources */,
+				FF5EF90328D49FC400C6DEA8 /* desesperado-cinza.json in Resources */,
 				0B45266628CA0EEC00D4083C /* Assets.xcassets in Resources */,
 				FF5EF8F328D3580E00C6DEA8 /* feliz.json in Resources */,
 			);
@@ -548,7 +568,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = JYTUW4QXB6;
+				DEVELOPMENT_TEAM = NTS86MKTBV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Myrror/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -577,7 +597,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = JYTUW4QXB6;
+				DEVELOPMENT_TEAM = NTS86MKTBV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Myrror/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

@@ -17,7 +17,6 @@ class NewReflectionViewController: UIViewController {
         
         navigationController?.navigationBar.items?[1].backBarButtonItem = UIBarButtonItem(title: "Voltar", style: .plain, target: nil, action: nil)
         
-        
         view.addSubview(pageTitle)
         configPageTitle()
         
@@ -97,15 +96,17 @@ class NewReflectionViewController: UIViewController {
         stackView.backgroundColor = .systemFill
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
-        let emojisName : [String] = ["raiva", "triste", "indiferente", "feliz", "confiante"]
+        let emojisName : [String] = ["desesperado", "triste", "indiferente", "feliz", "confiante"]
         
         // MARK: Não esquecer de configurar!!!
         for i in 0...4 {
             let animationView = AnimationView()
             
-            animationView.animation = Animation.named(emojisName[i])
+            animationView.animation = Animation.named("\(emojisName[i])-cinza")
+            
             animationView.contentMode = .scaleAspectFit
-            animationView.loopMode = .playOnce
+            animationView.layer.cornerRadius = 8
+            animationView.loopMode = .repeat(3)
             animationView.accessibilityLabel = emojisName[i]
             animationView.isAccessibilityElement = true
             
@@ -132,7 +133,18 @@ class NewReflectionViewController: UIViewController {
     @objc func handleEmojiTap(sender: UITapGestureRecognizer) {
         guard let animationView = sender.view as? AnimationView else { return }
         if sender.state == .ended {
-            animationView.play()
+            
+            for emoji in backgroundView.subviews {
+                if emoji.accessibilityLabel != animationView.accessibilityLabel {
+                    let notSelectedAnimation = emoji as? AnimationView
+                    notSelectedAnimation?.animation = Animation.named("\(emoji.accessibilityLabel!)-cinza")
+                    notSelectedAnimation?.stop()
+                } else {
+                    animationView.animation = Animation.named(animationView.accessibilityLabel!)
+                    animationView.play()
+                }
+                    
+            }
         }
     }
     
