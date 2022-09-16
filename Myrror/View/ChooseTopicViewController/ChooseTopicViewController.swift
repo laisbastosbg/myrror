@@ -19,10 +19,12 @@ class ChooseTopicViewController: UIViewController {
         swipeGesture1.direction = .left
         screen?.option1.addGestureRecognizer(swipeGesture1)
         
+        screen?.option2.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(navigate2(sender: ))))
         let swipeGesture2 = UISwipeGestureRecognizer(target: self, action: #selector(navigate2(sender: )))
         swipeGesture2.direction = .left
         screen?.option2.addGestureRecognizer(swipeGesture2)
         
+        screen?.option3.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(navigate3(sender: ))))
         let swipeGesture3 = UISwipeGestureRecognizer(target: self, action: #selector(navigate3(sender: )))
         swipeGesture3.direction = .left
         screen?.option3.addGestureRecognizer(swipeGesture3)

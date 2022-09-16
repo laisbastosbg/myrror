@@ -20,8 +20,6 @@ class ChooseTopicView: UIView {
     let option1: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.layer.borderWidth = 1
-        view.layer.borderColor = CGColor(red: 0, green: 0, blue: 0, alpha: 0.7)
         return view
     }()
     
@@ -47,11 +45,37 @@ class ChooseTopicView: UIView {
         return image
     }()
     
+    let optionLine: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .systemGray3
+        return view
+    }()
+    
+    let option1Line: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .systemGray3
+        return view
+    }()
+    
+    let option2Line: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .systemGray3
+        return view
+    }()
+    
+    let option3Line: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .systemGray3
+        return view
+    }()
+    
     let option2: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.layer.borderWidth = 1
-        view.layer.borderColor = CGColor(red: 0, green: 0, blue: 0, alpha: 0.7)
         return view
     }()
     
@@ -80,8 +104,6 @@ class ChooseTopicView: UIView {
     let option3: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.layer.borderWidth = 1
-        view.layer.borderColor = CGColor(red: 0, green: 0, blue: 0, alpha: 0.7)
         return view
     }()
     
@@ -113,24 +135,24 @@ class ChooseTopicView: UIView {
         
         self.backgroundColor = UIColor(named: "Primary")
         self.addSubview(pageTitle)
+        self.addSubview(optionLine)
         self.addSubview(option1)
         option1.addSubview(option1Image)
         option1.addSubview(option1Label)
         option1.addSubview(option1NavigationIcon)
+        option1.addSubview(option1Line)
         
         self.addSubview(option2)
         option2.addSubview(option2Image)
         option2.addSubview(option2Label)
         option2.addSubview(option2NavigationIcon)
+        option2.addSubview(option2Line)
         
         self.addSubview(option3)
         option3.addSubview(option3Image)
         option3.addSubview(option3Label)
         option3.addSubview(option3NavigationIcon)
-//        self.addSubview(buttonStack)
-//        buttonStack.addArrangedSubview(option1Button)
-//        buttonStack.addArrangedSubview(option2Button)
-//        buttonStack.addArrangedSubview(option3Button)
+        option3.addSubview(option3Line)
         setupConstraints()
     }
     
@@ -144,10 +166,19 @@ class ChooseTopicView: UIView {
             pageTitle.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             pageTitle.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
             
-            option1.topAnchor.constraint(equalTo: pageTitle.bottomAnchor, constant: 8),
+            optionLine.topAnchor.constraint(equalTo: pageTitle.bottomAnchor, constant: 8),
+            optionLine.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            optionLine.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            optionLine.heightAnchor.constraint(equalToConstant: 1),
+            option1.topAnchor.constraint(equalTo: optionLine.bottomAnchor),
             option1.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             option1.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             option1.heightAnchor.constraint(equalToConstant: 100),
+            
+            option1Line.topAnchor.constraint(equalTo: option1.bottomAnchor),
+            option1Line.heightAnchor.constraint(equalTo: optionLine.heightAnchor),
+            option1Line.leadingAnchor.constraint(equalTo: optionLine.leadingAnchor),
+            option1Line.trailingAnchor.constraint(equalTo: optionLine.trailingAnchor),
             
             option1Image.centerYAnchor.constraint(equalTo: option1.centerYAnchor),
             option1Image.leadingAnchor.constraint(equalTo: option1.leadingAnchor, constant: 8),
@@ -165,6 +196,11 @@ class ChooseTopicView: UIView {
             option2.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             option2.heightAnchor.constraint(equalToConstant: 100),
             
+            option2Line.topAnchor.constraint(equalTo: option2.bottomAnchor),
+            option2Line.heightAnchor.constraint(equalTo: optionLine.heightAnchor),
+            option2Line.leadingAnchor.constraint(equalTo: optionLine.leadingAnchor),
+            option2Line.trailingAnchor.constraint(equalTo: optionLine.trailingAnchor),
+            
             option2Image.centerYAnchor.constraint(equalTo: option2.centerYAnchor),
             option2Image.leadingAnchor.constraint(equalTo: option2.leadingAnchor, constant: 8),
             option2Image.heightAnchor.constraint(equalTo: option2.heightAnchor, multiplier: 0.5),
@@ -180,6 +216,11 @@ class ChooseTopicView: UIView {
             option3.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             option3.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             option3.heightAnchor.constraint(equalToConstant: 100),
+            
+            option3Line.topAnchor.constraint(equalTo: option3.bottomAnchor),
+            option3Line.heightAnchor.constraint(equalTo: optionLine.heightAnchor),
+            option3Line.leadingAnchor.constraint(equalTo: optionLine.leadingAnchor),
+            option3Line.trailingAnchor.constraint(equalTo: optionLine.trailingAnchor),
             
             option3Image.centerYAnchor.constraint(equalTo: option3.centerYAnchor),
             option3Image.leadingAnchor.constraint(equalTo: option3.leadingAnchor, constant: 8),
