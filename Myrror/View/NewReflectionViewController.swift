@@ -131,6 +131,10 @@ class NewReflectionViewController: UIViewController {
     }
     
     @objc func handleEmojiTap(sender: UITapGestureRecognizer) {
+        
+        let haptics = UISelectionFeedbackGenerator()
+        haptics.selectionChanged()
+        
         guard let animationView = sender.view as? AnimationView else { return }
         if sender.state == .ended {
             
@@ -168,6 +172,7 @@ class NewReflectionViewController: UIViewController {
         button.configuration = configButton
         button.translatesAutoresizingMaskIntoConstraints = false
         button.semanticContentAttribute = .forceRightToLeft
+        button.addTarget(self, action: #selector(saveReflection), for: .touchUpInside)
 
         return button
     }()
@@ -180,6 +185,11 @@ class NewReflectionViewController: UIViewController {
             confirmationButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
             confirmationButton.heightAnchor.constraint(equalToConstant: 50)
         ])
+    }
+    
+    @objc func saveReflection() {
+        let haptics = UINotificationFeedbackGenerator()
+        haptics.notificationOccurred(.success)
     }
 
 }
