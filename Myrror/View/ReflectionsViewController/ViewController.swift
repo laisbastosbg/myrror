@@ -31,12 +31,13 @@ class ViewController: UIViewController {
         screen?.calendarContainer.addGestureRecognizer(swipePrevious)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        setMonthView()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.items?[0].backBarButtonItem = UIBarButtonItem(title: "Voltar", style: .plain, target: nil, action: nil)
-        
-        setMonthView()
-        
         view.backgroundColor = UIColor(named: "Primary")
         
         setupConstraints()
