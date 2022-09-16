@@ -14,6 +14,10 @@
 		0B45266928CA0EEC00D4083C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B45266728CA0EEC00D4083C /* LaunchScreen.storyboard */; };
 		0B45267528CA369100D4083C /* NewReflectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B45267428CA369100D4083C /* NewReflectionViewController.swift */; };
 		65C9D9F7188D33A4E870D2F9 /* Pods_Myrror.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A67F735F3DC35C15FA26D8 /* Pods_Myrror.framework */; };
+		0B9F82BF28D35589000D848B /* ReflectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9F82BE28D35589000D848B /* ReflectionsView.swift */; };
+		0B9F82C228D355DC000D848B /* CalendarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9F82C128D355DC000D848B /* CalendarHelper.swift */; };
+		0B9F82C428D35613000D848B /* CalendarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9F82C328D35613000D848B /* CalendarItem.swift */; };
+		0B9F82C628D3563B000D848B /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9F82C528D3563B000D848B /* CalendarCollectionViewCell.swift */; };
 		ED19590128CB8539004E7045 /* ChooseTopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED19590028CB8539004E7045 /* ChooseTopicViewController.swift */; };
 		ED75100728D22268000207F2 /* EmojiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED75100628D22268000207F2 /* EmojiViewController.swift */; };
 		FF5EF8CB28D342B600C6DEA8 /* UnitTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5EF8BA28D3422600C6DEA8 /* UnitTestViewController.swift */; };
@@ -66,6 +70,10 @@
 		2EC86285561FB4DED73E8FB7 /* Pods-Myrror.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Myrror.release.xcconfig"; path = "Target Support Files/Pods-Myrror/Pods-Myrror.release.xcconfig"; sourceTree = "<group>"; };
 		7973B5507D8F7CD0CE4F9537 /* Pods-Myrror.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Myrror.debug.xcconfig"; path = "Target Support Files/Pods-Myrror/Pods-Myrror.debug.xcconfig"; sourceTree = "<group>"; };
 		A9A67F735F3DC35C15FA26D8 /* Pods_Myrror.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Myrror.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B9F82BE28D35589000D848B /* ReflectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflectionsView.swift; sourceTree = "<group>"; };
+		0B9F82C128D355DC000D848B /* CalendarHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHelper.swift; sourceTree = "<group>"; };
+		0B9F82C328D35613000D848B /* CalendarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarItem.swift; sourceTree = "<group>"; };
+		0B9F82C528D3563B000D848B /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
 		ED19590028CB8539004E7045 /* ChooseTopicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTopicViewController.swift; sourceTree = "<group>"; };
 		ED75100628D22268000207F2 /* EmojiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiViewController.swift; sourceTree = "<group>"; };
 		FF5EF8B028D3417D00C6DEA8 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = ../Pods/Pods.xcodeproj; sourceTree = "<group>"; };
@@ -146,6 +154,7 @@
 				FF5EF90228D49FC400C6DEA8 /* desesperado-cinza.json */,
 				FF5EF8F228D3580E00C6DEA8 /* feliz.json */,
 				FF5EF8FC28D49F2F00C6DEA8 /* feliz-cinza.json */,
+				0B9F82C028D355CF000D848B /* Helpers */,
 				0B45267328CA292A00D4083C /* ViewModel */,
 				0B45267228CA292200D4083C /* View */,
 				0B45267128CA291700D4083C /* Model */,
@@ -168,7 +177,7 @@
 		0B45267228CA292200D4083C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0B45266028CA0EEA00D4083C /* ViewController.swift */,
+				0B9F82C828D35804000D848B /* ReflectionsViewController */,
 				0B45267428CA369100D4083C /* NewReflectionViewController.swift */,
 				ED19590028CB8539004E7045 /* ChooseTopicViewController.swift */,
 				ED75100628D22268000207F2 /* EmojiViewController.swift */,
@@ -207,6 +216,25 @@
 				FF5EF8BB28D3422600C6DEA8 /* UnitTestNewReflectionViewController.swift */,
 			);
 			path = MyrrorTests;
+			sourceTree = "<group>";
+		};
+		0B9F82C028D355CF000D848B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0B9F82C128D355DC000D848B /* CalendarHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		0B9F82C828D35804000D848B /* ReflectionsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0B9F82C328D35613000D848B /* CalendarItem.swift */,
+				0B9F82C528D3563B000D848B /* CalendarCollectionViewCell.swift */,
+				0B9F82BE28D35589000D848B /* ReflectionsView.swift */,
+				0B45266028CA0EEA00D4083C /* ViewController.swift */,
+			);
+			path = ReflectionsViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -408,10 +436,14 @@
 			files = (
 				0B45267528CA369100D4083C /* NewReflectionViewController.swift in Sources */,
 				0B45266128CA0EEA00D4083C /* ViewController.swift in Sources */,
+				0B9F82BF28D35589000D848B /* ReflectionsView.swift in Sources */,
 				0B45265D28CA0EEA00D4083C /* AppDelegate.swift in Sources */,
 				ED75100728D22268000207F2 /* EmojiViewController.swift in Sources */,
 				ED19590128CB8539004E7045 /* ChooseTopicViewController.swift in Sources */,
 				0B45265F28CA0EEA00D4083C /* SceneDelegate.swift in Sources */,
+				0B9F82C628D3563B000D848B /* CalendarCollectionViewCell.swift in Sources */,
+				0B9F82C428D35613000D848B /* CalendarItem.swift in Sources */,
+				0B9F82C228D355DC000D848B /* CalendarHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
