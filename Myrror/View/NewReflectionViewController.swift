@@ -100,7 +100,7 @@ class NewReflectionViewController: UIViewController {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
         
-        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(emojiTapped(sender:)))
+        let tapRecognizer = UITapGestureRecognizer(target: NewReflectionViewController.self, action: #selector(emojiTapped(sender:)))
         tapRecognizer.numberOfTapsRequired = 1
         tapRecognizer.numberOfTouchesRequired = 1
         stackView.addGestureRecognizer(tapRecognizer)
