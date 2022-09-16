@@ -13,8 +13,46 @@
 		0B45266628CA0EEC00D4083C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B45266528CA0EEC00D4083C /* Assets.xcassets */; };
 		0B45266928CA0EEC00D4083C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B45266728CA0EEC00D4083C /* LaunchScreen.storyboard */; };
 		0B45267528CA369100D4083C /* NewReflectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B45267428CA369100D4083C /* NewReflectionViewController.swift */; };
+		65C9D9F7188D33A4E870D2F9 /* Pods_Myrror.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A67F735F3DC35C15FA26D8 /* Pods_Myrror.framework */; };
 		ED19590128CB8539004E7045 /* ChooseTopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED19590028CB8539004E7045 /* ChooseTopicViewController.swift */; };
+		ED75100728D22268000207F2 /* EmojiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED75100628D22268000207F2 /* EmojiViewController.swift */; };
+		FF5EF8CB28D342B600C6DEA8 /* UnitTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5EF8BA28D3422600C6DEA8 /* UnitTestViewController.swift */; };
+		FF5EF8CC28D342B600C6DEA8 /* UnitTestNewReflectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5EF8BB28D3422600C6DEA8 /* UnitTestNewReflectionViewController.swift */; };
+		FF5EF8F128D357F100C6DEA8 /* triste.json in Resources */ = {isa = PBXBuildFile; fileRef = FF5EF8EE28D357F100C6DEA8 /* triste.json */; };
+		FF5EF8F328D3580E00C6DEA8 /* feliz.json in Resources */ = {isa = PBXBuildFile; fileRef = FF5EF8F228D3580E00C6DEA8 /* feliz.json */; };
+		FF5EF8F528D3581700C6DEA8 /* desesperado.json in Resources */ = {isa = PBXBuildFile; fileRef = FF5EF8F428D3581700C6DEA8 /* desesperado.json */; };
+		FF5EF8F728D3582300C6DEA8 /* confiante.json in Resources */ = {isa = PBXBuildFile; fileRef = FF5EF8F628D3582300C6DEA8 /* confiante.json */; };
+		FF5EF8F928D3582E00C6DEA8 /* indiferente.json in Resources */ = {isa = PBXBuildFile; fileRef = FF5EF8F828D3582E00C6DEA8 /* indiferente.json */; };
+		FF5EF8FB28D49B7A00C6DEA8 /* confiante-cinza.json in Resources */ = {isa = PBXBuildFile; fileRef = FF5EF8FA28D49B7A00C6DEA8 /* confiante-cinza.json */; };
+		FF5EF8FD28D49F2F00C6DEA8 /* feliz-cinza.json in Resources */ = {isa = PBXBuildFile; fileRef = FF5EF8FC28D49F2F00C6DEA8 /* feliz-cinza.json */; };
+		FF5EF8FF28D49F7200C6DEA8 /* indiferente-cinza.json in Resources */ = {isa = PBXBuildFile; fileRef = FF5EF8FE28D49F7200C6DEA8 /* indiferente-cinza.json */; };
+		FF5EF90128D49F9E00C6DEA8 /* triste-cinza.json in Resources */ = {isa = PBXBuildFile; fileRef = FF5EF90028D49F9E00C6DEA8 /* triste-cinza.json */; };
+		FF5EF90328D49FC400C6DEA8 /* desesperado-cinza.json in Resources */ = {isa = PBXBuildFile; fileRef = FF5EF90228D49FC400C6DEA8 /* desesperado-cinza.json */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FF5EF8B528D3417D00C6DEA8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF5EF8B028D3417D00C6DEA8 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 51BA97E8B5085EFFB47BC9C0B785CEA7;
+			remoteInfo = "lottie-ios";
+		};
+		FF5EF8B728D3417D00C6DEA8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF5EF8B028D3417D00C6DEA8 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D85DD9D7B233037CEE3C827B44259E8B;
+			remoteInfo = "Pods-Myrror";
+		};
+		FF5EF8C628D342AB00C6DEA8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0B45265128CA0EEA00D4083C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0B45265828CA0EEA00D4083C;
+			remoteInfo = Myrror;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0B45265928CA0EEA00D4083C /* Myrror.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Myrror.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -25,11 +63,37 @@
 		0B45266828CA0EEC00D4083C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0B45266A28CA0EEC00D4083C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B45267428CA369100D4083C /* NewReflectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReflectionViewController.swift; sourceTree = "<group>"; };
+		2EC86285561FB4DED73E8FB7 /* Pods-Myrror.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Myrror.release.xcconfig"; path = "Target Support Files/Pods-Myrror/Pods-Myrror.release.xcconfig"; sourceTree = "<group>"; };
+		7973B5507D8F7CD0CE4F9537 /* Pods-Myrror.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Myrror.debug.xcconfig"; path = "Target Support Files/Pods-Myrror/Pods-Myrror.debug.xcconfig"; sourceTree = "<group>"; };
+		A9A67F735F3DC35C15FA26D8 /* Pods_Myrror.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Myrror.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED19590028CB8539004E7045 /* ChooseTopicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTopicViewController.swift; sourceTree = "<group>"; };
+		ED75100628D22268000207F2 /* EmojiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiViewController.swift; sourceTree = "<group>"; };
+		FF5EF8B028D3417D00C6DEA8 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = ../Pods/Pods.xcodeproj; sourceTree = "<group>"; };
+		FF5EF8BA28D3422600C6DEA8 /* UnitTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitTestViewController.swift; sourceTree = "<group>"; };
+		FF5EF8BB28D3422600C6DEA8 /* UnitTestNewReflectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitTestNewReflectionViewController.swift; sourceTree = "<group>"; };
+		FF5EF8C228D342AB00C6DEA8 /* MyrrorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyrrorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF5EF8EE28D357F100C6DEA8 /* triste.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = triste.json; sourceTree = "<group>"; };
+		FF5EF8F228D3580E00C6DEA8 /* feliz.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = feliz.json; sourceTree = "<group>"; };
+		FF5EF8F428D3581700C6DEA8 /* desesperado.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = desesperado.json; sourceTree = "<group>"; };
+		FF5EF8F628D3582300C6DEA8 /* confiante.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = confiante.json; sourceTree = "<group>"; };
+		FF5EF8F828D3582E00C6DEA8 /* indiferente.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = indiferente.json; sourceTree = "<group>"; };
+		FF5EF8FA28D49B7A00C6DEA8 /* confiante-cinza.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "confiante-cinza.json"; sourceTree = "<group>"; };
+		FF5EF8FC28D49F2F00C6DEA8 /* feliz-cinza.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "feliz-cinza.json"; sourceTree = "<group>"; };
+		FF5EF8FE28D49F7200C6DEA8 /* indiferente-cinza.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "indiferente-cinza.json"; sourceTree = "<group>"; };
+		FF5EF90028D49F9E00C6DEA8 /* triste-cinza.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "triste-cinza.json"; sourceTree = "<group>"; };
+		FF5EF90228D49FC400C6DEA8 /* desesperado-cinza.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "desesperado-cinza.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		0B45265628CA0EEA00D4083C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65C9D9F7188D33A4E870D2F9 /* Pods_Myrror.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF5EF8BF28D342AB00C6DEA8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -39,11 +103,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		022E324D1FE7AD01839DC39A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7973B5507D8F7CD0CE4F9537 /* Pods-Myrror.debug.xcconfig */,
+				2EC86285561FB4DED73E8FB7 /* Pods-Myrror.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		0B45265028CA0EEA00D4083C = {
 			isa = PBXGroup;
 			children = (
 				0B45265B28CA0EEA00D4083C /* Myrror */,
+				FF5EF8C328D342AB00C6DEA8 /* MyrrorTests */,
 				0B45265A28CA0EEA00D4083C /* Products */,
+				022E324D1FE7AD01839DC39A /* Pods */,
+				47970496DD16FE59B194B9BC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				0B45265928CA0EEA00D4083C /* Myrror.app */,
+				FF5EF8C228D342AB00C6DEA8 /* MyrrorTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,6 +135,17 @@
 		0B45265B28CA0EEA00D4083C /* Myrror */ = {
 			isa = PBXGroup;
 			children = (
+				FF5EF8B028D3417D00C6DEA8 /* Pods.xcodeproj */,
+				FF5EF8EE28D357F100C6DEA8 /* triste.json */,
+				FF5EF90028D49F9E00C6DEA8 /* triste-cinza.json */,
+				FF5EF8F628D3582300C6DEA8 /* confiante.json */,
+				FF5EF8FA28D49B7A00C6DEA8 /* confiante-cinza.json */,
+				FF5EF8F828D3582E00C6DEA8 /* indiferente.json */,
+				FF5EF8FE28D49F7200C6DEA8 /* indiferente-cinza.json */,
+				FF5EF8F428D3581700C6DEA8 /* desesperado.json */,
+				FF5EF90228D49FC400C6DEA8 /* desesperado-cinza.json */,
+				FF5EF8F228D3580E00C6DEA8 /* feliz.json */,
+				FF5EF8FC28D49F2F00C6DEA8 /* feliz-cinza.json */,
 				0B45267328CA292A00D4083C /* ViewModel */,
 				0B45267228CA292200D4083C /* View */,
 				0B45267128CA291700D4083C /* Model */,
@@ -83,6 +171,7 @@
 				0B45266028CA0EEA00D4083C /* ViewController.swift */,
 				0B45267428CA369100D4083C /* NewReflectionViewController.swift */,
 				ED19590028CB8539004E7045 /* ChooseTopicViewController.swift */,
+				ED75100628D22268000207F2 /* EmojiViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -94,6 +183,32 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		47970496DD16FE59B194B9BC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A9A67F735F3DC35C15FA26D8 /* Pods_Myrror.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FF5EF8B128D3417D00C6DEA8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FF5EF8B628D3417D00C6DEA8 /* lottie-ios */,
+				FF5EF8B828D3417D00C6DEA8 /* Pods-Myrror */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FF5EF8C328D342AB00C6DEA8 /* MyrrorTests */ = {
+			isa = PBXGroup;
+			children = (
+				FF5EF8BA28D3422600C6DEA8 /* UnitTestViewController.swift */,
+				FF5EF8BB28D3422600C6DEA8 /* UnitTestNewReflectionViewController.swift */,
+			);
+			path = MyrrorTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -101,10 +216,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0B45266D28CA0EEC00D4083C /* Build configuration list for PBXNativeTarget "Myrror" */;
 			buildPhases = (
+				560E7AEE0BB845B99C155CEE /* [CP] Check Pods Manifest.lock */,
 				0B45265528CA0EEA00D4083C /* Sources */,
 				0B45265628CA0EEA00D4083C /* Frameworks */,
 				0B45265728CA0EEA00D4083C /* Resources */,
 				0B45267028CA249B00D4083C /* ShellScript */,
+				CCF23567C710BBA1FD6F8B62 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -115,6 +232,24 @@
 			productReference = 0B45265928CA0EEA00D4083C /* Myrror.app */;
 			productType = "com.apple.product-type.application";
 		};
+		FF5EF8C128D342AB00C6DEA8 /* MyrrorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF5EF8C828D342AB00C6DEA8 /* Build configuration list for PBXNativeTarget "MyrrorTests" */;
+			buildPhases = (
+				FF5EF8BE28D342AB00C6DEA8 /* Sources */,
+				FF5EF8BF28D342AB00C6DEA8 /* Frameworks */,
+				FF5EF8C028D342AB00C6DEA8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FF5EF8C728D342AB00C6DEA8 /* PBXTargetDependency */,
+			);
+			name = MyrrorTests;
+			productName = MyrrorTests;
+			productReference = FF5EF8C228D342AB00C6DEA8 /* MyrrorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -122,11 +257,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1340;
+				LastSwiftUpdateCheck = 1400;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
 					0B45265828CA0EEA00D4083C = {
 						CreatedOnToolsVersion = 13.4.1;
+					};
+					FF5EF8C128D342AB00C6DEA8 = {
+						CreatedOnToolsVersion = 14.0;
+						TestTargetID = 0B45265828CA0EEA00D4083C;
 					};
 				};
 			};
@@ -141,20 +280,63 @@
 			mainGroup = 0B45265028CA0EEA00D4083C;
 			productRefGroup = 0B45265A28CA0EEA00D4083C /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = FF5EF8B128D3417D00C6DEA8 /* Products */;
+					ProjectRef = FF5EF8B028D3417D00C6DEA8 /* Pods.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				0B45265828CA0EEA00D4083C /* Myrror */,
+				FF5EF8C128D342AB00C6DEA8 /* MyrrorTests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		FF5EF8B628D3417D00C6DEA8 /* lottie-ios */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			name = "lottie-ios";
+			path = Lottie.framework;
+			remoteRef = FF5EF8B528D3417D00C6DEA8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FF5EF8B828D3417D00C6DEA8 /* Pods-Myrror */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			name = "Pods-Myrror";
+			path = Pods_Myrror.framework;
+			remoteRef = FF5EF8B728D3417D00C6DEA8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		0B45265728CA0EEA00D4083C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF5EF8F128D357F100C6DEA8 /* triste.json in Resources */,
 				0B45266928CA0EEC00D4083C /* LaunchScreen.storyboard in Resources */,
+				FF5EF90128D49F9E00C6DEA8 /* triste-cinza.json in Resources */,
+				FF5EF8F728D3582300C6DEA8 /* confiante.json in Resources */,
+				FF5EF8FF28D49F7200C6DEA8 /* indiferente-cinza.json in Resources */,
+				FF5EF8F928D3582E00C6DEA8 /* indiferente.json in Resources */,
+				FF5EF8F528D3581700C6DEA8 /* desesperado.json in Resources */,
+				FF5EF8FD28D49F2F00C6DEA8 /* feliz-cinza.json in Resources */,
+				FF5EF8FB28D49B7A00C6DEA8 /* confiante-cinza.json in Resources */,
+				FF5EF90328D49FC400C6DEA8 /* desesperado-cinza.json in Resources */,
 				0B45266628CA0EEC00D4083C /* Assets.xcassets in Resources */,
+				FF5EF8F328D3580E00C6DEA8 /* feliz.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF5EF8C028D342AB00C6DEA8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,6 +360,45 @@
 			shellPath = /bin/sh;
 			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint Myrror/*\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
+		560E7AEE0BB845B99C155CEE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Myrror-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CCF23567C710BBA1FD6F8B62 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Myrror/Pods-Myrror-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Myrror/Pods-Myrror-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Myrror/Pods-Myrror-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -188,12 +409,30 @@
 				0B45267528CA369100D4083C /* NewReflectionViewController.swift in Sources */,
 				0B45266128CA0EEA00D4083C /* ViewController.swift in Sources */,
 				0B45265D28CA0EEA00D4083C /* AppDelegate.swift in Sources */,
+				ED75100728D22268000207F2 /* EmojiViewController.swift in Sources */,
 				ED19590128CB8539004E7045 /* ChooseTopicViewController.swift in Sources */,
 				0B45265F28CA0EEA00D4083C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FF5EF8BE28D342AB00C6DEA8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF5EF8CC28D342B600C6DEA8 /* UnitTestNewReflectionViewController.swift in Sources */,
+				FF5EF8CB28D342B600C6DEA8 /* UnitTestViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FF5EF8C728D342AB00C6DEA8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0B45265828CA0EEA00D4083C /* Myrror */;
+			targetProxy = FF5EF8C628D342AB00C6DEA8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0B45266728CA0EEC00D4083C /* LaunchScreen.storyboard */ = {
@@ -323,12 +562,13 @@
 		};
 		0B45266E28CA0EEC00D4083C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7973B5507D8F7CD0CE4F9537 /* Pods-Myrror.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = JYTUW4QXB6;
+				DEVELOPMENT_TEAM = NTS86MKTBV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Myrror/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -351,12 +591,13 @@
 		};
 		0B45266F28CA0EEC00D4083C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2EC86285561FB4DED73E8FB7 /* Pods-Myrror.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = JYTUW4QXB6;
+				DEVELOPMENT_TEAM = NTS86MKTBV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Myrror/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -377,6 +618,46 @@
 			};
 			name = Release;
 		};
+		FF5EF8C928D342AB00C6DEA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NTS86MKTBV;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.beatrizlds.MyrrorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Myrror.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Myrror";
+			};
+			name = Debug;
+		};
+		FF5EF8CA28D342AB00C6DEA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NTS86MKTBV;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.beatrizlds.MyrrorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Myrror.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Myrror";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -394,6 +675,15 @@
 			buildConfigurations = (
 				0B45266E28CA0EEC00D4083C /* Debug */,
 				0B45266F28CA0EEC00D4083C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF5EF8C828D342AB00C6DEA8 /* Build configuration list for PBXNativeTarget "MyrrorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF5EF8C928D342AB00C6DEA8 /* Debug */,
+				FF5EF8CA28D342AB00C6DEA8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

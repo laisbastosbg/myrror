@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Lottie
 
 class NewReflectionViewController: UIViewController {
     var navigationTitle : String = ""
@@ -15,7 +16,6 @@ class NewReflectionViewController: UIViewController {
         view.backgroundColor = UIColor(named: "Primary")
         
         navigationController?.navigationBar.items?[1].backBarButtonItem = UIBarButtonItem(title: "Voltar", style: .plain, target: nil, action: nil)
-        
         
         view.addSubview(pageTitle)
         configPageTitle()
@@ -29,11 +29,9 @@ class NewReflectionViewController: UIViewController {
         view.addSubview(subTitle)
         configSubTitle()
         
+        configTapGesture()
         view.addSubview(backgroundView)
         configBackgroundView()
-        
-//        view.addSubview(angryEmojiButton)
-//        configAngryEmojiButton()
     }
     
     lazy var pageTitle : UILabel = {
@@ -91,27 +89,68 @@ class NewReflectionViewController: UIViewController {
         ])
     }
     
-    let backgroundView : UIStackView = {
+     let backgroundView : UIStackView = {
         let stackView = UIStackView()
-        stackView.distribution = .fillEqually
+        stackView.layer.cornerRadius = 8
+        stackView.distribution = .equalCentering
         stackView.backgroundColor = .systemFill
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
+        let emojisName : [String] = ["desesperado", "triste", "indiferente", "feliz", "confiante"]
+        
         // MARK: Não esquecer de configurar!!!
-        for _ in 1...5 {
-            let child = UIButton()
-            if let image = UIImage(systemName: "circle.fill") {
-                child.setImage(image, for: .normal)
-            }
-//            child.layer.borderWidth = 1
-//            child.layer.borderColor = UIColor.orange.cgColor
-            stackView.addArrangedSubview(child)
-            child.translatesAutoresizingMaskIntoConstraints = false
-            child.widthAnchor.constraint(equalTo: child.heightAnchor).isActive = true
+        for i in 0...4 {
+            let animationView = AnimationView()
+            
+            animationView.animation = Animation.named("\(emojisName[i])-cinza")
+            
+            animationView.contentMode = .scaleAspectFit
+            animationView.layer.cornerRadius = 8
+            animationView.loopMode = .repeat(3)
+            animationView.accessibilityLabel = emojisName[i]
+            animationView.isAccessibilityElement = true
+            
+            stackView.addArrangedSubview(animationView)
+            animationView.translatesAutoresizingMaskIntoConstraints = false
+            animationView.widthAnchor.constraint(equalTo: animationView.heightAnchor).isActive = true
+            stackView.isUserInteractionEnabled = true
         }
         
         return stackView
     }()
+
+    func configTapGesture(){
+        for emoji in backgroundView.arrangedSubviews {
+            let tapRecognizer = UITapGestureRecognizer(target: self,
+                                                       action: #selector(handleEmojiTap(sender: )))
+            tapRecognizer.numberOfTapsRequired = 1
+            tapRecognizer.numberOfTouchesRequired = 1
+            emoji.addGestureRecognizer(tapRecognizer)
+            emoji.isUserInteractionEnabled = true
+        }
+    }
+    
+    @objc func handleEmojiTap(sender: UITapGestureRecognizer) {
+        
+        let haptics = UISelectionFeedbackGenerator()
+        haptics.selectionChanged()
+        
+        guard let animationView = sender.view as? AnimationView else { return }
+        if sender.state == .ended {
+            
+            for emoji in backgroundView.subviews {
+                if emoji.accessibilityLabel != animationView.accessibilityLabel {
+                    let notSelectedAnimation = emoji as? AnimationView
+                    notSelectedAnimation?.animation = Animation.named("\(emoji.accessibilityLabel!)-cinza")
+                    notSelectedAnimation?.stop()
+                } else {
+                    animationView.animation = Animation.named(animationView.accessibilityLabel!)
+                    animationView.play()
+                }
+                    
+            }
+        }
+    }
     
     func configBackgroundView() {
         NSLayoutConstraint.activate([
@@ -119,7 +158,7 @@ class NewReflectionViewController: UIViewController {
             backgroundView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 18),
             backgroundView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -18),
             backgroundView.topAnchor.constraint(equalTo: subTitle.bottomAnchor, constant: 35),
-            backgroundView.heightAnchor.constraint(equalToConstant: 50)
+            backgroundView.heightAnchor.constraint(equalToConstant: 70)
         ])
     }
     
@@ -133,6 +172,7 @@ class NewReflectionViewController: UIViewController {
         button.configuration = configButton
         button.translatesAutoresizingMaskIntoConstraints = false
         button.semanticContentAttribute = .forceRightToLeft
+        button.addTarget(self, action: #selector(saveReflection), for: .touchUpInside)
 
         return button
     }()
@@ -147,15 +187,9 @@ class NewReflectionViewController: UIViewController {
         ])
     }
     
-    let angryEmojiButton : UIButton = {
-        let button = UIButton(type: .custom)
-        if let image = UIImage(systemName: "circle.fill") {
-            button.setImage(image, for: .normal)
-        }
-        button.setTitle("Emoji", for: .disabled)
-        button.translatesAutoresizingMaskIntoConstraints = false
-
-        return button
-    }()
+    @objc func saveReflection() {
+        let haptics = UINotificationFeedbackGenerator()
+        haptics.notificationOccurred(.success)
+    }
 
 }
