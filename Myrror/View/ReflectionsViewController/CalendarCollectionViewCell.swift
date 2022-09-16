@@ -51,7 +51,7 @@ class CalendarCollectionViewCell: UICollectionViewCell {
     
     func configure(day: String, hide: Bool) {
         dayOfMonth.text = day
-        
+
         if(hide) {
             moodOfTheDay.backgroundColor = .clear
             moodOfTheDay.image = UIImage()
