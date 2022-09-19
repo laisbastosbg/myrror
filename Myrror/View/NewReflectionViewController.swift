@@ -191,7 +191,7 @@ class NewReflectionViewController: UIViewController{
     func configConfirmationButton () {
         NSLayoutConstraint.activate([
             confirmationButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            confirmationButton.centerYAnchor.constraint(equalTo: view.bottomAnchor, constant: -150),
+            confirmationButton.centerYAnchor.constraint(equalTo: view.bottomAnchor, constant: -120),
             confirmationButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
             confirmationButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
             confirmationButton.heightAnchor.constraint(equalToConstant: 50)

@@ -48,7 +48,7 @@ class ReflectionsView: UIView {
         view.axis = .vertical
         view.translatesAutoresizingMaskIntoConstraints = false
         view.alignment = .center
-        view.distribution = .equalSpacing
+        view.distribution = .equalCentering
         return view
     }()
     
@@ -189,7 +189,8 @@ class ReflectionsView: UIView {
         scrollView.addSubview(pageContentStack)
         pageContentStack.addArrangedSubview(emptyScreenImage)
         pageContentStack.addArrangedSubview(emptyScreenLabel)
-        pageContentStack.addArrangedSubview(navigationButton)
+        self.addSubview(navigationButton)
+//        pageContentStack.addArrangedSubview(navigationButton)
         self.addSubview(calendarContainer)
         calendarContainer.addSubview(currentMonth)
         calendarContainer.addSubview(previousMonthButton)
@@ -238,21 +239,19 @@ class ReflectionsView: UIView {
             weekDayStack.trailingAnchor.constraint(equalTo: nextMonthButton.trailingAnchor),
             weekDayStack.centerXAnchor.constraint(equalTo: calendarContainer.centerXAnchor),
             
+            pageContentStack.centerYAnchor.constraint(equalTo: scrollView.safeAreaLayoutGuide.centerYAnchor, constant: -90),
+            pageContentStack.centerXAnchor.constraint(equalTo: scrollView.safeAreaLayoutGuide.centerXAnchor),
+            pageContentStack.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            pageContentStack.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            
             scrollView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
             scrollView.topAnchor.constraint(equalTo: calendarContainer.bottomAnchor),
             scrollView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor),
             
-            pageContentStack.topAnchor.constraint(equalTo: scrollView.topAnchor),
-            pageContentStack.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
-            pageContentStack.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
-            pageContentStack.heightAnchor.constraint(equalTo: scrollView.safeAreaLayoutGuide.heightAnchor),
-            
-//            emptyScreenImage.bottomAnchor.constraint(equalTo: emptyScreenLabel.topAnchor),
-            
             navigationButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 48),
             navigationButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -48),
-            navigationButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -90),
+            navigationButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -100),
             navigationButton.heightAnchor.constraint(equalToConstant: 48),
         ]
         NSLayoutConstraint.activate(constraints)
@@ -262,7 +261,6 @@ class ReflectionsView: UIView {
     func toggleCalendar() {
         UIView.animate(withDuration: 0.75) {
             self.calendarContainerHeightConstraint.constant = self.calendarContainerHeightConstraint.constant == 0 ? UIScreen.main.bounds.height * 0.56 : 0
-            
             self.layoutIfNeeded()
             
             
@@ -272,7 +270,6 @@ class ReflectionsView: UIView {
             self.pageContentStack.removeArrangedSubview(self.emptyScreenImage)
             self.emptyScreenImage.removeFromSuperview()
         } else {
-
             self.pageContentStack.insertArrangedSubview(self.emptyScreenImage, at: 0)
             
         }
