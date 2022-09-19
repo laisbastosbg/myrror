@@ -8,7 +8,7 @@
 import UIKit
 import Lottie
 
-class NewReflectionViewController: UIViewController, UITextViewDelegate {
+class NewReflectionViewController: UIViewController{
     var navigationTitle : String = ""
 
     override func viewDidLoad() {
