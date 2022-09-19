@@ -22,6 +22,7 @@ class ReflectionsView: UIView {
         
         let monthFormatter = DateFormatter()
         monthFormatter.dateFormat = "MMMM"
+        monthFormatter.locale = Locale.init(identifier: "pt-br")
         let month = monthFormatter.string(from: Date.now)
         
         let today = "\(day) de \(month)"
@@ -237,19 +238,21 @@ class ReflectionsView: UIView {
             weekDayStack.trailingAnchor.constraint(equalTo: nextMonthButton.trailingAnchor),
             weekDayStack.centerXAnchor.constraint(equalTo: calendarContainer.centerXAnchor),
             
-            scrollView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            scrollView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
             scrollView.topAnchor.constraint(equalTo: calendarContainer.bottomAnchor),
             scrollView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor),
             
             pageContentStack.topAnchor.constraint(equalTo: scrollView.topAnchor),
             pageContentStack.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
             pageContentStack.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
-            pageContentStack.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            pageContentStack.heightAnchor.constraint(equalTo: scrollView.safeAreaLayoutGuide.heightAnchor),
             
-            navigationButton.topAnchor.constraint(equalTo: emptyScreenLabel.bottomAnchor, constant: 40),
+//            emptyScreenImage.bottomAnchor.constraint(equalTo: emptyScreenLabel.topAnchor),
+            
             navigationButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 48),
             navigationButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -48),
+            navigationButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -90),
             navigationButton.heightAnchor.constraint(equalToConstant: 48),
         ]
         NSLayoutConstraint.activate(constraints)
@@ -262,14 +265,18 @@ class ReflectionsView: UIView {
             
             self.layoutIfNeeded()
             
+            
         }
         
         if self.pageContentStack.subviews.contains(self.emptyScreenImage) {
             self.pageContentStack.removeArrangedSubview(self.emptyScreenImage)
             self.emptyScreenImage.removeFromSuperview()
         } else {
+
             self.pageContentStack.insertArrangedSubview(self.emptyScreenImage, at: 0)
+            
         }
+        
         
     }
 }
