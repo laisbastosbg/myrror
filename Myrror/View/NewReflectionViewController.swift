@@ -8,7 +8,7 @@
 import UIKit
 import Lottie
 
-class NewReflectionViewController: UIViewController {
+class NewReflectionViewController: UIViewController, UITextViewDelegate {
     var navigationTitle : String = ""
 
     override func viewDidLoad() {
@@ -23,13 +23,14 @@ class NewReflectionViewController: UIViewController {
         view.addSubview(confirmationButton)
         configConfirmationButton()
         
+        configKeyBoardTapGesture()
         view.addSubview(reflectionText)
         configReflectionText()
         
         view.addSubview(subTitle)
         configSubTitle()
         
-        configTapGesture()
+        configEmojiTapGesture()
         view.addSubview(backgroundView)
         configBackgroundView()
     }
@@ -71,6 +72,11 @@ class NewReflectionViewController: UIViewController {
             reflectionText.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
             reflectionText.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor, constant: -100)
         ])
+    }
+    
+    func configKeyBoardTapGesture(){
+        let gesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(gesture)
     }
     
     let subTitle : UILabel = {
@@ -124,7 +130,7 @@ class NewReflectionViewController: UIViewController {
         return stackView
     }()
 
-    func configTapGesture(){
+    func configEmojiTapGesture(){
         for emoji in backgroundView.arrangedSubviews {
             let tapRecognizer = UITapGestureRecognizer(target: self,
                                                        action: #selector(handleEmojiTap(sender: )))
