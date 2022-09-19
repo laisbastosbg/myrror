@@ -18,17 +18,26 @@ class UITestNewReflectionViewController: XCTestCase {
         app.launchArguments = ["testing"]
         app.launch()
     }
-
     func testButtonFinalizar() {
 
-        let buttonFinalizar = app.buttons.element
-        XCTAssertTrue(buttonFinalizar.exists)
-    }
+        let buttonFinalizar = app.buttons["Finalizar"]
+        let imageButtonFinalizar = app.images["square.and.arrow.down"]
 
+        XCTAssertFalse(buttonFinalizar.exists)
+        XCTAssertFalse(imageButtonFinalizar.exists)
+    }
     func testSubTitle() {
 
         let subTitle = app.staticTexts["Como isso te faz se sentir?"]
+
         XCTAssertNotNil(subTitle)
+    }
+    func testButtonEmojis() throws {
+
+        let buttonEmoijsName = app.buttons.element
+
+        XCTAssertTrue(buttonEmoijsName.exists)
+
     }
 
 }
