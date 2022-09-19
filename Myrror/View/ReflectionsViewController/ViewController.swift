@@ -10,9 +10,13 @@ import UIKit
 class ViewController: UIViewController {
     
     var screen: ReflectionsView?
-    private var collectionView: UICollectionView?
+    var collectionView: UICollectionView?
+    var tableView: UITableView?
     var selectedDate = Date()
     var totalSquares = [String]()
+    var reflections: [String] = [
+        "maçã", "banana", "laranja", "pera"
+    ]
     
     override func loadView() {
         self.screen = ReflectionsView()
@@ -33,6 +37,14 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         setMonthView()
+        
+        guard let screen = screen else {
+            return
+        }
+        
+        if reflections.count > 0 {
+            screen.scrollView.removeFromSuperview()
+        }
     }
     
     override func viewDidLoad() {
@@ -63,7 +75,20 @@ class ViewController: UIViewController {
         
         screen.calendarContainer.addSubview(collectionView)
         collectionView.backgroundColor = .clear
-        collectionView.frame = CGRect(x: 0, y: 55, width: view.bounds.width, height: (screen.bounds.width/8*6)+2)
+        collectionView.frame = CGRect(x: 0, y: screen.weekDayStack.frame.maxY, width: view.bounds.width, height: (screen.bounds.width/8*7))
+        
+        tableView = UITableView()
+        
+        guard let tableView = tableView else {
+            return
+        }
+        
+        screen.reflectionsContainer.addSubview(tableView)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "myCell")
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.frame = screen.reflectionsContainer.bounds
+        tableView.backgroundColor = .clear
     }
     
     func setMonthView() {
@@ -73,8 +98,6 @@ class ViewController: UIViewController {
         let daysInMonth = CalendarHelper().daysInMonth(date: selectedDate)
         let firstDayOfMonth = CalendarHelper().firstOfMonth(date: selectedDate)
         let startingSpaces = CalendarHelper().weekDay(date: firstDayOfMonth)
-        print("firstDayOfMonth: \(firstDayOfMonth)")
-        print("startingSpaces: \(startingSpaces)")
         
         var count: Int = 1
         
@@ -96,7 +119,7 @@ class ViewController: UIViewController {
         self.collectionView?.frame = CGRect(x: -self.view.bounds.width, y: 55, width: self.view.bounds.width, height: (self.view.bounds.width/8*6)+2)
         
         UIView.animate(withDuration: 1) {
-            self.collectionView?.frame = CGRect(x: 0, y: 55, width: self.view.bounds.width, height: (self.view.bounds.width/8*6)+2)
+            self.collectionView?.frame = CGRect(x: 0, y: 55, width: self.view.bounds.width, height: (self.view.bounds.width/8*7))
         }
         selectedDate = CalendarHelper().minusMonth(date: selectedDate)
         setMonthView()
@@ -108,7 +131,7 @@ class ViewController: UIViewController {
         self.collectionView?.frame = CGRect(x: self.view.bounds.width, y: 55, width: self.view.bounds.width, height: (self.view.bounds.width/8*6)+2)
         
         UIView.animate(withDuration: 1) {
-            self.collectionView?.frame = CGRect(x: 0, y: 55, width: self.view.bounds.width, height: (self.view.bounds.width/8*6)+2)
+            self.collectionView?.frame = CGRect(x: 0, y: 55, width: self.view.bounds.width, height: (self.view.bounds.width/8*7))
         }
         selectedDate = CalendarHelper().plusMonth(date: selectedDate)
         setMonthView()
@@ -171,3 +194,19 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
             return 1.0
         }
     }
+
+extension ViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return reflections.count
+    }
+}
+
+extension ViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let myCell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
+        myCell.textLabel?.text = reflections[indexPath[1]]
+        myCell.backgroundColor = .clear
+        
+        return myCell
+    }
+}
