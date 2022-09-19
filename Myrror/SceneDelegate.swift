@@ -18,7 +18,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         let window = UIWindow(windowScene: windowScene)
         window.rootViewController = UINavigationController(rootViewController: ViewController())
-//        navigationController?.navigationBar.items?[0].backBarButtonItem = UIBarButtonItem(title: "Voltar", style: .plain, target: nil, action: nil)
         self.window = window
         window.makeKeyAndVisible()
         window.overrideUserInterfaceStyle = .dark

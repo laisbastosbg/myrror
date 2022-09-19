@@ -13,6 +13,7 @@
 		0B45266628CA0EEC00D4083C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B45266528CA0EEC00D4083C /* Assets.xcassets */; };
 		0B45266928CA0EEC00D4083C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B45266728CA0EEC00D4083C /* LaunchScreen.storyboard */; };
 		0B45267528CA369100D4083C /* NewReflectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B45267428CA369100D4083C /* NewReflectionViewController.swift */; };
+		0B4B7E6828D8AAAC004F2906 /* ReflectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4B7E6728D8AAAC004F2906 /* ReflectionTableViewCell.swift */; };
 		0B9F82BF28D35589000D848B /* ReflectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9F82BE28D35589000D848B /* ReflectionsView.swift */; };
 		0B9F82C228D355DC000D848B /* CalendarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9F82C128D355DC000D848B /* CalendarHelper.swift */; };
 		0B9F82C428D35613000D848B /* CalendarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9F82C328D35613000D848B /* CalendarItem.swift */; };
@@ -79,6 +80,7 @@
 		0B45266828CA0EEC00D4083C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0B45266A28CA0EEC00D4083C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B45267428CA369100D4083C /* NewReflectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReflectionViewController.swift; sourceTree = "<group>"; };
+		0B4B7E6728D8AAAC004F2906 /* ReflectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflectionTableViewCell.swift; sourceTree = "<group>"; };
 		0B9F82BE28D35589000D848B /* ReflectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflectionsView.swift; sourceTree = "<group>"; };
 		0B9F82C128D355DC000D848B /* CalendarHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHelper.swift; sourceTree = "<group>"; };
 		0B9F82C328D35613000D848B /* CalendarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarItem.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 				0B9F82C528D3563B000D848B /* CalendarCollectionViewCell.swift */,
 				0B9F82BE28D35589000D848B /* ReflectionsView.swift */,
 				0B45266028CA0EEA00D4083C /* ViewController.swift */,
+				0B4B7E6728D8AAAC004F2906 /* ReflectionTableViewCell.swift */,
 			);
 			path = ReflectionsViewController;
 			sourceTree = "<group>";
@@ -521,6 +524,7 @@
 			files = (
 				0B45267528CA369100D4083C /* NewReflectionViewController.swift in Sources */,
 				0B45266128CA0EEA00D4083C /* ViewController.swift in Sources */,
+				0B4B7E6828D8AAAC004F2906 /* ReflectionTableViewCell.swift in Sources */,
 				0B9F82BF28D35589000D848B /* ReflectionsView.swift in Sources */,
 				0B45265D28CA0EEA00D4083C /* AppDelegate.swift in Sources */,
 				ED75100728D22268000207F2 /* EmojiViewController.swift in Sources */,

@@ -84,11 +84,12 @@ class ViewController: UIViewController {
         }
         
         screen.reflectionsContainer.addSubview(tableView)
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "myCell")
+        tableView.register(ReflectionTableViewCell.self, forCellReuseIdentifier: ReflectionTableViewCell.identifier)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.frame = screen.reflectionsContainer.bounds
         tableView.backgroundColor = .clear
+        tableView.separatorStyle = .none
     }
     
     func setMonthView() {
@@ -203,9 +204,7 @@ extension ViewController: UITableViewDelegate {
 
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let myCell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
-        myCell.textLabel?.text = reflections[indexPath[1]]
-        myCell.backgroundColor = .clear
+        let myCell = tableView.dequeueReusableCell(withIdentifier: ReflectionTableViewCell.identifier, for: indexPath) as! ReflectionTableViewCell
         
         return myCell
     }

@@ -248,7 +248,7 @@ class ReflectionsView: UIView {
             reflectionsContainer.topAnchor.constraint(equalTo: calendarContainer.bottomAnchor),
             reflectionsContainer.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             reflectionsContainer.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            reflectionsContainer.heightAnchor.constraint(equalToConstant: 300),
+            reflectionsContainer.heightAnchor.constraint(equalToConstant: 600),
 //
             scrollView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
