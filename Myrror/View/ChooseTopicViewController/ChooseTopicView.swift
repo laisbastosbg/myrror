@@ -89,7 +89,7 @@ class ChooseTopicView: UIView {
     let option2Label: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "O não gostei"
+        label.text = "O que não gostei"
         label.font = .preferredFont(forTextStyle: .body)
         return label
     }()
@@ -117,7 +117,7 @@ class ChooseTopicView: UIView {
     let option3Label: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "O posso melhorar"
+        label.text = "O que posso melhorar"
         label.font = .preferredFont(forTextStyle: .body)
         return label
     }()

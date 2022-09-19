@@ -68,6 +68,7 @@ class ViewController: UIViewController {
     
     func setMonthView() {
         totalSquares.removeAll()
+        collectionView?.reloadData()
         
         let daysInMonth = CalendarHelper().daysInMonth(date: selectedDate)
         let firstDayOfMonth = CalendarHelper().firstOfMonth(date: selectedDate)
