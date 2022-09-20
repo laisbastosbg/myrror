@@ -132,8 +132,7 @@ class NewReflectionViewController: UIViewController{
 
     func configEmojiTapGesture(){
         for emoji in backgroundView.arrangedSubviews {
-            let tapRecognizer = UITapGestureRecognizer(target: self,
-                                                       action: #selector(handleEmojiTap(sender: )))
+            let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleEmojiTap(sender: )))
             tapRecognizer.numberOfTapsRequired = 1
             tapRecognizer.numberOfTouchesRequired = 1
             emoji.addGestureRecognizer(tapRecognizer)
@@ -142,10 +141,9 @@ class NewReflectionViewController: UIViewController{
     }
     
     @objc func handleEmojiTap(sender: UITapGestureRecognizer) {
-        
+        view.endEditing(true)
         let haptics = UISelectionFeedbackGenerator()
         haptics.selectionChanged()
-        
         guard let animationView = sender.view as? AnimationView else { return }
         if sender.state == .ended {
             
