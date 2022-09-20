@@ -28,6 +28,7 @@ class CalendarCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+//        self.contentView.backgroundColor = .white
         self.contentView.addSubview(dayOfMonth)
         self.contentView.addSubview(moodOfTheDay)
         setConstraints()
@@ -51,7 +52,7 @@ class CalendarCollectionViewCell: UICollectionViewCell {
     
     func configure(day: String, hide: Bool) {
         dayOfMonth.text = day
-        
+
         if(hide) {
             moodOfTheDay.backgroundColor = .clear
             moodOfTheDay.image = UIImage()

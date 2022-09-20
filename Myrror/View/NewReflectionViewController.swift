@@ -97,8 +97,13 @@ class NewReflectionViewController: UIViewController {
         stackView.distribution = .equalCentering
         stackView.backgroundColor = .systemFill
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        
+
         let emojisName : [String] = ["desesperado", "triste", "indiferente", "feliz", "confiante"]
+        let tapRecognizer = UITapGestureRecognizer(target: NewReflectionViewController.self, action: #selector(handleEmojiTap(sender:)))
+        tapRecognizer.numberOfTapsRequired = 1
+        tapRecognizer.numberOfTouchesRequired = 1
+        stackView.addGestureRecognizer(tapRecognizer)
+        stackView.isUserInteractionEnabled = true
         
         // MARK: Não esquecer de configurar!!!
         for i in 0...4 {

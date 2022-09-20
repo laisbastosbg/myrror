@@ -21,14 +21,23 @@ class ViewController: UIViewController {
         screen?.previousMonthButton.addTarget(self, action: #selector(previousMonth), for: .touchUpInside)
         screen?.nextMonthButton.addTarget(self, action: #selector(nextMonth), for: .touchUpInside)
         screen?.navigationButton.addTarget(self, action: #selector(self.navigate), for: .touchUpInside)
+        
+        let swipeNext = UISwipeGestureRecognizer(target: self, action: #selector(nextMonth))
+        swipeNext.direction = .left
+        screen?.calendarContainer.addGestureRecognizer(swipeNext)
+        
+        let swipePrevious = UISwipeGestureRecognizer(target: self, action: #selector(previousMonth))
+        swipePrevious.direction = .right
+        screen?.calendarContainer.addGestureRecognizer(swipePrevious)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setMonthView()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.items?[0].backBarButtonItem = UIBarButtonItem(title: "Voltar", style: .plain, target: nil, action: nil)
-        
-        setMonthView()
-        
         view.backgroundColor = UIColor(named: "Primary")
         
         setupConstraints()
@@ -46,7 +55,7 @@ class ViewController: UIViewController {
         guard let screen = screen else {
             return
         }
-
+        
         
         collectionView.register(CalendarCollectionViewCell.self, forCellWithReuseIdentifier: CalendarCollectionViewCell.identifier)
         collectionView.dataSource = self
@@ -54,7 +63,7 @@ class ViewController: UIViewController {
         
         screen.calendarContainer.addSubview(collectionView)
         collectionView.backgroundColor = .clear
-        collectionView.frame = CGRect(x: 0, y: 55, width: view.bounds.width, height: screen.bounds.height/2)
+        collectionView.frame = CGRect(x: 0, y: 55, width: view.bounds.width, height: (screen.bounds.width/8*6)+2)
     }
     
     func setMonthView() {
@@ -63,6 +72,8 @@ class ViewController: UIViewController {
         let daysInMonth = CalendarHelper().daysInMonth(date: selectedDate)
         let firstDayOfMonth = CalendarHelper().firstOfMonth(date: selectedDate)
         let startingSpaces = CalendarHelper().weekDay(date: firstDayOfMonth)
+        print("firstDayOfMonth: \(firstDayOfMonth)")
+        print("startingSpaces: \(startingSpaces)")
         
         var count: Int = 1
         
@@ -79,16 +90,29 @@ class ViewController: UIViewController {
     }
     
     @objc func previousMonth() {
+        let haptics = UIImpactFeedbackGenerator(style: .soft)
+        haptics.impactOccurred(intensity: 0.5)
+        self.collectionView?.frame = CGRect(x: -self.view.bounds.width, y: 55, width: self.view.bounds.width, height: (self.view.bounds.width/8*6)+2)
+        
+        UIView.animate(withDuration: 1) {
+            self.collectionView?.frame = CGRect(x: 0, y: 55, width: self.view.bounds.width, height: (self.view.bounds.width/8*6)+2)
+        }
         selectedDate = CalendarHelper().minusMonth(date: selectedDate)
-        print(selectedDate)
         setMonthView()
     }
     
     @objc func nextMonth() {
+        let haptics = UIImpactFeedbackGenerator(style: .soft)
+        haptics.impactOccurred(intensity: 0.5)
+        self.collectionView?.frame = CGRect(x: self.view.bounds.width, y: 55, width: self.view.bounds.width, height: (self.view.bounds.width/8*6)+2)
+        
+        UIView.animate(withDuration: 1) {
+            self.collectionView?.frame = CGRect(x: 0, y: 55, width: self.view.bounds.width, height: (self.view.bounds.width/8*6)+2)
+        }
         selectedDate = CalendarHelper().plusMonth(date: selectedDate)
         setMonthView()
     }
-
+    
     
     func setupConstraints() {
         NSLayoutConstraint.activate([
@@ -124,3 +148,25 @@ extension ViewController: UICollectionViewDelegate {
     }
 }
 
+extension ViewController: UICollectionViewDelegateFlowLayout {
+        func collectionView(_ collectionView: UICollectionView,
+                            layout collectionViewLayout: UICollectionViewLayout,
+                            sizeForItemAt indexPath: IndexPath) -> CGSize {
+            guard let screen = screen else {
+                fatalError("no")
+            }
+            return CGSize(width: screen.bounds.width/8, height: screen.bounds.width/8)
+        }
+
+        func collectionView(_ collectionView: UICollectionView,
+                            layout collectionViewLayout: UICollectionViewLayout,
+                            minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+            return 1.0
+        }
+
+        func collectionView(_ collectionView: UICollectionView, layout
+            collectionViewLayout: UICollectionViewLayout,
+                            minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+            return 1.0
+        }
+    }
