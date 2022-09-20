@@ -14,6 +14,7 @@
 		0B45266928CA0EEC00D4083C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B45266728CA0EEC00D4083C /* LaunchScreen.storyboard */; };
 		0B45267528CA369100D4083C /* NewReflectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B45267428CA369100D4083C /* NewReflectionViewController.swift */; };
 		0B4B7E6828D8AAAC004F2906 /* ReflectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4B7E6728D8AAAC004F2906 /* ReflectionTableViewCell.swift */; };
+		0B4B7E6F28D9F8B8004F2906 /* empty.json in Resources */ = {isa = PBXBuildFile; fileRef = 0B4B7E6C28D9F8B8004F2906 /* empty.json */; };
 		0B9F82BF28D35589000D848B /* ReflectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9F82BE28D35589000D848B /* ReflectionsView.swift */; };
 		0B9F82C228D355DC000D848B /* CalendarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9F82C128D355DC000D848B /* CalendarHelper.swift */; };
 		0B9F82C428D35613000D848B /* CalendarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9F82C328D35613000D848B /* CalendarItem.swift */; };
@@ -81,6 +82,7 @@
 		0B45266A28CA0EEC00D4083C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B45267428CA369100D4083C /* NewReflectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReflectionViewController.swift; sourceTree = "<group>"; };
 		0B4B7E6728D8AAAC004F2906 /* ReflectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflectionTableViewCell.swift; sourceTree = "<group>"; };
+		0B4B7E6C28D9F8B8004F2906 /* empty.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = empty.json; sourceTree = "<group>"; };
 		0B9F82BE28D35589000D848B /* ReflectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflectionsView.swift; sourceTree = "<group>"; };
 		0B9F82C128D355DC000D848B /* CalendarHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHelper.swift; sourceTree = "<group>"; };
 		0B9F82C328D35613000D848B /* CalendarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarItem.swift; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 				FF5EF90028D49F9E00C6DEA8 /* triste-cinza.json */,
 				FF5EF8EE28D357F100C6DEA8 /* triste.json */,
 				FF5EF8FC28D49F2F00C6DEA8 /* feliz-cinza.json */,
+				0B4B7E6C28D9F8B8004F2906 /* empty.json */,
 				FF5EF8F228D3580E00C6DEA8 /* feliz.json */,
 			);
 			path = Assets;
@@ -429,6 +432,7 @@
 			files = (
 				FF5EF8F128D357F100C6DEA8 /* triste.json in Resources */,
 				0B45266928CA0EEC00D4083C /* LaunchScreen.storyboard in Resources */,
+				0B4B7E6F28D9F8B8004F2906 /* empty.json in Resources */,
 				FF5EF90128D49F9E00C6DEA8 /* triste-cinza.json in Resources */,
 				FF5EF8F728D3582300C6DEA8 /* confiante.json in Resources */,
 				FF5EF8FF28D49F7200C6DEA8 /* indiferente-cinza.json in Resources */,
