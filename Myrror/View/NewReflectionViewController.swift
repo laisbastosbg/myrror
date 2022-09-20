@@ -10,7 +10,9 @@ import Lottie
 
 class NewReflectionViewController: UIViewController {
     var navigationTitle : String = ""
-
+    var viewModel = ReflectionViewModel()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(named: "Primary")
@@ -190,6 +192,8 @@ class NewReflectionViewController: UIViewController {
     @objc func saveReflection() {
         let haptics = UINotificationFeedbackGenerator()
         haptics.notificationOccurred(.success)
+        
+        viewModel.addReflection(subject: navigationTitle, textoReflection: reflectionText.text, emoji: "pensando")
     }
 
 }
