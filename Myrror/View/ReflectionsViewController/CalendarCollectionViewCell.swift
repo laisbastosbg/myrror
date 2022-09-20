@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Lottie
 
 class CalendarCollectionViewCell: UICollectionViewCell {
     static let identifier = "CustomCollectionViewCell"
@@ -18,11 +19,25 @@ class CalendarCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    lazy var moodOfTheDay: UIImageView = {
-        let view = UIImageView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.layer.cornerRadius = 0.5 * 0.6 * contentView.bounds.size.width
-        return view
+//    lazy var moodOfTheDay: UIImageView = {
+//        let view = UIImageView()
+//        view.translatesAutoresizingMaskIntoConstraints = false
+//        view.layer.cornerRadius = 0.5 * 0.6 * contentView.bounds.size.width
+//        return view
+//    }()
+//
+    let moodOfTheDay: AnimationView = {
+        let animationView = AnimationView()
+        
+        animationView.animation = Animation.named("desesperado")
+        
+        animationView.contentMode = .scaleAspectFit
+        animationView.layer.cornerRadius = 8
+        animationView.accessibilityLabel = "desesperado"
+        animationView.isAccessibilityElement = true
+        animationView.translatesAutoresizingMaskIntoConstraints = false
+//        animationView.backgroundColor = .systemBlue
+        return animationView
     }()
     
     override init(frame: CGRect) {
@@ -31,6 +46,7 @@ class CalendarCollectionViewCell: UICollectionViewCell {
 //        self.contentView.backgroundColor = .white
         self.contentView.addSubview(dayOfMonth)
         self.contentView.addSubview(moodOfTheDay)
+        moodOfTheDay.layer.cornerRadius = 0.5 * 0.6 * contentView.bounds.size.width
         setConstraints()
     }
     
@@ -55,10 +71,10 @@ class CalendarCollectionViewCell: UICollectionViewCell {
 
         if(hide) {
             moodOfTheDay.backgroundColor = .clear
-            moodOfTheDay.image = UIImage()
+            moodOfTheDay.animation = Animation.named("empty")
         } else {
             moodOfTheDay.backgroundColor = .systemGray5
-            moodOfTheDay.image = Mood.angry.emoji
+            moodOfTheDay.animation = Animation.named("desesperado")
             
         }
         

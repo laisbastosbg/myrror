@@ -13,6 +13,7 @@
 		0B45266628CA0EEC00D4083C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B45266528CA0EEC00D4083C /* Assets.xcassets */; };
 		0B45266928CA0EEC00D4083C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B45266728CA0EEC00D4083C /* LaunchScreen.storyboard */; };
 		0B45267528CA369100D4083C /* NewReflectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B45267428CA369100D4083C /* NewReflectionViewController.swift */; };
+		0B4B7E6828D8AAAC004F2906 /* ReflectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4B7E6728D8AAAC004F2906 /* ReflectionTableViewCell.swift */; };
 		0B4B7EB728D9FF00004F2906 /* feliz-cinza.json in Resources */ = {isa = PBXBuildFile; fileRef = 0B4B7EAB28D9FF00004F2906 /* feliz-cinza.json */; };
 		0B4B7EB828D9FF00004F2906 /* feliz.json in Resources */ = {isa = PBXBuildFile; fileRef = 0B4B7EAC28D9FF00004F2906 /* feliz.json */; };
 		0B4B7EB928D9FF00004F2906 /* triste-cinza.json in Resources */ = {isa = PBXBuildFile; fileRef = 0B4B7EAD28D9FF00004F2906 /* triste-cinza.json */; };
@@ -23,6 +24,7 @@
 		0B4B7EBE28D9FF00004F2906 /* triste.json in Resources */ = {isa = PBXBuildFile; fileRef = 0B4B7EB228D9FF00004F2906 /* triste.json */; };
 		0B4B7EBF28D9FF00004F2906 /* indiferente-cinza.json in Resources */ = {isa = PBXBuildFile; fileRef = 0B4B7EB328D9FF00004F2906 /* indiferente-cinza.json */; };
 		0B4B7EC028D9FF00004F2906 /* confiante-cinza.json in Resources */ = {isa = PBXBuildFile; fileRef = 0B4B7EB428D9FF00004F2906 /* confiante-cinza.json */; };
+		0B4B7EC728DA0297004F2906 /* empty.json in Resources */ = {isa = PBXBuildFile; fileRef = 0B4B7EC428DA0297004F2906 /* empty.json */; };
 		0B9F82BF28D35589000D848B /* ReflectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9F82BE28D35589000D848B /* ReflectionsView.swift */; };
 		0B9F82C228D355DC000D848B /* CalendarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9F82C128D355DC000D848B /* CalendarHelper.swift */; };
 		0B9F82C428D35613000D848B /* CalendarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9F82C328D35613000D848B /* CalendarItem.swift */; };
@@ -40,7 +42,7 @@
 		ED75100728D22268000207F2 /* EmojiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED75100628D22268000207F2 /* EmojiViewController.swift */; };
 		FF5EF8CB28D342B600C6DEA8 /* UnitTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5EF8BA28D3422600C6DEA8 /* UnitTestViewController.swift */; };
 		FF5EF8CC28D342B600C6DEA8 /* UnitTestNewReflectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5EF8BB28D3422600C6DEA8 /* UnitTestNewReflectionViewController.swift */; };
-		/* End PBXBuildFile section */
+/* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		0B4B7E8628D9FE3D004F2906 /* PBXContainerItemProxy */ = {
@@ -82,6 +84,7 @@
 		0B45266828CA0EEC00D4083C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0B45266A28CA0EEC00D4083C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B45267428CA369100D4083C /* NewReflectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReflectionViewController.swift; sourceTree = "<group>"; };
+		0B4B7E6728D8AAAC004F2906 /* ReflectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflectionTableViewCell.swift; sourceTree = "<group>"; };
 		0B4B7EAB28D9FF00004F2906 /* feliz-cinza.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "feliz-cinza.json"; sourceTree = "<group>"; };
 		0B4B7EAC28D9FF00004F2906 /* feliz.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = feliz.json; sourceTree = "<group>"; };
 		0B4B7EAD28D9FF00004F2906 /* triste-cinza.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "triste-cinza.json"; sourceTree = "<group>"; };
@@ -92,6 +95,7 @@
 		0B4B7EB228D9FF00004F2906 /* triste.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = triste.json; sourceTree = "<group>"; };
 		0B4B7EB328D9FF00004F2906 /* indiferente-cinza.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "indiferente-cinza.json"; sourceTree = "<group>"; };
 		0B4B7EB428D9FF00004F2906 /* confiante-cinza.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "confiante-cinza.json"; sourceTree = "<group>"; };
+		0B4B7EC428DA0297004F2906 /* empty.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = empty.json; sourceTree = "<group>"; };
 		0B9F82BE28D35589000D848B /* ReflectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflectionsView.swift; sourceTree = "<group>"; };
 		0B9F82C128D355DC000D848B /* CalendarHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHelper.swift; sourceTree = "<group>"; };
 		0B9F82C328D35613000D848B /* CalendarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarItem.swift; sourceTree = "<group>"; };
@@ -114,16 +118,6 @@
 		FF5EF8BA28D3422600C6DEA8 /* UnitTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitTestViewController.swift; sourceTree = "<group>"; };
 		FF5EF8BB28D3422600C6DEA8 /* UnitTestNewReflectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitTestNewReflectionViewController.swift; sourceTree = "<group>"; };
 		FF5EF8C228D342AB00C6DEA8 /* MyrrorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyrrorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FF5EF8EE28D357F100C6DEA8 /* triste.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = triste.json; sourceTree = "<group>"; };
-		FF5EF8F228D3580E00C6DEA8 /* feliz.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = feliz.json; sourceTree = "<group>"; };
-		FF5EF8F428D3581700C6DEA8 /* desesperado.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = desesperado.json; sourceTree = "<group>"; };
-		FF5EF8F628D3582300C6DEA8 /* confiante.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = confiante.json; sourceTree = "<group>"; };
-		FF5EF8F828D3582E00C6DEA8 /* indiferente.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = indiferente.json; sourceTree = "<group>"; };
-		FF5EF8FA28D49B7A00C6DEA8 /* confiante-cinza.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "confiante-cinza.json"; sourceTree = "<group>"; };
-		FF5EF8FC28D49F2F00C6DEA8 /* feliz-cinza.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "feliz-cinza.json"; sourceTree = "<group>"; };
-		FF5EF8FE28D49F7200C6DEA8 /* indiferente-cinza.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "indiferente-cinza.json"; sourceTree = "<group>"; };
-		FF5EF90028D49F9E00C6DEA8 /* triste-cinza.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "triste-cinza.json"; sourceTree = "<group>"; };
-		FF5EF90228D49FC400C6DEA8 /* desesperado-cinza.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "desesperado-cinza.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,16 +234,6 @@
 			isa = PBXGroup;
 			children = (
 				41E5A9F2BF1B183F48A999D1 /* Pods_Myrror.framework */,
-				FF5EF8EE28D357F100C6DEA8 /* triste.json */,
-				FF5EF90028D49F9E00C6DEA8 /* triste-cinza.json */,
-				FF5EF8F628D3582300C6DEA8 /* confiante.json */,
-				FF5EF8FE28D49F7200C6DEA8 /* indiferente-cinza.json */,
-				FF5EF8F828D3582E00C6DEA8 /* indiferente.json */,
-				FF5EF8F428D3581700C6DEA8 /* desesperado.json */,
-				FF5EF8FC28D49F2F00C6DEA8 /* feliz-cinza.json */,
-				FF5EF8FA28D49B7A00C6DEA8 /* confiante-cinza.json */,
-				FF5EF90228D49FC400C6DEA8 /* desesperado-cinza.json */,
-				FF5EF8F228D3580E00C6DEA8 /* feliz.json */,
 				FF5EF8BB28D3422600C6DEA8 /* UnitTestNewReflectionViewController.swift */,
 				FF5EF8BA28D3422600C6DEA8 /* UnitTestViewController.swift */,
 				14EC6C8428D350E60084F470 /* UnitTestEmojiViewController.swift */,
@@ -263,6 +247,7 @@
 		0B4B7EAA28D9FF00004F2906 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				0B4B7EC428DA0297004F2906 /* empty.json */,
 				0B4B7EAB28D9FF00004F2906 /* feliz-cinza.json */,
 				0B4B7EAC28D9FF00004F2906 /* feliz.json */,
 				0B4B7EAD28D9FF00004F2906 /* triste-cinza.json */,
@@ -293,6 +278,7 @@
 				0B9F82C528D3563B000D848B /* CalendarCollectionViewCell.swift */,
 				0B9F82BE28D35589000D848B /* ReflectionsView.swift */,
 				0B45266028CA0EEA00D4083C /* ViewController.swift */,
+				0B4B7E6728D8AAAC004F2906 /* ReflectionTableViewCell.swift */,
 			);
 			path = ReflectionsViewController;
 			sourceTree = "<group>";
@@ -438,22 +424,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF5EF8F128D357F100C6DEA8 /* triste.json in Resources */,
 				0B4B7EBF28D9FF00004F2906 /* indiferente-cinza.json in Resources */,
 				0B45266928CA0EEC00D4083C /* LaunchScreen.storyboard in Resources */,
-				FF5EF90128D49F9E00C6DEA8 /* triste-cinza.json in Resources */,
+				0B4B7E6F28D9F8B8004F2906 /* empty.json in Resources */,
 				0B4B7EBB28D9FF00004F2906 /* indiferente.json in Resources */,
-				FF5EF8F728D3582300C6DEA8 /* confiante.json in Resources */,
-				FF5EF8FF28D49F7200C6DEA8 /* indiferente-cinza.json in Resources */,
 				0B4B7EBE28D9FF00004F2906 /* triste.json in Resources */,
-				FF5EF8F928D3582E00C6DEA8 /* indiferente.json in Resources */,
-				FF5EF8F528D3581700C6DEA8 /* desesperado.json in Resources */,
-				FF5EF8FD28D49F2F00C6DEA8 /* feliz-cinza.json in Resources */,
 				0B4B7EBC28D9FF00004F2906 /* desesperado.json in Resources */,
-				FF5EF8FB28D49B7A00C6DEA8 /* confiante-cinza.json in Resources */,
-				FF5EF90328D49FC400C6DEA8 /* desesperado-cinza.json in Resources */,
 				0B45266628CA0EEC00D4083C /* Assets.xcassets in Resources */,
-				FF5EF8F328D3580E00C6DEA8 /* feliz.json in Resources */,
+				0B4B7EC728DA0297004F2906 /* empty.json in Resources */,
 				0B4B7EB828D9FF00004F2906 /* feliz.json in Resources */,
 				0B4B7EBD28D9FF00004F2906 /* confiante.json in Resources */,
 				0B4B7EB728D9FF00004F2906 /* feliz-cinza.json in Resources */,
@@ -547,6 +525,7 @@
 				ED55FE5828D4BE5800715D6F /* ReflectionModel.swift in Sources */,
 				ED55FE4C28D4B9AB00715D6F /* MyrrorData.xcdatamodeld in Sources */,
 				0B45266128CA0EEA00D4083C /* ViewController.swift in Sources */,
+				0B4B7E6828D8AAAC004F2906 /* ReflectionTableViewCell.swift in Sources */,
 				0B9F82BF28D35589000D848B /* ReflectionsView.swift in Sources */,
 				0B45265D28CA0EEA00D4083C /* AppDelegate.swift in Sources */,
 				ED75100728D22268000207F2 /* EmojiViewController.swift in Sources */,

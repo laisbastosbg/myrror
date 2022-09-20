@@ -89,6 +89,13 @@ class ReflectionsView: UIView {
         return view
     }()
     
+    lazy var reflectionsContainer: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.clipsToBounds = true
+        return view
+    }()
+    
     lazy var currentMonth: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -177,7 +184,7 @@ class ReflectionsView: UIView {
     }()
     
     lazy var calendarContainerHeightConstraint: NSLayoutConstraint = {
-        self.calendarContainer.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height * 0)
+        self.calendarContainer.heightAnchor.constraint(equalToConstant: 0)
     }()
     
     override init(frame: CGRect) {
@@ -187,6 +194,7 @@ class ReflectionsView: UIView {
         self.addSubview(pageTitle)
         self.addSubview(calendarButton)
         scrollView.addSubview(pageContentStack)
+        self.addSubview(reflectionsContainer)
         pageContentStack.addArrangedSubview(emptyScreenImage)
         pageContentStack.addArrangedSubview(emptyScreenLabel)
         self.addSubview(navigationButton)
@@ -239,6 +247,7 @@ class ReflectionsView: UIView {
             weekDayStack.trailingAnchor.constraint(equalTo: nextMonthButton.trailingAnchor),
             weekDayStack.centerXAnchor.constraint(equalTo: calendarContainer.centerXAnchor),
             
+//<<<<<<< HEAD
             pageContentStack.centerYAnchor.constraint(equalTo: scrollView.safeAreaLayoutGuide.centerYAnchor, constant: -90),
             pageContentStack.centerXAnchor.constraint(equalTo: scrollView.safeAreaLayoutGuide.centerXAnchor),
             pageContentStack.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
@@ -249,6 +258,24 @@ class ReflectionsView: UIView {
             scrollView.topAnchor.constraint(equalTo: calendarContainer.bottomAnchor),
             scrollView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor),
             
+//=======
+            reflectionsContainer.topAnchor.constraint(equalTo: calendarContainer.bottomAnchor),
+            reflectionsContainer.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            reflectionsContainer.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            reflectionsContainer.heightAnchor.constraint(equalToConstant: 600),
+//
+//            scrollView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+//            scrollView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+//            scrollView.topAnchor.constraint(equalTo: calendarContainer.bottomAnchor),
+//            scrollView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor),
+//
+//            pageContentStack.topAnchor.constraint(equalTo: scrollView.topAnchor),
+//            pageContentStack.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+//            pageContentStack.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+//            pageContentStack.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+//
+//            navigationButton.topAnchor.constraint(equalTo: emptyScreenLabel.bottomAnchor, constant: 40),
+//>>>>>>> feature/reflections-tableview
             navigationButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 48),
             navigationButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -48),
             navigationButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -100),
@@ -260,7 +287,8 @@ class ReflectionsView: UIView {
     @objc
     func toggleCalendar() {
         UIView.animate(withDuration: 0.75) {
-            self.calendarContainerHeightConstraint.constant = self.calendarContainerHeightConstraint.constant == 0 ? UIScreen.main.bounds.height * 0.56 : 0
+            self.calendarContainerHeightConstraint.constant = self.calendarContainerHeightConstraint.constant == 0 ? (self.weekDayStack.frame.height + self.bounds.width/8*7) : 0
+
             self.layoutIfNeeded()
             
             

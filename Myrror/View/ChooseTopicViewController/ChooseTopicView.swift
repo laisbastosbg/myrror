@@ -89,7 +89,7 @@ class ChooseTopicView: UIView {
     let option2Label: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "O não gostei"
+        label.text = "O que não gostei"
         label.font = .preferredFont(forTextStyle: .body)
         return label
     }()
@@ -117,7 +117,7 @@ class ChooseTopicView: UIView {
     let option3Label: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "O posso melhorar"
+        label.text = "O que posso melhorar"
         label.font = .preferredFont(forTextStyle: .body)
         return label
     }()
@@ -232,24 +232,6 @@ class ChooseTopicView: UIView {
             
             option3NavigationIcon.centerYAnchor.constraint(equalTo: option3.centerYAnchor),
             option3NavigationIcon.trailingAnchor.constraint(equalTo: option3.trailingAnchor, constant: -8),
-//            option1NavigationIcon.heightAnchor.constraint(equalTo: option1.heightAnchor, multiplier: 0.3),
-//
-//            buttonStack.topAnchor.constraint(equalTo: pageTitle.bottomAnchor, constant: 80),
-//            buttonStack.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -80),
-//            buttonStack.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-//            buttonStack.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-////
-////            option1Button.leadingAnchor.constraint(equalTo: buttonStack.leadingAnchor, constant: 48),
-////            option1Button.trailingAnchor.constraint(equalTo: buttonStack.trailingAnchor, constant: -48),
-////            option1Button.heightAnchor.constraint(equalToConstant: 48),
-//
-//            option2Button.leadingAnchor.constraint(equalTo: buttonStack.leadingAnchor, constant: 48),
-//            option2Button.trailingAnchor.constraint(equalTo: buttonStack.trailingAnchor, constant: -48),
-//            option2Button.heightAnchor.constraint(equalToConstant: 48),
-//
-//            option3Button.leadingAnchor.constraint(equalTo: buttonStack.leadingAnchor, constant: 48),
-//            option3Button.trailingAnchor.constraint(equalTo: buttonStack.trailingAnchor, constant: -48),
-//            option3Button.heightAnchor.constraint(equalToConstant: 48),
         ])
     }
 
