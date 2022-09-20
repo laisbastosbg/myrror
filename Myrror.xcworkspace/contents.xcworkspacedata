@@ -5,6 +5,6 @@
       location = "group:Myrror.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Pods/Pods.xcodeproj">
+      location = "group:Myrror/../Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>
