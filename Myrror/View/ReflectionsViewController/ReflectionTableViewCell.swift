@@ -15,20 +15,56 @@ class ReflectionTableViewCell: UITableViewCell {
         
         animationView.animation = Animation.named("desesperado")
         
-        animationView.contentMode = .scaleToFill
+        animationView.contentMode = .scaleAspectFit
         animationView.layer.cornerRadius = 8
         animationView.accessibilityLabel = "desesperado"
         animationView.isAccessibilityElement = true
         animationView.translatesAutoresizingMaskIntoConstraints = false
-        animationView.backgroundColor = .systemBlue
+//        animationView.backgroundColor = .systemBlue
         return animationView
     }()
     
-    let container: UIView = {
-        let view = UIView()
+    let container: UIStackView = {
+        let view = UIStackView()
+        view.axis = .horizontal
         view.backgroundColor = UIColor(named: "Secondary")
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.layer.cornerRadius = 8
+        view.alignment = .top
+        view.distribution = .equalSpacing
+//        view.clipsToBounds = true
         return view
+    }()
+    
+    let textStack: UIStackView = {
+        let view = UIStackView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.axis = .vertical
+        view.alignment = .top
+        view.distribution = .fill
+        return view
+    }()
+    
+    let title: UITextView = {
+        let text = UITextView()
+        text.text = "teste"
+        text.isEditable = false
+        text.font = .preferredFont(forTextStyle: .title3)
+        text.backgroundColor = .clear
+        text.isScrollEnabled = false
+        return text
+    }()
+    
+    let reflectionText: UITextView = {
+        let label = UITextView()
+        label.text = ""
+        label.isEditable = false
+        label.font = .preferredFont(forTextStyle: .body)
+        label.backgroundColor = .clear
+        label.textColor = UIColor(named: "SecondaryText")
+        label.isScrollEnabled = false
+        label.textAlignment = .justified
+        return label
     }()
     
     override func awakeFromNib() {
@@ -47,8 +83,10 @@ class ReflectionTableViewCell: UITableViewCell {
         self.backgroundColor = .clear
         self.contentView.backgroundColor = .clear
         self.contentView.addSubview(container)
-        self.container.addSubview(mood)
-//        self.mood.layer.frame = CGRect(x: container.bounds.minX, y: container.bounds.minY, width: 32, height: 32)
+        self.container.addArrangedSubview(mood)
+        self.container.addArrangedSubview(textStack)
+        self.textStack.addArrangedSubview(title)
+        self.textStack.addArrangedSubview(reflectionText)
         setConstraints()
     }
     
@@ -63,14 +101,14 @@ class ReflectionTableViewCell: UITableViewCell {
             container.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
             container.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
             container.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
-            container.heightAnchor.constraint(equalToConstant: 102),
             container.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             
-            mood.topAnchor.constraint(equalTo: container.topAnchor),
-            mood.centerYAnchor.constraint(equalTo: container.centerYAnchor),
-//            mood.heightAnchor.constraint(equalToConstant: 32),
-//            mood.widthAnchor.constraint(equalTo: mood.heightAnchor),
-//            mood.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 8),
+            mood.topAnchor.constraint(equalTo: container.topAnchor, constant: 8),
+            mood.heightAnchor.constraint(equalToConstant: 75),
+            title.topAnchor.constraint(equalTo: mood.topAnchor),
+            reflectionText.topAnchor.constraint(equalTo: title.bottomAnchor),
+            reflectionText.widthAnchor.constraint(equalTo: container.widthAnchor, multiplier: 0.75),
+            reflectionText.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -8)
         ])
     }
 

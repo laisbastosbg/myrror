@@ -14,8 +14,13 @@ class ViewController: UIViewController {
     var tableView: UITableView?
     var selectedDate = Date()
     var totalSquares = [String]()
-    var reflections: [String] = [
-        "maçã", "banana", "laranja", "pera"
+    var reflections = [
+        ["O que não gostei", "maçã"],
+        ["O que aprendi", "banana"],
+        ["O que posso melhorar", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."],
+        [
+            "O que não gostei", "pera"
+        ]
     ]
     
     override func loadView() {
@@ -205,7 +210,8 @@ extension ViewController: UITableViewDelegate {
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let myCell = tableView.dequeueReusableCell(withIdentifier: ReflectionTableViewCell.identifier, for: indexPath) as! ReflectionTableViewCell
-        
+        myCell.title.text = reflections[indexPath.item][0]
+        myCell.reflectionText.text = reflections[indexPath.item][1]
         return myCell
     }
 }
