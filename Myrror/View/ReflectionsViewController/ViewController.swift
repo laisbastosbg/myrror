@@ -215,7 +215,7 @@ extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let myCell = tableView.dequeueReusableCell(withIdentifier: ReflectionTableViewCell.identifier, for: indexPath) as! ReflectionTableViewCell
         myCell.mood.animation = Animation.named(reflections[indexPath.item].emoji!)
-        myCell.title.text = reflections[indexPath.item].date?.description
+        myCell.title.text = reflections[indexPath.item].subject
         myCell.reflectionText.text = reflections[indexPath.item].text_reflection
         return myCell
     }
