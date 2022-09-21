@@ -11,6 +11,7 @@ import Lottie
 class NewReflectionViewController: UIViewController{
     var navigationTitle : String = ""
     var viewModel = ReflectionViewModel()
+    var selectedEmoji = ""
     
     
     override func viewDidLoad() {
@@ -72,7 +73,7 @@ class NewReflectionViewController: UIViewController{
             reflectionText.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 18),
             reflectionText.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -18),
             reflectionText.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
-            reflectionText.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor, constant: -100)
+            reflectionText.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor, constant: -150)
         ])
     }
     
@@ -93,7 +94,7 @@ class NewReflectionViewController: UIViewController{
         NSLayoutConstraint.activate([
             subTitle.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             subTitle.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 18),
-            subTitle.topAnchor.constraint(equalTo: reflectionText.bottomAnchor, constant: 60),
+            subTitle.topAnchor.constraint(equalTo: reflectionText.bottomAnchor, constant: 40),
         ])
     }
     
@@ -119,7 +120,7 @@ class NewReflectionViewController: UIViewController{
             
             animationView.contentMode = .scaleAspectFit
             animationView.layer.cornerRadius = 8
-            animationView.loopMode = .repeat(3)
+            animationView.loopMode = .repeat(1)
             animationView.accessibilityLabel = emojisName[i]
             animationView.isAccessibilityElement = true
             
@@ -156,6 +157,7 @@ class NewReflectionViewController: UIViewController{
                     notSelectedAnimation?.stop()
                 } else {
                     animationView.animation = Animation.named(animationView.accessibilityLabel!)
+                    selectedEmoji = animationView.accessibilityLabel!
                     animationView.play()
                 }
                     
@@ -168,7 +170,7 @@ class NewReflectionViewController: UIViewController{
             backgroundView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             backgroundView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 18),
             backgroundView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -18),
-            backgroundView.topAnchor.constraint(equalTo: subTitle.bottomAnchor, constant: 35),
+            backgroundView.topAnchor.constraint(equalTo: subTitle.bottomAnchor, constant: 20),
             backgroundView.heightAnchor.constraint(equalToConstant: 70)
         ])
     }
@@ -202,7 +204,16 @@ class NewReflectionViewController: UIViewController{
         let haptics = UINotificationFeedbackGenerator()
         haptics.notificationOccurred(.success)
         
-        viewModel.addReflection(subject: navigationTitle, textoReflection: reflectionText.text, emoji: "pensando")
+        guard let viewController = navigationController?.viewControllers[0] as? ViewController else {return}
+        
+        if selectedEmoji != ""  || reflectionText.text != "" {
+            viewModel.addReflection(date: viewController.selectedDate ,subject: navigationTitle, textoReflection: reflectionText.text, emoji: selectedEmoji)
+        }else{
+            let alert = UIAlertController(title: "Nenhuma informação!", message: "Adicione alguma informação para a sua reflection!", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Click", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+
     }
 
 }

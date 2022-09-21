@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     var tableView: UITableView?
 
     var selectedDate = Date()
+    var test = "valor 1"
+    
     var totalSquares = [String]()
     var reflections = [
         ["O que não gostei", "maçã"],
@@ -152,6 +154,8 @@ class ViewController: UIViewController {
     }
     
     @objc func navigate() {
+        test = "Valor 2"
+        print("Esse é o valor do objeto que eu quero: \(test)")
         let nextPage = ChooseTopicViewController()
         self.navigationController?.pushViewController(nextPage, animated: true)
     }
