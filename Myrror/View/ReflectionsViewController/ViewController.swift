@@ -10,8 +10,10 @@ import UIKit
 class ViewController: UIViewController {
     
     var screen: ReflectionsView?
+
     var collectionView: UICollectionView?
     var tableView: UITableView?
+
     var selectedDate = Date()
     var totalSquares = [String]()
     var reflections = [

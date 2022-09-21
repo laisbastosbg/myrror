@@ -38,4 +38,11 @@ class UITestMyrror: XCTestCase {
         buttonViewController.tap()
         XCTAssertFalse(buttonViewController.exists)
     }
+    func testButtonCalendarFlow() throws {
+
+        let buttonCalendar = app.buttons["calendar"]
+        XCTAssertTrue(buttonCalendar.exists)
+        buttonCalendar.tap()
+        XCTAssertTrue(buttonCalendar.exists)
+    }
 }

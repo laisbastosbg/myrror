@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import Lottie
 @testable import Myrror
 
 
@@ -16,15 +17,19 @@ class UnitTestEmojiViewController: XCTestCase {
 
     func testEmojiName() throws {
 
-        XCTAssertEqual(sut.emojiName, "")
+        XCTAssertEqual(sut.emojiName, "sad2")
     }
+    func testQuadrado() throws {
 
+        let quadrado = sut.quadrado
+
+        XCTAssertNotEqual(quadrado.backgroundColor, UIColor.systemRed)
+        XCTAssertNotEqual(quadrado, UIView(frame: CGRect(x: 100, y: 100, width: 30, height: 30)))
+    }
     func testSetupAnimation() throws {
 
         let setupAnimation = sut.setupAnimation
 
-
+        XCTAssertNotNil(setupAnimation)
     }
-
-
 }

@@ -32,6 +32,7 @@
 		0BFD56BA28D4B243009C99E8 /* ChooseTopicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFD56B928D4B243009C99E8 /* ChooseTopicView.swift */; };
 		11692D7D416A900D9AF63267 /* Pods_Myrror.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41E5A9F2BF1B183F48A999D1 /* Pods_Myrror.framework */; };
 		148199ED28D4A59800BB1873 /* UITestNewReflectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148199EC28D4A59800BB1873 /* UITestNewReflectionViewController.swift */; };
+		14B0F05A28D74DED00CD75CE /* UnitTestCalendarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B0F05928D74DED00CD75CE /* UnitTestCalendarHelper.swift */; };
 		14CE07B028D4925600CAA578 /* UITestChooseTopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CE07AF28D4925600CAA578 /* UITestChooseTopicViewController.swift */; };
 		14DE6D2F28D398EA007DDC98 /* UITestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DE6D1C28D3694E007DDC98 /* UITestViewController.swift */; };
 		14EC6C8528D350E60084F470 /* UnitTestEmojiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EC6C8428D350E60084F470 /* UnitTestEmojiViewController.swift */; };
@@ -102,6 +103,7 @@
 		0B9F82C528D3563B000D848B /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
 		0BFD56B928D4B243009C99E8 /* ChooseTopicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTopicView.swift; sourceTree = "<group>"; };
 		148199EC28D4A59800BB1873 /* UITestNewReflectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestNewReflectionViewController.swift; sourceTree = "<group>"; };
+		14B0F05928D74DED00CD75CE /* UnitTestCalendarHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTestCalendarHelper.swift; sourceTree = "<group>"; };
 		14CE07AF28D4925600CAA578 /* UITestChooseTopicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestChooseTopicViewController.swift; sourceTree = "<group>"; };
 		14DE6D1C28D3694E007DDC98 /* UITestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestViewController.swift; sourceTree = "<group>"; };
 		14DE6D2428D398CB007DDC98 /* MyrrorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyrrorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -286,6 +288,10 @@
 		0BFD56B828D4B203009C99E8 /* ChooseTopicViewController */ = {
 			isa = PBXGroup;
 			children = (
+				FF5EF8BA28D3422600C6DEA8 /* UnitTestViewController.swift */,
+				14B0F05928D74DED00CD75CE /* UnitTestCalendarHelper.swift */,
+				FF5EF8BB28D3422600C6DEA8 /* UnitTestNewReflectionViewController.swift */,
+				14EC6C8428D350E60084F470 /* UnitTestEmojiViewController.swift */,
 				ED19590028CB8539004E7045 /* ChooseTopicViewController.swift */,
 				0BFD56B928D4B243009C99E8 /* ChooseTopicView.swift */,
 			);
@@ -554,6 +560,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF5EF8CC28D342B600C6DEA8 /* UnitTestNewReflectionViewController.swift in Sources */,
+				14B0F05A28D74DED00CD75CE /* UnitTestCalendarHelper.swift in Sources */,
 				FF5EF8CB28D342B600C6DEA8 /* UnitTestViewController.swift in Sources */,
 				14EC6C8528D350E60084F470 /* UnitTestEmojiViewController.swift in Sources */,
 			);
