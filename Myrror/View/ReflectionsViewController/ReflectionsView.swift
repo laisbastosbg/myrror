@@ -22,6 +22,7 @@ class ReflectionsView: UIView {
         
         let monthFormatter = DateFormatter()
         monthFormatter.dateFormat = "MMMM"
+        monthFormatter.locale = Locale.init(identifier: "pt-br")
         let month = monthFormatter.string(from: Date.now)
         
         let today = "\(day) de \(month)"
@@ -47,7 +48,7 @@ class ReflectionsView: UIView {
         view.axis = .vertical
         view.translatesAutoresizingMaskIntoConstraints = false
         view.alignment = .center
-        view.distribution = .equalSpacing
+        view.distribution = .equalCentering
         return view
     }()
     
@@ -82,6 +83,13 @@ class ReflectionsView: UIView {
     }()
     
     lazy var calendarContainer: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.clipsToBounds = true
+        return view
+    }()
+    
+    lazy var reflectionsContainer: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.clipsToBounds = true
@@ -176,7 +184,7 @@ class ReflectionsView: UIView {
     }()
     
     lazy var calendarContainerHeightConstraint: NSLayoutConstraint = {
-        self.calendarContainer.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height * 0)
+        self.calendarContainer.heightAnchor.constraint(equalToConstant: 0)
     }()
     
     override init(frame: CGRect) {
@@ -186,9 +194,11 @@ class ReflectionsView: UIView {
         self.addSubview(pageTitle)
         self.addSubview(calendarButton)
         scrollView.addSubview(pageContentStack)
+        self.addSubview(reflectionsContainer)
         pageContentStack.addArrangedSubview(emptyScreenImage)
         pageContentStack.addArrangedSubview(emptyScreenLabel)
-        pageContentStack.addArrangedSubview(navigationButton)
+        self.addSubview(navigationButton)
+//        pageContentStack.addArrangedSubview(navigationButton)
         self.addSubview(calendarContainer)
         calendarContainer.addSubview(currentMonth)
         calendarContainer.addSubview(previousMonthButton)
@@ -237,19 +247,38 @@ class ReflectionsView: UIView {
             weekDayStack.trailingAnchor.constraint(equalTo: nextMonthButton.trailingAnchor),
             weekDayStack.centerXAnchor.constraint(equalTo: calendarContainer.centerXAnchor),
             
-            scrollView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            scrollView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+//<<<<<<< HEAD
+            pageContentStack.centerYAnchor.constraint(equalTo: scrollView.safeAreaLayoutGuide.centerYAnchor, constant: -90),
+            pageContentStack.centerXAnchor.constraint(equalTo: scrollView.safeAreaLayoutGuide.centerXAnchor),
+            pageContentStack.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            pageContentStack.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            
+            scrollView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
             scrollView.topAnchor.constraint(equalTo: calendarContainer.bottomAnchor),
             scrollView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor),
             
-            pageContentStack.topAnchor.constraint(equalTo: scrollView.topAnchor),
-            pageContentStack.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
-            pageContentStack.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
-            pageContentStack.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            
-            navigationButton.topAnchor.constraint(equalTo: emptyScreenLabel.bottomAnchor, constant: 40),
+//=======
+            reflectionsContainer.topAnchor.constraint(equalTo: calendarContainer.bottomAnchor),
+            reflectionsContainer.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            reflectionsContainer.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            reflectionsContainer.heightAnchor.constraint(equalToConstant: 600),
+//
+//            scrollView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+//            scrollView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+//            scrollView.topAnchor.constraint(equalTo: calendarContainer.bottomAnchor),
+//            scrollView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor),
+//
+//            pageContentStack.topAnchor.constraint(equalTo: scrollView.topAnchor),
+//            pageContentStack.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+//            pageContentStack.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+//            pageContentStack.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+//
+//            navigationButton.topAnchor.constraint(equalTo: emptyScreenLabel.bottomAnchor, constant: 40),
+//>>>>>>> feature/reflections-tableview
             navigationButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 48),
             navigationButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -48),
+            navigationButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -100),
             navigationButton.heightAnchor.constraint(equalToConstant: 48),
         ]
         NSLayoutConstraint.activate(constraints)
@@ -258,9 +287,10 @@ class ReflectionsView: UIView {
     @objc
     func toggleCalendar() {
         UIView.animate(withDuration: 0.75) {
-            self.calendarContainerHeightConstraint.constant = self.calendarContainerHeightConstraint.constant == 0 ? UIScreen.main.bounds.height * 0.56 : 0
-            
+            self.calendarContainerHeightConstraint.constant = self.calendarContainerHeightConstraint.constant == 0 ? (self.weekDayStack.frame.height + self.bounds.width/8*7) : 0
+
             self.layoutIfNeeded()
+            
             
         }
         
@@ -269,7 +299,9 @@ class ReflectionsView: UIView {
             self.emptyScreenImage.removeFromSuperview()
         } else {
             self.pageContentStack.insertArrangedSubview(self.emptyScreenImage, at: 0)
+            
         }
+        
         
     }
 }

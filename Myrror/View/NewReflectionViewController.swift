@@ -8,9 +8,11 @@
 import UIKit
 import Lottie
 
-class NewReflectionViewController: UIViewController {
+class NewReflectionViewController: UIViewController{
     var navigationTitle : String = ""
-
+    var viewModel = ReflectionViewModel()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(named: "Primary")
@@ -23,13 +25,14 @@ class NewReflectionViewController: UIViewController {
         view.addSubview(confirmationButton)
         configConfirmationButton()
         
+        configKeyBoardTapGesture()
         view.addSubview(reflectionText)
         configReflectionText()
         
         view.addSubview(subTitle)
         configSubTitle()
         
-        configTapGesture()
+        configEmojiTapGesture()
         view.addSubview(backgroundView)
         configBackgroundView()
     }
@@ -71,6 +74,11 @@ class NewReflectionViewController: UIViewController {
             reflectionText.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
             reflectionText.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor, constant: -100)
         ])
+    }
+    
+    func configKeyBoardTapGesture(){
+        let gesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(gesture)
     }
     
     let subTitle : UILabel = {
@@ -124,10 +132,9 @@ class NewReflectionViewController: UIViewController {
         return stackView
     }()
 
-    func configTapGesture(){
+    func configEmojiTapGesture(){
         for emoji in backgroundView.arrangedSubviews {
-            let tapRecognizer = UITapGestureRecognizer(target: self,
-                                                       action: #selector(handleEmojiTap(sender: )))
+            let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleEmojiTap(sender: )))
             tapRecognizer.numberOfTapsRequired = 1
             tapRecognizer.numberOfTouchesRequired = 1
             emoji.addGestureRecognizer(tapRecognizer)
@@ -136,10 +143,9 @@ class NewReflectionViewController: UIViewController {
     }
     
     @objc func handleEmojiTap(sender: UITapGestureRecognizer) {
-        
+        view.endEditing(true)
         let haptics = UISelectionFeedbackGenerator()
         haptics.selectionChanged()
-        
         guard let animationView = sender.view as? AnimationView else { return }
         if sender.state == .ended {
             
@@ -185,7 +191,7 @@ class NewReflectionViewController: UIViewController {
     func configConfirmationButton () {
         NSLayoutConstraint.activate([
             confirmationButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            confirmationButton.centerYAnchor.constraint(equalTo: view.bottomAnchor, constant: -150),
+            confirmationButton.centerYAnchor.constraint(equalTo: view.bottomAnchor, constant: -120),
             confirmationButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
             confirmationButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
             confirmationButton.heightAnchor.constraint(equalToConstant: 50)
@@ -195,6 +201,8 @@ class NewReflectionViewController: UIViewController {
     @objc func saveReflection() {
         let haptics = UINotificationFeedbackGenerator()
         haptics.notificationOccurred(.success)
+        
+        viewModel.addReflection(subject: navigationTitle, textoReflection: reflectionText.text, emoji: "pensando")
     }
 
 }
