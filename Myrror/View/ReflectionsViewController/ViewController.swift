@@ -56,8 +56,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         navigationController?.navigationBar.items?[0].backBarButtonItem = UIBarButtonItem(title: "Voltar", style: .plain, target: nil, action: nil)
         view.backgroundColor = UIColor(named: "Primary")
-        
-        setupConstraints()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -104,7 +102,6 @@ class ViewController: UIViewController {
         let daysInMonth = CalendarHelper().daysInMonth(date: selectedDate)
         let firstDayOfMonth = CalendarHelper().firstOfMonth(date: selectedDate)
         let startingSpaces = CalendarHelper().weekDay(date: firstDayOfMonth)
-        
         var count: Int = 1
         
         while (count <= 42) {
@@ -143,12 +140,6 @@ class ViewController: UIViewController {
         setMonthView()
     }
     
-    
-    func setupConstraints() {
-        NSLayoutConstraint.activate([
-        ])
-    }
-    
     @objc func navigate() {
         let nextPage = ChooseTopicViewController()
         self.navigationController?.pushViewController(nextPage, animated: true)
@@ -167,7 +158,7 @@ extension ViewController: UICollectionViewDataSource {
         if (totalSquares[indexPath.item].count <= 0) {
             hide = true
         }
-        myCell.configure(day: day, hide: hide)
+        myCell.configure(day: day, hide: hide, selectedDate: selectedDate)
         return myCell
     }
 }

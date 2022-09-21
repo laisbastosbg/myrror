@@ -66,8 +66,19 @@ class CalendarCollectionViewCell: UICollectionViewCell {
         ])
     }
     
-    func configure(day: String, hide: Bool) {
+    func configure(day: String, hide: Bool, selectedDate: Date) {
+        let selectedDateComponents = Calendar.current.dateComponents([.month, .year], from: selectedDate)
+        let currentDateComponents = Calendar.current.dateComponents([.month, .year], from: Date())
+        let currentDay = Calendar.current.dateComponents([.day], from: Date())
+        
+        if selectedDateComponents == currentDateComponents && day == String(currentDay.day!) {
+            dayOfMonth.textColor = .tintColor
+        } else {
+            dayOfMonth.textColor = UIColor(named: "TextColor")
+        }
+        
         dayOfMonth.text = day
+        
 
         if(hide) {
             moodOfTheDay.backgroundColor = .clear
