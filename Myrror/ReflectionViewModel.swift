@@ -34,9 +34,18 @@ class ReflectionViewModel: ObservableObject {
      }
 
     // MARK: READ
-    func fetchReflection() {
+    func fetchReflection(date: Date) {
+        let fetchRequest = Reflection.fetchRequest()
+
+        let startDate = Calendar.current.startOfDay(for: date)
+        var components = DateComponents()
+        components.day = 1
+        components.second = -1
+        let endDate = Calendar.current.date(byAdding: components, to: startDate)!
+        fetchRequest.predicate = NSPredicate(format: "date >= %@ AND date <= %@",
+                                             startDate as NSDate, endDate as NSDate)
         do {
-            self.reflectionList = try context.fetch(Reflection.fetchRequest())
+            self.reflectionList = try context.fetch(fetchRequest)
             return
         } catch {
             print("deu errado")

@@ -70,13 +70,23 @@ class CalendarCollectionViewCell: UICollectionViewCell {
         let selectedDateComponents = Calendar.current.dateComponents([.month, .year], from: selectedDate)
         let currentDateComponents = Calendar.current.dateComponents([.month, .year], from: Date())
         let currentDay = Calendar.current.dateComponents([.day], from: Date())
+        let selectedDay = Calendar.current.dateComponents([.day], from: selectedDate)
         
-        if selectedDateComponents == currentDateComponents && day == String(currentDay.day!) {
+
+        let isCurrentDate = selectedDateComponents == currentDateComponents && day == String(currentDay.day!)
+        let isSelectedDate = day == String(selectedDay.day!)
+        
+        if isCurrentDate {
             dayOfMonth.textColor = .tintColor
-        } else {
-            dayOfMonth.textColor = UIColor(named: "TextColor")
         }
         
+        if !isCurrentDate && isSelectedDate {
+            dayOfMonth.textColor = UIColor.black
+        }
+        
+        if !isCurrentDate && !isSelectedDate {
+            dayOfMonth.textColor = UIColor(named: "TextColor")
+        }
         dayOfMonth.text = day
         
 

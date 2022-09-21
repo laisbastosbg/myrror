@@ -15,6 +15,12 @@ class CalendarHelper {
         return calendar.date(byAdding: .month, value: 1, to: date)!
     }
     
+        func setDay(date: Date, day: Int) -> Date {
+            var dateComponents = calendar.dateComponents([.day, .month, .year], from: date)
+            dateComponents.day = day
+            return calendar.date(from: dateComponents)!
+        }
+    
     func minusMonth(date: Date) -> Date{
         return calendar.date(byAdding: .month, value: -1, to: date)!
     }
@@ -49,5 +55,21 @@ class CalendarHelper {
     func weekDay(date: Date) -> Int {
         let components = calendar.dateComponents([.weekday], from: date)
         return components.weekday! - 1
+    }
+    
+    func getDateAsString(date: Date) -> String {
+        
+        let dayFormatter = DateFormatter()
+        dayFormatter.dateFormat = "dd"
+        let day = dayFormatter.string(from: date)
+        
+        let monthFormatter = DateFormatter()
+        monthFormatter.dateFormat = "MMMM"
+        monthFormatter.locale = Locale.init(identifier: "pt-br")
+        let month = monthFormatter.string(from: date)
+        
+        let today = "\(day) de \(month)"
+        
+        return today
     }
 }

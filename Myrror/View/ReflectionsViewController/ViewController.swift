@@ -35,7 +35,7 @@ class ViewController: UIViewController {
         let swipePrevious = UISwipeGestureRecognizer(target: self, action: #selector(previousMonth))
         swipePrevious.direction = .right
         screen?.calendarContainer.addGestureRecognizer(swipePrevious)
-        viewModel.fetchReflection()
+        viewModel.fetchReflection(date: selectedDate)
         
         self.reflections = viewModel.reflectionList!
     }
@@ -125,7 +125,11 @@ class ViewController: UIViewController {
             self.collectionView?.frame = CGRect(x: 0, y: 55, width: self.view.bounds.width, height: (self.view.bounds.width/8*7))
         }
         selectedDate = CalendarHelper().minusMonth(date: selectedDate)
+        self.screen?.pageTitle.text = CalendarHelper().getDateAsString(date: selectedDate)
         setMonthView()
+        viewModel.fetchReflection(date: selectedDate)
+        reflections = viewModel.reflectionList!
+        tableView?.reloadData()
     }
     
     @objc func nextMonth() {
@@ -137,7 +141,11 @@ class ViewController: UIViewController {
             self.collectionView?.frame = CGRect(x: 0, y: 55, width: self.view.bounds.width, height: (self.view.bounds.width/8*7))
         }
         selectedDate = CalendarHelper().plusMonth(date: selectedDate)
+        self.screen?.pageTitle.text = CalendarHelper().getDateAsString(date: selectedDate)
         setMonthView()
+        viewModel.fetchReflection(date: selectedDate)
+        reflections = viewModel.reflectionList!
+        tableView?.reloadData()
     }
     
     @objc func navigate() {
@@ -165,7 +173,12 @@ extension ViewController: UICollectionViewDataSource {
 
 extension ViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("User tapped on item \(indexPath.row)")
+        selectedDate = CalendarHelper().setDay(date: selectedDate, day: Int(totalSquares[indexPath.item])!)
+        self.screen?.pageTitle.text = CalendarHelper().getDateAsString(date: selectedDate)
+        collectionView.reloadData()
+        viewModel.fetchReflection(date: selectedDate)
+        reflections = viewModel.reflectionList!
+        tableView?.reloadData()
     }
 }
 
@@ -202,8 +215,7 @@ extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let myCell = tableView.dequeueReusableCell(withIdentifier: ReflectionTableViewCell.identifier, for: indexPath) as! ReflectionTableViewCell
         myCell.mood.animation = Animation.named(reflections[indexPath.item].emoji!)
-        print(reflections[indexPath.item].emoji!)
-        myCell.title.text = reflections[indexPath.item].subject
+        myCell.title.text = reflections[indexPath.item].date?.description
         myCell.reflectionText.text = reflections[indexPath.item].text_reflection
         return myCell
     }
