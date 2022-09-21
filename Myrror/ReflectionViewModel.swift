@@ -16,8 +16,7 @@ class ReflectionViewModel: ObservableObject {
 
     //    Referencia ao Container que está no App Delegate
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    
-    //    MARK: CREATE
+    // MARK: - CREATE
     func addReflection(subject: String, textoReflection: String, emoji: String) {
         let newReflection = Reflection(context: self.context)
         newReflection.date = Date()
@@ -26,20 +25,19 @@ class ReflectionViewModel: ObservableObject {
         newReflection.emoji = emoji
         do {
             try self.context.save()
-            print("Deucertoooo \(newReflection)")}
-        catch {
+            print("Deucertoooo \(newReflection)")
+
+        } catch {
             print("deu errado")
         }
      }
-    
-    //    MARK: READ
+    // MARK: - READ
     func fetchReflection() {
-        do{
+        do {
             self.reflectionList = try!context.fetch(Reflection.fetchRequest())
-        }
-        catch {
+
+        } catch {
             print("deu errado")
         }
-       
     }
 }
