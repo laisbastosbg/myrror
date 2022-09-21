@@ -25,24 +25,24 @@
 		0B4B7EBF28D9FF00004F2906 /* indiferente-cinza.json in Resources */ = {isa = PBXBuildFile; fileRef = 0B4B7EB328D9FF00004F2906 /* indiferente-cinza.json */; };
 		0B4B7EC028D9FF00004F2906 /* confiante-cinza.json in Resources */ = {isa = PBXBuildFile; fileRef = 0B4B7EB428D9FF00004F2906 /* confiante-cinza.json */; };
 		0B4B7EC728DA0297004F2906 /* empty.json in Resources */ = {isa = PBXBuildFile; fileRef = 0B4B7EC428DA0297004F2906 /* empty.json */; };
+		0B4B7EE928DB30D1004F2906 /* UnitTestCalendarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4B7EE328DB30D1004F2906 /* UnitTestCalendarHelper.swift */; };
+		0B4B7EEA28DB30D1004F2906 /* UnitTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4B7EE428DB30D1004F2906 /* UnitTestViewController.swift */; };
+		0B4B7EEB28DB30D1004F2906 /* UnitTestNewReflectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4B7EE528DB30D1004F2906 /* UnitTestNewReflectionViewController.swift */; };
+		0B4B7EEC28DB30D1004F2906 /* UnitTestEmojiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4B7EE628DB30D1004F2906 /* UnitTestEmojiViewController.swift */; };
+		0B4B7EF128DB30DB004F2906 /* UITestChooseTopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4B7EEE28DB30DB004F2906 /* UITestChooseTopicViewController.swift */; };
+		0B4B7EF228DB30DB004F2906 /* UITestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4B7EEF28DB30DB004F2906 /* UITestViewController.swift */; };
+		0B4B7EF328DB30DB004F2906 /* UITestNewReflectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4B7EF028DB30DB004F2906 /* UITestNewReflectionViewController.swift */; };
 		0B9F82BF28D35589000D848B /* ReflectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9F82BE28D35589000D848B /* ReflectionsView.swift */; };
 		0B9F82C228D355DC000D848B /* CalendarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9F82C128D355DC000D848B /* CalendarHelper.swift */; };
 		0B9F82C428D35613000D848B /* CalendarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9F82C328D35613000D848B /* CalendarItem.swift */; };
 		0B9F82C628D3563B000D848B /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9F82C528D3563B000D848B /* CalendarCollectionViewCell.swift */; };
 		0BFD56BA28D4B243009C99E8 /* ChooseTopicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFD56B928D4B243009C99E8 /* ChooseTopicView.swift */; };
 		11692D7D416A900D9AF63267 /* Pods_Myrror.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41E5A9F2BF1B183F48A999D1 /* Pods_Myrror.framework */; };
-		148199ED28D4A59800BB1873 /* UITestNewReflectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148199EC28D4A59800BB1873 /* UITestNewReflectionViewController.swift */; };
-		14B0F05A28D74DED00CD75CE /* UnitTestCalendarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B0F05928D74DED00CD75CE /* UnitTestCalendarHelper.swift */; };
-		14CE07B028D4925600CAA578 /* UITestChooseTopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CE07AF28D4925600CAA578 /* UITestChooseTopicViewController.swift */; };
-		14DE6D2F28D398EA007DDC98 /* UITestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DE6D1C28D3694E007DDC98 /* UITestViewController.swift */; };
-		14EC6C8528D350E60084F470 /* UnitTestEmojiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EC6C8428D350E60084F470 /* UnitTestEmojiViewController.swift */; };
 		ED19590128CB8539004E7045 /* ChooseTopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED19590028CB8539004E7045 /* ChooseTopicViewController.swift */; };
 		ED55FE4C28D4B9AB00715D6F /* MyrrorData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ED55FE4828D4B9AB00715D6F /* MyrrorData.xcdatamodeld */; };
 		ED55FE5028D4BB3200715D6F /* ReflectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED55FE4F28D4BB3200715D6F /* ReflectionViewModel.swift */; };
 		ED55FE5828D4BE5800715D6F /* ReflectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED55FE5728D4BE5800715D6F /* ReflectionModel.swift */; };
 		ED75100728D22268000207F2 /* EmojiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED75100628D22268000207F2 /* EmojiViewController.swift */; };
-		FF5EF8CB28D342B600C6DEA8 /* UnitTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5EF8BA28D3422600C6DEA8 /* UnitTestViewController.swift */; };
-		FF5EF8CC28D342B600C6DEA8 /* UnitTestNewReflectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5EF8BB28D3422600C6DEA8 /* UnitTestNewReflectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +97,13 @@
 		0B4B7EB328D9FF00004F2906 /* indiferente-cinza.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "indiferente-cinza.json"; sourceTree = "<group>"; };
 		0B4B7EB428D9FF00004F2906 /* confiante-cinza.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "confiante-cinza.json"; sourceTree = "<group>"; };
 		0B4B7EC428DA0297004F2906 /* empty.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = empty.json; sourceTree = "<group>"; };
+		0B4B7EE328DB30D1004F2906 /* UnitTestCalendarHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitTestCalendarHelper.swift; sourceTree = "<group>"; };
+		0B4B7EE428DB30D1004F2906 /* UnitTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitTestViewController.swift; sourceTree = "<group>"; };
+		0B4B7EE528DB30D1004F2906 /* UnitTestNewReflectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitTestNewReflectionViewController.swift; sourceTree = "<group>"; };
+		0B4B7EE628DB30D1004F2906 /* UnitTestEmojiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitTestEmojiViewController.swift; sourceTree = "<group>"; };
+		0B4B7EEE28DB30DB004F2906 /* UITestChooseTopicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITestChooseTopicViewController.swift; sourceTree = "<group>"; };
+		0B4B7EEF28DB30DB004F2906 /* UITestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITestViewController.swift; sourceTree = "<group>"; };
+		0B4B7EF028DB30DB004F2906 /* UITestNewReflectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITestNewReflectionViewController.swift; sourceTree = "<group>"; };
 		0B9F82BE28D35589000D848B /* ReflectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflectionsView.swift; sourceTree = "<group>"; };
 		0B9F82C128D355DC000D848B /* CalendarHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHelper.swift; sourceTree = "<group>"; };
 		0B9F82C328D35613000D848B /* CalendarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarItem.swift; sourceTree = "<group>"; };
@@ -192,6 +199,8 @@
 				ED55FE4828D4B9AB00715D6F /* MyrrorData.xcdatamodeld */,
 				0B45266A28CA0EEC00D4083C /* Info.plist */,
 				0B45266528CA0EEC00D4083C /* Assets.xcassets */,
+				0B4B7EED28DB30DB004F2906 /* MyrrorUITests */,
+				0B4B7EE228DB30D1004F2906 /* MyrrorTests */,
 			);
 			path = Myrror;
 			sourceTree = "<group>";
@@ -265,6 +274,28 @@
 			path = ../../../Assets;
 			sourceTree = "<group>";
 		};
+		0B4B7EE228DB30D1004F2906 /* MyrrorTests */ = {
+			isa = PBXGroup;
+			children = (
+				0B4B7EE328DB30D1004F2906 /* UnitTestCalendarHelper.swift */,
+				0B4B7EE428DB30D1004F2906 /* UnitTestViewController.swift */,
+				0B4B7EE528DB30D1004F2906 /* UnitTestNewReflectionViewController.swift */,
+				0B4B7EE628DB30D1004F2906 /* UnitTestEmojiViewController.swift */,
+			);
+			path = MyrrorTests;
+			sourceTree = SOURCE_ROOT;
+		};
+		0B4B7EED28DB30DB004F2906 /* MyrrorUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0B4B7EEE28DB30DB004F2906 /* UITestChooseTopicViewController.swift */,
+				0B4B7EEF28DB30DB004F2906 /* UITestViewController.swift */,
+				0B4B7EF028DB30DB004F2906 /* UITestNewReflectionViewController.swift */,
+			);
+			name = MyrrorUITests;
+			path = Myrror/MyrrorUITests;
+			sourceTree = SOURCE_ROOT;
+		};
 		0B9F82C028D355CF000D848B /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -288,10 +319,7 @@
 		0BFD56B828D4B203009C99E8 /* ChooseTopicViewController */ = {
 			isa = PBXGroup;
 			children = (
-				FF5EF8BA28D3422600C6DEA8 /* UnitTestViewController.swift */,
 				14B0F05928D74DED00CD75CE /* UnitTestCalendarHelper.swift */,
-				FF5EF8BB28D3422600C6DEA8 /* UnitTestNewReflectionViewController.swift */,
-				14EC6C8428D350E60084F470 /* UnitTestEmojiViewController.swift */,
 				ED19590028CB8539004E7045 /* ChooseTopicViewController.swift */,
 				0BFD56B928D4B243009C99E8 /* ChooseTopicView.swift */,
 			);
@@ -432,7 +460,6 @@
 			files = (
 				0B4B7EBF28D9FF00004F2906 /* indiferente-cinza.json in Resources */,
 				0B45266928CA0EEC00D4083C /* LaunchScreen.storyboard in Resources */,
-				0B4B7E6F28D9F8B8004F2906 /* empty.json in Resources */,
 				0B4B7EBB28D9FF00004F2906 /* indiferente.json in Resources */,
 				0B4B7EBE28D9FF00004F2906 /* triste.json in Resources */,
 				0B4B7EBC28D9FF00004F2906 /* desesperado.json in Resources */,
@@ -549,9 +576,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14CE07B028D4925600CAA578 /* UITestChooseTopicViewController.swift in Sources */,
-				148199ED28D4A59800BB1873 /* UITestNewReflectionViewController.swift in Sources */,
-				14DE6D2F28D398EA007DDC98 /* UITestViewController.swift in Sources */,
+				0B4B7EF228DB30DB004F2906 /* UITestViewController.swift in Sources */,
+				0B4B7EF128DB30DB004F2906 /* UITestChooseTopicViewController.swift in Sources */,
+				0B4B7EF328DB30DB004F2906 /* UITestNewReflectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -559,10 +586,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF5EF8CC28D342B600C6DEA8 /* UnitTestNewReflectionViewController.swift in Sources */,
-				14B0F05A28D74DED00CD75CE /* UnitTestCalendarHelper.swift in Sources */,
-				FF5EF8CB28D342B600C6DEA8 /* UnitTestViewController.swift in Sources */,
-				14EC6C8528D350E60084F470 /* UnitTestEmojiViewController.swift in Sources */,
+				0B4B7EEA28DB30D1004F2906 /* UnitTestViewController.swift in Sources */,
+				0B4B7EEB28DB30D1004F2906 /* UnitTestNewReflectionViewController.swift in Sources */,
+				0B4B7EEC28DB30D1004F2906 /* UnitTestEmojiViewController.swift in Sources */,
+				0B4B7EE928DB30D1004F2906 /* UnitTestCalendarHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
