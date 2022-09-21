@@ -6,24 +6,19 @@
 //
 
 import UIKit
+import Lottie
 
 class ViewController: UIViewController {
     
     var screen: ReflectionsView?
+    var viewModel = ReflectionViewModel()
+    var reflections: [Reflection] = []
 
     var collectionView: UICollectionView?
     var tableView: UITableView?
 
     var selectedDate = Date()
     var totalSquares = [String]()
-    var reflections = [
-        ["O que não gostei", "maçã"],
-        ["O que aprendi", "banana"],
-        ["O que posso melhorar", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."],
-        [
-            "O que não gostei", "pera"
-        ]
-    ]
     
     override func loadView() {
         self.screen = ReflectionsView()
@@ -40,6 +35,9 @@ class ViewController: UIViewController {
         let swipePrevious = UISwipeGestureRecognizer(target: self, action: #selector(previousMonth))
         swipePrevious.direction = .right
         screen?.calendarContainer.addGestureRecognizer(swipePrevious)
+        viewModel.fetchReflection()
+        
+        self.reflections = viewModel.reflectionList!
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -212,8 +210,10 @@ extension ViewController: UITableViewDelegate {
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let myCell = tableView.dequeueReusableCell(withIdentifier: ReflectionTableViewCell.identifier, for: indexPath) as! ReflectionTableViewCell
-        myCell.title.text = reflections[indexPath.item][0]
-        myCell.reflectionText.text = reflections[indexPath.item][1]
+        myCell.mood.animation = Animation.named(reflections[indexPath.item].emoji!)
+        print(reflections[indexPath.item].emoji!)
+        myCell.title.text = reflections[indexPath.item].subject
+        myCell.reflectionText.text = reflections[indexPath.item].text_reflection
         return myCell
     }
 }

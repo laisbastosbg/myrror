@@ -71,7 +71,7 @@ class CalendarCollectionViewCell: UICollectionViewCell {
 
         if(hide) {
             moodOfTheDay.backgroundColor = .clear
-            moodOfTheDay.animation = Animation.named("empty")
+            moodOfTheDay.animation = nil
         } else {
             moodOfTheDay.backgroundColor = .systemGray5
             moodOfTheDay.animation = Animation.named("desesperado")

@@ -202,7 +202,7 @@ class NewReflectionViewController: UIViewController{
         let haptics = UINotificationFeedbackGenerator()
         haptics.notificationOccurred(.success)
         
-        viewModel.addReflection(subject: navigationTitle, textoReflection: reflectionText.text, emoji: "pensando")
+        viewModel.addReflection(subject: navigationTitle, textoReflection: reflectionText.text, emoji: "desesperado")
     }
 
 }
