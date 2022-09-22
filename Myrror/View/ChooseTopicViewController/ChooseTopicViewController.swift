@@ -28,6 +28,11 @@ class ChooseTopicViewController: UIViewController {
         let swipeGesture3 = UISwipeGestureRecognizer(target: self, action: #selector(navigate3(sender: )))
         swipeGesture3.direction = .left
         screen?.option3.addGestureRecognizer(swipeGesture3)
+        
+        screen?.option4.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(navigate4(sender: ))))
+        let swipeGesture4 = UISwipeGestureRecognizer(target: self, action: #selector(navigate4(sender: )))
+        swipeGesture4.direction = .left
+        screen?.option4.addGestureRecognizer(swipeGesture4)
     }
     
     override func viewDidLoad() {
@@ -66,6 +71,17 @@ class ChooseTopicViewController: UIViewController {
             return
         }
         nextPage.navigationTitle = screen.option3Label.text!
+        self.navigationController?.pushViewController(nextPage, animated: true)
+    }
+    
+    @objc func navigate4(sender: UITapGestureRecognizer) {
+        let haptics = UISelectionFeedbackGenerator()
+        haptics.selectionChanged()
+        let nextPage = NewReflectionViewController()
+        guard let screen = screen else {
+            return
+        }
+        nextPage.navigationTitle = screen.option4Label.text!
         self.navigationController?.pushViewController(nextPage, animated: true)
     }
 

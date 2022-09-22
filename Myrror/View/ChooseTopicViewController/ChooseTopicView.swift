@@ -73,6 +73,13 @@ class ChooseTopicView: UIView {
         return view
     }()
     
+    let option4Line: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .systemGray3
+        return view
+    }()
+    
     let option2: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -129,6 +136,34 @@ class ChooseTopicView: UIView {
         return image
     }()
     
+    let option4: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    let option4Image: UIImageView = {
+        let image = UIImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.image = UIImage(named: "writing")
+        return image
+    }()
+    
+    let option4Label: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Tema livre"
+        label.font = .preferredFont(forTextStyle: .body)
+        return label
+    }()
+    
+    let option4NavigationIcon: UIImageView = {
+        let image = UIImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.image = UIImage(systemName: "chevron.right")
+        return image
+    }()
+    
     
     required override init(frame: CGRect) {
         super.init(frame: frame)
@@ -153,6 +188,12 @@ class ChooseTopicView: UIView {
         option3.addSubview(option3Label)
         option3.addSubview(option3NavigationIcon)
         option3.addSubview(option3Line)
+        
+        self.addSubview(option4)
+        option4.addSubview(option4Image)
+        option4.addSubview(option4Label)
+        option4.addSubview(option4NavigationIcon)
+        option4.addSubview(option4Line)
         setupConstraints()
     }
     
@@ -232,6 +273,27 @@ class ChooseTopicView: UIView {
             
             option3NavigationIcon.centerYAnchor.constraint(equalTo: option3.centerYAnchor),
             option3NavigationIcon.trailingAnchor.constraint(equalTo: option3.trailingAnchor, constant: -8),
+            
+            option4.topAnchor.constraint(equalTo: option3.bottomAnchor),
+            option4.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            option4.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            option4.heightAnchor.constraint(equalToConstant: 100),
+            
+            option4Line.topAnchor.constraint(equalTo: option4.bottomAnchor),
+            option4Line.heightAnchor.constraint(equalTo: optionLine.heightAnchor),
+            option4Line.leadingAnchor.constraint(equalTo: optionLine.leadingAnchor),
+            option4Line.trailingAnchor.constraint(equalTo: optionLine.trailingAnchor),
+            
+            option4Image.centerYAnchor.constraint(equalTo: option4.centerYAnchor),
+            option4Image.leadingAnchor.constraint(equalTo: option4.leadingAnchor, constant: 8),
+            option4Image.heightAnchor.constraint(equalTo: option4.heightAnchor, multiplier: 0.5),
+            option4Image.widthAnchor.constraint(equalTo: option4Image.heightAnchor),
+            
+            option4Label.centerYAnchor.constraint(equalTo: option4.centerYAnchor),
+            option4Label.leadingAnchor.constraint(equalTo: option4Image.trailingAnchor, constant: 16),
+            
+            option4NavigationIcon.centerYAnchor.constraint(equalTo: option4.centerYAnchor),
+            option4NavigationIcon.trailingAnchor.constraint(equalTo: option4.trailingAnchor, constant: -8),
         ])
     }
 
