@@ -220,11 +220,14 @@ class NewReflectionViewController: UIViewController{
         
         if selectedEmoji != ""  || reflectionText.text != "Insira aqui uma descrição" {
             viewModel.addReflection(date: viewController.selectedDate ,subject: navigationTitle, textoReflection: reflectionText.text, emoji: selectedEmoji)
+            navigationController?.popToRootViewController(animated: true)
+//            self.dismiss(animated: true, completion: nil)
         }else{
             let alert = UIAlertController(title: "Nenhuma informação!", message: "Adicione alguma informação para a sua reflection!", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "Click", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
+        
 
     }
 }
