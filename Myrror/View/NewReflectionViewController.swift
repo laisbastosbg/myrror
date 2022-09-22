@@ -30,6 +30,8 @@ class NewReflectionViewController: UIViewController{
         textView.textAlignment = .justified
         textView.backgroundColor = .systemFill
         textView.layer.cornerRadius = 8
+        textView.text = "Insira aqui uma descrição"
+        textView.textColor = UIColor(named: "SecondaryText")
         textView.translatesAutoresizingMaskIntoConstraints = false
         return textView
     }()
@@ -166,6 +168,10 @@ class NewReflectionViewController: UIViewController{
         //view.keyboardLayoutGuide.layoutFrame.height
         UIView.animate(withDuration: 0.75) {
             self.reflectionTextHeightConstraint.constant = self.reflectionTextHeightConstraint.constant == self.view.bounds.height/3 ? (self.reflectionTextHeightConstraint.constant - 170): self.view.bounds.height/3
+        }
+        if (reflectionText.textColor == UIColor(named: "SecondaryText")) {
+            reflectionText.text = ""
+            reflectionText.textColor = UIColor(named: "TextColor")
         }
     }
     
