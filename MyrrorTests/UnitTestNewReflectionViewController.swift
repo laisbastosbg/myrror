@@ -19,7 +19,7 @@ class UnitTestNewReflectionViewController: XCTestCase {
 
     func testConfirmationButton() throws {
 
-        let button = sut.confirmationButton
+        let button = sut.saveReflectionButton
 
         XCTAssertEqual(button.configuration?.image, UIImage(systemName:"square.and.arrow.down"))
         XCTAssertFalse(button.translatesAutoresizingMaskIntoConstraints)
@@ -49,7 +49,7 @@ class UnitTestNewReflectionViewController: XCTestCase {
 
     func testBackGroundView() throws {
 
-        let background = sut.backgroundView
+        let background = sut.emojiView
 
         XCTAssertEqual(background.backgroundColor, UIColor.systemFill)
         XCTAssertEqual(background.layer.cornerRadius, 8)

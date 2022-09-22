@@ -18,9 +18,9 @@ class ReflectionViewModel: ObservableObject {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     //    MARK: CREATE
-    func addReflection(subject: String, textoReflection: String, emoji: String) {
+    func addReflection(date: Date, subject: String, textoReflection: String, emoji: String) {
         let newReflection = Reflection(context: self.context)
-        newReflection.date = Date()
+        newReflection.date = date
         newReflection.subject = subject
         newReflection.text_reflection = textoReflection
         newReflection.emoji = emoji
