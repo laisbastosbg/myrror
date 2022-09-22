@@ -168,12 +168,12 @@ class NewReflectionViewController: UIViewController{
         //view.keyboardLayoutGuide.layoutFrame.height
         if (self.reflectionTextHeightConstraint.constant == self.view.bounds.height/3 - 170) {
             UIView.animate(withDuration: 0.75) {
-                self.reflectionTextHeightConstraint.constant = self.view.bounds.height/3 - 200
+                self.reflectionTextHeightConstraint.constant = self.view.bounds.height/3 - 200 > 50 ? self.view.bounds.height/3 - 200 : 50
             }
         }
         else {
             UIView.animate(withDuration: 0.75) {
-                self.reflectionTextHeightConstraint.constant = self.view.bounds.height/3 - 170
+                self.reflectionTextHeightConstraint.constant = self.view.bounds.height/3 - 170 > 50 ? self.view.bounds.height/3 - 170 : 50
             }
         }
 
