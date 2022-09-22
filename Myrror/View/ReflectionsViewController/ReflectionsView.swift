@@ -257,7 +257,7 @@ class ReflectionsView: UIView {
             
             navigationButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 48),
             navigationButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -48),
-            navigationButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -100),
+            navigationButton.bottomAnchor.constraint(equalTo: self.keyboardLayoutGuide.topAnchor, constant: -20),
             navigationButton.heightAnchor.constraint(equalToConstant: 48),
         ]
         NSLayoutConstraint.activate(constraints)
