@@ -29,14 +29,14 @@ class CalendarCollectionViewCell: UICollectionViewCell {
     let moodOfTheDay: AnimationView = {
         let animationView = AnimationView()
         
-        animationView.animation = Animation.named("desesperado")
+//        animationView.animation = Animation.named("desesperado")
         
         animationView.contentMode = .scaleAspectFit
         animationView.layer.cornerRadius = 8
-        animationView.accessibilityLabel = "desesperado"
+//        animationView.accessibilityLabel = "desesperado"
         animationView.isAccessibilityElement = true
         animationView.translatesAutoresizingMaskIntoConstraints = false
-//        animationView.backgroundColor = .systemBlue
+        animationView.backgroundColor = .systemBlue
         return animationView
     }()
     
@@ -44,8 +44,8 @@ class CalendarCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         
 //        self.contentView.backgroundColor = .white
-        self.contentView.addSubview(dayOfMonth)
         self.contentView.addSubview(moodOfTheDay)
+        self.contentView.addSubview(dayOfMonth)
         moodOfTheDay.layer.cornerRadius = 0.5 * 0.6 * contentView.bounds.size.width
         setConstraints()
     }
@@ -56,13 +56,15 @@ class CalendarCollectionViewCell: UICollectionViewCell {
     
     func setConstraints() {
         NSLayoutConstraint.activate([
-            dayOfMonth.topAnchor.constraint(equalTo: contentView.topAnchor),
-            dayOfMonth.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             
-            moodOfTheDay.topAnchor.constraint(equalTo: dayOfMonth.bottomAnchor),
+            moodOfTheDay.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 4),
             moodOfTheDay.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             moodOfTheDay.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.6),
-            moodOfTheDay.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.6)
+            moodOfTheDay.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.6),
+            
+            
+            dayOfMonth.centerYAnchor.constraint(equalTo: moodOfTheDay.centerYAnchor),
+            dayOfMonth.centerXAnchor.constraint(equalTo: moodOfTheDay.centerXAnchor),
         ])
     }
     
@@ -77,15 +79,18 @@ class CalendarCollectionViewCell: UICollectionViewCell {
         let isSelectedDate = day == String(selectedDay.day!)
         
         if isCurrentDate {
-            dayOfMonth.textColor = .tintColor
+//            dayOfMonth.textColor = .tintColor
+            moodOfTheDay.backgroundColor = .tintColor
         }
         
         if !isCurrentDate && isSelectedDate {
-            dayOfMonth.textColor = UIColor.black
+//            dayOfMonth.textColor = UIColor.black
+            moodOfTheDay.backgroundColor = .systemGray3
         }
         
         if !isCurrentDate && !isSelectedDate {
             dayOfMonth.textColor = UIColor(named: "TextColor")
+            moodOfTheDay.backgroundColor = .systemGray5
         }
         dayOfMonth.text = day
         
@@ -94,9 +99,9 @@ class CalendarCollectionViewCell: UICollectionViewCell {
             moodOfTheDay.backgroundColor = .clear
             moodOfTheDay.animation = nil
         } else {
-            moodOfTheDay.backgroundColor = .systemGray5
-            moodOfTheDay.animation = Animation.named("desesperado")
-            
+//            moodOfTheDay.backgroundColor = .systemGray5
+//            moodOfTheDay.animation = Animation.named("desesperado")
+
         }
         
     }
