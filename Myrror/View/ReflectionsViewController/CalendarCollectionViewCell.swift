@@ -66,12 +66,33 @@ class CalendarCollectionViewCell: UICollectionViewCell {
         ])
     }
     
-    func configure(day: String, hide: Bool) {
+    func configure(day: String, hide: Bool, selectedDate: Date) {
+        let selectedDateComponents = Calendar.current.dateComponents([.month, .year], from: selectedDate)
+        let currentDateComponents = Calendar.current.dateComponents([.month, .year], from: Date())
+        let currentDay = Calendar.current.dateComponents([.day], from: Date())
+        let selectedDay = Calendar.current.dateComponents([.day], from: selectedDate)
+        
+
+        let isCurrentDate = selectedDateComponents == currentDateComponents && day == String(currentDay.day!)
+        let isSelectedDate = day == String(selectedDay.day!)
+        
+        if isCurrentDate {
+            dayOfMonth.textColor = .tintColor
+        }
+        
+        if !isCurrentDate && isSelectedDate {
+            dayOfMonth.textColor = UIColor.black
+        }
+        
+        if !isCurrentDate && !isSelectedDate {
+            dayOfMonth.textColor = UIColor(named: "TextColor")
+        }
         dayOfMonth.text = day
+        
 
         if(hide) {
             moodOfTheDay.backgroundColor = .clear
-            moodOfTheDay.animation = Animation.named("empty")
+            moodOfTheDay.animation = nil
         } else {
             moodOfTheDay.backgroundColor = .systemGray5
             moodOfTheDay.animation = Animation.named("desesperado")

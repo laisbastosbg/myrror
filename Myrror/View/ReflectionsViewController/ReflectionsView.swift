@@ -16,16 +16,8 @@ class ReflectionsView: UIView {
     
     let pageTitle: UILabel = {
         let label = UILabel()
-        let dayFormatter = DateFormatter()
-        dayFormatter.dateFormat = "dd"
-        let day = dayFormatter.string(from: Date.now)
         
-        let monthFormatter = DateFormatter()
-        monthFormatter.dateFormat = "MMMM"
-        monthFormatter.locale = Locale.init(identifier: "pt-br")
-        let month = monthFormatter.string(from: Date.now)
-        
-        let today = "\(day) de \(month)"
+        let today = CalendarHelper().getDateAsString(date: Date.now)
         
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 32, weight: .bold)
@@ -247,7 +239,6 @@ class ReflectionsView: UIView {
             weekDayStack.trailingAnchor.constraint(equalTo: nextMonthButton.trailingAnchor),
             weekDayStack.centerXAnchor.constraint(equalTo: calendarContainer.centerXAnchor),
             
-//<<<<<<< HEAD
             pageContentStack.centerYAnchor.constraint(equalTo: scrollView.safeAreaLayoutGuide.centerYAnchor, constant: -90),
             pageContentStack.centerXAnchor.constraint(equalTo: scrollView.safeAreaLayoutGuide.centerXAnchor),
             pageContentStack.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
@@ -258,24 +249,12 @@ class ReflectionsView: UIView {
             scrollView.topAnchor.constraint(equalTo: calendarContainer.bottomAnchor),
             scrollView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor),
             
-//=======
             reflectionsContainer.topAnchor.constraint(equalTo: calendarContainer.bottomAnchor),
             reflectionsContainer.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             reflectionsContainer.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             reflectionsContainer.heightAnchor.constraint(equalToConstant: 600),
-//
-//            scrollView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-//            scrollView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-//            scrollView.topAnchor.constraint(equalTo: calendarContainer.bottomAnchor),
-//            scrollView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor),
-//
-//            pageContentStack.topAnchor.constraint(equalTo: scrollView.topAnchor),
-//            pageContentStack.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
-//            pageContentStack.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
-//            pageContentStack.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-//
-//            navigationButton.topAnchor.constraint(equalTo: emptyScreenLabel.bottomAnchor, constant: 40),
-//>>>>>>> feature/reflections-tableview
+
+            
             navigationButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 48),
             navigationButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -48),
             navigationButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -100),

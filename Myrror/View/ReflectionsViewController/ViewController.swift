@@ -6,10 +6,13 @@
 //
 
 import UIKit
+import Lottie
 
 class ViewController: UIViewController {
     
     var screen: ReflectionsView?
+    var viewModel = ReflectionViewModel()
+    var reflections: [Reflection] = []
 
     var collectionView: UICollectionView?
     var tableView: UITableView?
@@ -18,14 +21,6 @@ class ViewController: UIViewController {
     var test = "valor 1"
     
     var totalSquares = [String]()
-    var reflections = [
-        ["O que não gostei", "maçã"],
-        ["O que aprendi", "banana"],
-        ["O que posso melhorar", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."],
-        [
-            "O que não gostei", "pera"
-        ]
-    ]
     
     override func loadView() {
         self.screen = ReflectionsView()
@@ -42,6 +37,9 @@ class ViewController: UIViewController {
         let swipePrevious = UISwipeGestureRecognizer(target: self, action: #selector(previousMonth))
         swipePrevious.direction = .right
         screen?.calendarContainer.addGestureRecognizer(swipePrevious)
+        viewModel.fetchReflection(date: selectedDate)
+        
+        self.reflections = viewModel.reflectionList!
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,8 +58,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         navigationController?.navigationBar.items?[0].backBarButtonItem = UIBarButtonItem(title: "Voltar", style: .plain, target: nil, action: nil)
         view.backgroundColor = UIColor(named: "Primary")
-        
-        setupConstraints()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -108,7 +104,6 @@ class ViewController: UIViewController {
         let daysInMonth = CalendarHelper().daysInMonth(date: selectedDate)
         let firstDayOfMonth = CalendarHelper().firstOfMonth(date: selectedDate)
         let startingSpaces = CalendarHelper().weekDay(date: firstDayOfMonth)
-        
         var count: Int = 1
         
         while (count <= 42) {
@@ -132,7 +127,11 @@ class ViewController: UIViewController {
             self.collectionView?.frame = CGRect(x: 0, y: 55, width: self.view.bounds.width, height: (self.view.bounds.width/8*7))
         }
         selectedDate = CalendarHelper().minusMonth(date: selectedDate)
+        self.screen?.pageTitle.text = CalendarHelper().getDateAsString(date: selectedDate)
         setMonthView()
+        viewModel.fetchReflection(date: selectedDate)
+        reflections = viewModel.reflectionList!
+        tableView?.reloadData()
     }
     
     @objc func nextMonth() {
@@ -144,13 +143,11 @@ class ViewController: UIViewController {
             self.collectionView?.frame = CGRect(x: 0, y: 55, width: self.view.bounds.width, height: (self.view.bounds.width/8*7))
         }
         selectedDate = CalendarHelper().plusMonth(date: selectedDate)
+        self.screen?.pageTitle.text = CalendarHelper().getDateAsString(date: selectedDate)
         setMonthView()
-    }
-    
-    
-    func setupConstraints() {
-        NSLayoutConstraint.activate([
-        ])
+        viewModel.fetchReflection(date: selectedDate)
+        reflections = viewModel.reflectionList!
+        tableView?.reloadData()
     }
     
     @objc func navigate() {
@@ -173,14 +170,19 @@ extension ViewController: UICollectionViewDataSource {
         if (totalSquares[indexPath.item].count <= 0) {
             hide = true
         }
-        myCell.configure(day: day, hide: hide)
+        myCell.configure(day: day, hide: hide, selectedDate: selectedDate)
         return myCell
     }
 }
 
 extension ViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("User tapped on item \(indexPath.row)")
+        selectedDate = CalendarHelper().setDay(date: selectedDate, day: Int(totalSquares[indexPath.item])!)
+        self.screen?.pageTitle.text = CalendarHelper().getDateAsString(date: selectedDate)
+        collectionView.reloadData()
+        viewModel.fetchReflection(date: selectedDate)
+        reflections = viewModel.reflectionList!
+        tableView?.reloadData()
     }
 }
 
@@ -216,8 +218,9 @@ extension ViewController: UITableViewDelegate {
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let myCell = tableView.dequeueReusableCell(withIdentifier: ReflectionTableViewCell.identifier, for: indexPath) as! ReflectionTableViewCell
-        myCell.title.text = reflections[indexPath.item][0]
-        myCell.reflectionText.text = reflections[indexPath.item][1]
+        myCell.mood.animation = Animation.named(reflections[indexPath.item].emoji!)
+        myCell.title.text = reflections[indexPath.item].subject
+        myCell.reflectionText.text = reflections[indexPath.item].text_reflection
         return myCell
     }
 }
