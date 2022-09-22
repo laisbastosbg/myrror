@@ -13,31 +13,6 @@ class NewReflectionViewController: UIViewController{
     var viewModel = ReflectionViewModel()
     var selectedEmoji = ""
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = UIColor(named: "Primary")
-        
-        navigationController?.navigationBar.items?[1].backBarButtonItem = UIBarButtonItem(title: "Voltar", style: .plain, target: nil, action: nil)
-        
-        view.addSubview(pageTitle)
-        configPageTitle()
-        
-        view.addSubview(confirmationButton)
-        configConfirmationButton()
-        
-        configKeyBoardTapGesture()
-        view.addSubview(reflectionText)
-        configReflectionText()
-        
-        view.addSubview(subTitle)
-        configSubTitle()
-        
-        configEmojiTapGesture()
-        view.addSubview(backgroundView)
-        configBackgroundView()
-    }
-    
     lazy var pageTitle : UILabel = {
        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -46,14 +21,6 @@ class NewReflectionViewController: UIViewController{
         label.numberOfLines = 2
         return label
     }()
-    
-    func configPageTitle() {
-        NSLayoutConstraint.activate([
-            pageTitle.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            pageTitle.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            pageTitle.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
-        ])
-    }
     
     let reflectionText : UITextView = {
         let textView = UITextView()
@@ -67,21 +34,6 @@ class NewReflectionViewController: UIViewController{
         return textView
     }()
     
-    func configReflectionText() {
-        NSLayoutConstraint.activate([
-            reflectionText.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            reflectionText.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 18),
-            reflectionText.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -18),
-            reflectionText.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
-            reflectionText.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor, constant: -150)
-        ])
-    }
-    
-    func configKeyBoardTapGesture(){
-        let gesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
-        view.addGestureRecognizer(gesture)
-    }
-    
     let subTitle : UILabel = {
         let subTitle = UILabel()
         subTitle.text = "Como isso te faz se sentir?"
@@ -90,51 +42,140 @@ class NewReflectionViewController: UIViewController{
         return subTitle
     }()
     
-    func configSubTitle() {
-        NSLayoutConstraint.activate([
-            subTitle.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            subTitle.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 18),
-            subTitle.topAnchor.constraint(equalTo: reflectionText.bottomAnchor, constant: 40),
-        ])
+    let emojiView : UIStackView = {
+       let stackView = UIStackView()
+       stackView.layer.cornerRadius = 8
+       stackView.distribution = .equalCentering
+       stackView.backgroundColor = .systemFill
+       stackView.translatesAutoresizingMaskIntoConstraints = false
+
+       let emojisName : [String] = ["desesperado", "triste", "indiferente", "feliz", "confiante"]
+       let tapRecognizer = UITapGestureRecognizer(target: NewReflectionViewController.self, action: #selector(handleEmojiTap(sender:)))
+       tapRecognizer.numberOfTapsRequired = 1
+       tapRecognizer.numberOfTouchesRequired = 1
+       stackView.addGestureRecognizer(tapRecognizer)
+       stackView.isUserInteractionEnabled = true
+       
+       // MARK: Não esquecer de configurar!!!
+       for i in 0...4 {
+           let animationView = AnimationView()
+           
+           animationView.animation = Animation.named("\(emojisName[i])-cinza")
+           
+           animationView.contentMode = .scaleAspectFit
+           animationView.layer.cornerRadius = 8
+           animationView.loopMode = .repeat(1)
+           animationView.accessibilityLabel = emojisName[i]
+           animationView.isAccessibilityElement = true
+           
+           stackView.addArrangedSubview(animationView)
+           animationView.translatesAutoresizingMaskIntoConstraints = false
+           animationView.widthAnchor.constraint(equalTo: animationView.heightAnchor).isActive = true
+           stackView.isUserInteractionEnabled = true
+       }
+       
+       return stackView
+   }()
+    
+    let saveReflectionButton : UIButton = {
+        var configButton = UIButton.Configuration.filled()
+        configButton.image = UIImage(systemName: "square.and.arrow.down")
+        configButton.title = "Finalizar"
+        configButton.imagePadding = 150
+                
+        let button = UIButton(type: .system)
+        button.configuration = configButton
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.semanticContentAttribute = .forceRightToLeft
+        button.addTarget(self, action: #selector(saveReflection), for: .touchUpInside)
+
+        return button
+    }()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        view.backgroundColor = UIColor(named: "Primary")
+        navigationController?.navigationBar.items?[1].backBarButtonItem = UIBarButtonItem(title: "Voltar", style: .plain, target: nil, action: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(NewReflectionViewController.keyboardWillShowOrHide), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(NewReflectionViewController.keyboardWillShowOrHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        configKeyBoardTapGesture()
+        configEmojiTapGesture()
+        
+        view.addSubview(pageTitle)
+        view.addSubview(saveReflectionButton)
+        view.addSubview(reflectionText)
+        view.addSubview(subTitle)
+        view.addSubview(emojiView)
+
+        setConstraints()
     }
     
-     let backgroundView : UIStackView = {
-        let stackView = UIStackView()
-        stackView.layer.cornerRadius = 8
-        stackView.distribution = .equalCentering
-        stackView.backgroundColor = .systemFill
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-
-        let emojisName : [String] = ["desesperado", "triste", "indiferente", "feliz", "confiante"]
-        let tapRecognizer = UITapGestureRecognizer(target: NewReflectionViewController.self, action: #selector(handleEmojiTap(sender:)))
-        tapRecognizer.numberOfTapsRequired = 1
-        tapRecognizer.numberOfTouchesRequired = 1
-        stackView.addGestureRecognizer(tapRecognizer)
-        stackView.isUserInteractionEnabled = true
-        
-        // MARK: Não esquecer de configurar!!!
-        for i in 0...4 {
-            let animationView = AnimationView()
-            
-            animationView.animation = Animation.named("\(emojisName[i])-cinza")
-            
-            animationView.contentMode = .scaleAspectFit
-            animationView.layer.cornerRadius = 8
-            animationView.loopMode = .repeat(1)
-            animationView.accessibilityLabel = emojisName[i]
-            animationView.isAccessibilityElement = true
-            
-            stackView.addArrangedSubview(animationView)
-            animationView.translatesAutoresizingMaskIntoConstraints = false
-            animationView.widthAnchor.constraint(equalTo: animationView.heightAnchor).isActive = true
-            stackView.isUserInteractionEnabled = true
-        }
-        
-        return stackView
+    lazy var reflectionTextHeightConstraint: NSLayoutConstraint = {
+        self.reflectionText.heightAnchor.constraint(equalToConstant:view.bounds.height/3)
     }()
+    
+    func setConstraints() {
+        
+        let pageTitleConstraints = [
+            pageTitle.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            pageTitle.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            pageTitle.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
+        ]
+        
+        let reflectionTextConstraints = [
+            reflectionText.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            reflectionText.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 18),
+            reflectionText.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -18),
+            reflectionText.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
+            reflectionTextHeightConstraint
+        ]
+        
+        let subTitleConstraints = [
+            subTitle.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            subTitle.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 18),
+            subTitle.topAnchor.constraint(equalTo: reflectionText.bottomAnchor, constant: 40)
+        ]
+        
+        let emojiViewConstraints = [
+            emojiView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            emojiView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 18),
+            emojiView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -18),
+            emojiView.topAnchor.constraint(equalTo: subTitle.bottomAnchor, constant: 20) ,
+            emojiView.heightAnchor.constraint(equalToConstant: 70)
+        ]
+        
+        let saveReflectionButtonConstraints = [
+            saveReflectionButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            saveReflectionButton.bottomAnchor.constraint(equalTo: view.keyboardLayoutGuide.topAnchor, constant: -20),
+            saveReflectionButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
+            saveReflectionButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+            saveReflectionButton.heightAnchor.constraint(equalToConstant: 50)
+        ]
+        
+        NSLayoutConstraint.activate(pageTitleConstraints)
+        NSLayoutConstraint.activate(reflectionTextConstraints)
+        NSLayoutConstraint.activate(subTitleConstraints)
+        NSLayoutConstraint.activate(emojiViewConstraints)
+        NSLayoutConstraint.activate(saveReflectionButtonConstraints)
+    }
+    
+    @objc func keyboardWillShowOrHide (sender: NSNotification) {
+        //view.keyboardLayoutGuide.layoutFrame.height
+        UIView.animate(withDuration: 0.75) {
+            self.reflectionTextHeightConstraint.constant = self.reflectionTextHeightConstraint.constant == self.view.bounds.height/3 ? (self.reflectionTextHeightConstraint.constant - 170): self.view.bounds.height/3
+        }
+    }
+    
+    func configKeyBoardTapGesture(){
+        let gesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(gesture)
+    }
 
     func configEmojiTapGesture(){
-        for emoji in backgroundView.arrangedSubviews {
+        for emoji in emojiView.arrangedSubviews {
             let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleEmojiTap(sender: )))
             tapRecognizer.numberOfTapsRequired = 1
             tapRecognizer.numberOfTouchesRequired = 1
@@ -150,7 +191,7 @@ class NewReflectionViewController: UIViewController{
         guard let animationView = sender.view as? AnimationView else { return }
         if sender.state == .ended {
             
-            for emoji in backgroundView.subviews {
+            for emoji in emojiView.subviews {
                 if emoji.accessibilityLabel != animationView.accessibilityLabel {
                     let notSelectedAnimation = emoji as? AnimationView
                     notSelectedAnimation?.animation = Animation.named("\(emoji.accessibilityLabel!)-cinza")
@@ -163,41 +204,6 @@ class NewReflectionViewController: UIViewController{
                     
             }
         }
-    }
-    
-    func configBackgroundView() {
-        NSLayoutConstraint.activate([
-            backgroundView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            backgroundView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 18),
-            backgroundView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -18),
-            backgroundView.topAnchor.constraint(equalTo: subTitle.bottomAnchor, constant: 20),
-            backgroundView.heightAnchor.constraint(equalToConstant: 70)
-        ])
-    }
-    
-    let confirmationButton : UIButton = {
-        var configButton = UIButton.Configuration.filled()
-        configButton.image = UIImage(systemName: "square.and.arrow.down")
-        configButton.title = "Finalizar"
-        configButton.imagePadding = 150
-                
-        let button = UIButton(type: .system)
-        button.configuration = configButton
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.semanticContentAttribute = .forceRightToLeft
-        button.addTarget(self, action: #selector(saveReflection), for: .touchUpInside)
-
-        return button
-    }()
-    
-    func configConfirmationButton () {
-        NSLayoutConstraint.activate([
-            confirmationButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            confirmationButton.centerYAnchor.constraint(equalTo: view.bottomAnchor, constant: -120),
-            confirmationButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
-            confirmationButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
-            confirmationButton.heightAnchor.constraint(equalToConstant: 50)
-        ])
     }
     
     @objc func saveReflection() {
@@ -215,5 +221,4 @@ class NewReflectionViewController: UIViewController{
         }
 
     }
-
 }
