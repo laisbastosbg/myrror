@@ -100,8 +100,8 @@ class NewReflectionViewController: UIViewController{
         view.backgroundColor = UIColor(named: "Primary")
         navigationController?.navigationBar.items?[1].backBarButtonItem = UIBarButtonItem(title: "Voltar", style: .plain, target: nil, action: nil)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(NewReflectionViewController.keyboardWillShowOrHide), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(NewReflectionViewController.keyboardWillShowOrHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(NewReflectionViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(NewReflectionViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         configKeyBoardTapGesture()
         configEmojiTapGesture()
@@ -164,14 +164,34 @@ class NewReflectionViewController: UIViewController{
         NSLayoutConstraint.activate(saveReflectionButtonConstraints)
     }
     
-    @objc func keyboardWillShowOrHide (sender: NSNotification) {
+    @objc func keyboardWillShow (sender: NSNotification) {
         //view.keyboardLayoutGuide.layoutFrame.height
-        UIView.animate(withDuration: 0.75) {
-            self.reflectionTextHeightConstraint.constant = self.reflectionTextHeightConstraint.constant == self.view.bounds.height/3 ? (self.reflectionTextHeightConstraint.constant - 170): self.view.bounds.height/3
+        if (self.reflectionTextHeightConstraint.constant == self.view.bounds.height/3 - 170) {
+            UIView.animate(withDuration: 0.75) {
+                self.reflectionTextHeightConstraint.constant = self.view.bounds.height/3 - 200
+            }
         }
+        else {
+            UIView.animate(withDuration: 0.75) {
+                self.reflectionTextHeightConstraint.constant = self.view.bounds.height/3 - 170
+            }
+        }
+
+        
         if (reflectionText.textColor == UIColor(named: "SecondaryText")) {
             reflectionText.text = ""
             reflectionText.textColor = UIColor(named: "TextColor")
+        }
+    }
+    
+    @objc func keyboardWillHide (sender: NSNotification) {
+        //view.keyboardLayoutGuide.layoutFrame.height
+        UIView.animate(withDuration: 0.75) {
+            self.reflectionTextHeightConstraint.constant = self.view.bounds.height/3
+        }
+        if (reflectionText.text == "") {
+            reflectionText.textColor = UIColor(named: "SecondaryText")
+            reflectionText.text = "Insira aqui uma descrição"
         }
     }
     
