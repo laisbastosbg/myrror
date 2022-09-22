@@ -19,7 +19,6 @@ class ReflectionViewModel: ObservableObject {
     
     //    MARK: CREATE
     func addReflection(date: Date, subject: String, textoReflection: String, emoji: String) {
-
         let newReflection = Reflection(context: self.context)
         newReflection.date = date
         newReflection.subject = subject
@@ -47,7 +46,6 @@ class ReflectionViewModel: ObservableObject {
                                              startDate as NSDate, endDate as NSDate)
         do {
             self.reflectionList = try context.fetch(fetchRequest)
-            return
         } catch {
             print("deu errado")
         }
