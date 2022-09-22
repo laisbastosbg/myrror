@@ -15,12 +15,12 @@ class ViewController: UIViewController {
     var reflections: [Reflection] = []
 
     var collectionView: UICollectionView?
-    var tableView: UITableView?
+    var tableView: UITableView = UITableView()
 
     var selectedDate = Date()
     var test = "valor 1"
     
-    var totalSquares = [String]()
+    var totalSquares: [String] = []
     
     override func loadView() {
         self.screen = ReflectionsView()
@@ -37,14 +37,14 @@ class ViewController: UIViewController {
         let swipePrevious = UISwipeGestureRecognizer(target: self, action: #selector(previousMonth))
         swipePrevious.direction = .right
         screen?.calendarContainer.addGestureRecognizer(swipePrevious)
-        viewModel.fetchReflection(date: selectedDate)
-        
-        self.reflections = viewModel.reflectionList!
     }
     
     override func viewWillAppear(_ animated: Bool) {
+//        tableView.reloadData()
+        self.totalSquares = []
+        self.totalSquares.removeAll()
+        updateReflectionList()
         setMonthView()
-        
         guard let screen = screen else {
             return
         }
@@ -58,21 +58,20 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         navigationController?.navigationBar.items?[0].backBarButtonItem = UIBarButtonItem(title: "Voltar", style: .plain, target: nil, action: nil)
         view.backgroundColor = UIColor(named: "Primary")
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         
-        guard let collectionView = collectionView else {
-            return
-        }
-        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         guard let screen = screen else {
             return
         }
         
+        guard let collectionView = collectionView else {
+            return
+        }
         
         collectionView.register(CalendarCollectionViewCell.self, forCellWithReuseIdentifier: CalendarCollectionViewCell.identifier)
         collectionView.dataSource = self
@@ -84,10 +83,6 @@ class ViewController: UIViewController {
         
         tableView = UITableView()
         
-        guard let tableView = tableView else {
-            return
-        }
-        
         screen.reflectionsContainer.addSubview(tableView)
         tableView.register(ReflectionTableViewCell.self, forCellReuseIdentifier: ReflectionTableViewCell.identifier)
         tableView.delegate = self
@@ -98,8 +93,8 @@ class ViewController: UIViewController {
     }
     
     func setMonthView() {
-        totalSquares.removeAll()
-        collectionView?.reloadData()
+        self.totalSquares = []
+        self.totalSquares.removeAll()
         
         let daysInMonth = CalendarHelper().daysInMonth(date: selectedDate)
         let firstDayOfMonth = CalendarHelper().firstOfMonth(date: selectedDate)
@@ -131,7 +126,7 @@ class ViewController: UIViewController {
         setMonthView()
         viewModel.fetchReflection(date: selectedDate)
         reflections = viewModel.reflectionList!
-        tableView?.reloadData()
+        tableView.reloadData()
     }
     
     @objc func nextMonth() {
@@ -147,7 +142,7 @@ class ViewController: UIViewController {
         setMonthView()
         viewModel.fetchReflection(date: selectedDate)
         reflections = viewModel.reflectionList!
-        tableView?.reloadData()
+        tableView.reloadData()
     }
     
     @objc func navigate() {
@@ -156,6 +151,22 @@ class ViewController: UIViewController {
         let nextPage = ChooseTopicViewController()
         self.navigationController?.pushViewController(nextPage, animated: true)
     }
+    
+    func updateReflectionList() {
+//        self.reflections = []
+        self.reflections.removeAll()
+        tableView.reloadData()
+        viewModel.fetchReflection(date: selectedDate)
+        
+        self.reflections = viewModel.reflectionList!
+    }
+    
+    func updateCollectionView() {
+        self.totalSquares.removeAll()
+        collectionView?.reloadData()
+        setMonthView()
+    }
+
 }
 
 extension ViewController: UICollectionViewDataSource {
@@ -182,7 +193,7 @@ extension ViewController: UICollectionViewDelegate {
         collectionView.reloadData()
         viewModel.fetchReflection(date: selectedDate)
         reflections = viewModel.reflectionList!
-        tableView?.reloadData()
+        tableView.reloadData()
     }
 }
 
