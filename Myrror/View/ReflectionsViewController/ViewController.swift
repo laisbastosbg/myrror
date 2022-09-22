@@ -234,4 +234,12 @@ extension ViewController: UITableViewDataSource {
         myCell.reflectionText.text = reflections[indexPath.item].text_reflection
         return myCell
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+          if editingStyle == .delete {
+            self.reflections.remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: .automatic)
+              viewModel.deleteReflection(indexPath: indexPath)
+          }
+    }
 }

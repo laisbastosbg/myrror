@@ -13,7 +13,7 @@ import CoreData
 
 class ReflectionViewModel: ObservableObject {
     var reflectionList : [Reflection]?
-
+    
     //    Referencia ao Container que está no App Delegate
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -24,19 +24,19 @@ class ReflectionViewModel: ObservableObject {
         newReflection.subject = subject
         newReflection.text_reflection = textoReflection
         newReflection.emoji = emoji
-
+        
         do {
             try self.context.save()
             print("Deucertoooo \(newReflection)")
         } catch {
             print("deu errado")
         }
-     }
-
+    }
+    
     // MARK: READ
     func fetchReflection(date: Date) {
         let fetchRequest = Reflection.fetchRequest()
-
+        
         let startDate = Calendar.current.startOfDay(for: date)
         var components = DateComponents()
         components.day = 1
@@ -46,6 +46,19 @@ class ReflectionViewModel: ObservableObject {
                                              startDate as NSDate, endDate as NSDate)
         do {
             self.reflectionList = try context.fetch(fetchRequest)
+        } catch {
+            print("deu errado")
+        }
+    }
+    
+    func deleteReflection(indexPath: IndexPath) {
+        guard let reflectionList = self.reflectionList else {
+            return
+        }
+        do {
+            context.delete(reflectionList[indexPath.row])
+            self.reflectionList?.remove(at: indexPath.row)
+            try self.context.save()
         } catch {
             print("deu errado")
         }
