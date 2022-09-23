@@ -81,7 +81,7 @@ class ViewController: UIViewController {
         collectionView.backgroundColor = .clear
         collectionView.frame = CGRect(x: 0, y: screen.weekDayStack.frame.maxY, width: view.bounds.width, height: (screen.bounds.width/8*7))
         
-        tableView = UITableView()
+//        tableView = UITableView()
         
         screen.reflectionsContainer.addSubview(tableView)
         tableView.register(ReflectionTableViewCell.self, forCellReuseIdentifier: ReflectionTableViewCell.identifier)
@@ -155,6 +155,7 @@ class ViewController: UIViewController {
 //        self.reflections.removeAll()
         viewModel.fetchReflection(date: selectedDate)
         self.reflections = viewModel.reflectionList!
+        tableView.reloadData()
         
         if !reflections.isEmpty {
             screen!.scrollView.isHidden = true
@@ -162,7 +163,6 @@ class ViewController: UIViewController {
             screen!.scrollView.isHidden = false
         }
         
-        tableView.reloadData()
     }
     
     func updateCollectionView() {
@@ -196,13 +196,13 @@ extension ViewController: UICollectionViewDelegate {
             selectedDate = CalendarHelper().setDay(date: selectedDate, day: Int(totalSquares[indexPath.item])!)
             self.screen?.pageTitle.text = CalendarHelper().getDateAsString(date: selectedDate)
             
-            collectionView.reloadData()
-            viewModel.fetchReflection(date: selectedDate)
-            reflections = viewModel.reflectionList!
-            tableView.reloadData()
-            
 //            collectionView.reloadData()
-//            updateReflectionList()
+//            viewModel.fetchReflection(date: selectedDate)
+//            reflections = viewModel.reflectionList!
+//            tableView.reloadData()
+            
+            collectionView.reloadData()
+            updateReflectionList()
         }
     }
 }
