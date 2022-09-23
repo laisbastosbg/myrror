@@ -188,12 +188,14 @@ extension ViewController: UICollectionViewDataSource {
 
 extension ViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        selectedDate = CalendarHelper().setDay(date: selectedDate, day: Int(totalSquares[indexPath.item])!)
-        self.screen?.pageTitle.text = CalendarHelper().getDateAsString(date: selectedDate)
-        collectionView.reloadData()
-        viewModel.fetchReflection(date: selectedDate)
-        reflections = viewModel.reflectionList!
-        tableView.reloadData()
+        if(totalSquares[indexPath.item] != "") {
+            selectedDate = CalendarHelper().setDay(date: selectedDate, day: Int(totalSquares[indexPath.item])!)
+            self.screen?.pageTitle.text = CalendarHelper().getDateAsString(date: selectedDate) 
+            collectionView.reloadData()
+            viewModel.fetchReflection(date: selectedDate)
+            reflections = viewModel.reflectionList!
+            tableView.reloadData()
+        }
     }
 }
 
