@@ -28,6 +28,7 @@ class CalendarHelper {
     func monthString(date: Date) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMMM"
+        dateFormatter.locale = Locale.init(identifier: "pt-br")
         return dateFormatter.string(from: date).capitalized
     }
     
