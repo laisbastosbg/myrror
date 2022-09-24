@@ -45,13 +45,13 @@ class ViewController: UIViewController {
         self.totalSquares.removeAll()
         updateReflectionList()
         setMonthView()
-//        guard let screen = screen else {
-//            return
-//        }
-//        
-//        if !reflections.isEmpty {
-//            screen.scrollView.isHidden = true
-//        }
+        guard let screen = screen else {
+            return
+        }
+        
+        if reflections.count > 0 {
+            screen.scrollView.removeFromSuperview()
+        }
     }
     
     override func viewDidLoad() {
@@ -81,7 +81,7 @@ class ViewController: UIViewController {
         collectionView.backgroundColor = .clear
         collectionView.frame = CGRect(x: 0, y: screen.weekDayStack.frame.maxY, width: view.bounds.width, height: (screen.bounds.width/8*7))
         
-//        tableView = UITableView()
+        tableView = UITableView()
         
         screen.reflectionsContainer.addSubview(tableView)
         tableView.register(ReflectionTableViewCell.self, forCellReuseIdentifier: ReflectionTableViewCell.identifier)
@@ -146,23 +146,19 @@ class ViewController: UIViewController {
     }
     
     @objc func navigate() {
+        test = "Valor 2"
+        print("Esse é o valor do objeto que eu quero: \(test)")
         let nextPage = ChooseTopicViewController()
         self.navigationController?.pushViewController(nextPage, animated: true)
     }
     
     func updateReflectionList() {
 //        self.reflections = []
-//        self.reflections.removeAll()
-        viewModel.fetchReflection(date: selectedDate)
-        self.reflections = viewModel.reflectionList!
+        self.reflections.removeAll()
         tableView.reloadData()
+        viewModel.fetchReflection(date: selectedDate)
         
-        if !reflections.isEmpty {
-            screen!.scrollView.isHidden = true
-        } else {
-            screen!.scrollView.isHidden = false
-        }
-        
+        self.reflections = viewModel.reflectionList!
     }
     
     func updateCollectionView() {
@@ -194,15 +190,11 @@ extension ViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if(totalSquares[indexPath.item] != "") {
             selectedDate = CalendarHelper().setDay(date: selectedDate, day: Int(totalSquares[indexPath.item])!)
-            self.screen?.pageTitle.text = CalendarHelper().getDateAsString(date: selectedDate)
-            
-//            collectionView.reloadData()
-//            viewModel.fetchReflection(date: selectedDate)
-//            reflections = viewModel.reflectionList!
-//            tableView.reloadData()
-            
+            self.screen?.pageTitle.text = CalendarHelper().getDateAsString(date: selectedDate) 
             collectionView.reloadData()
-            updateReflectionList()
+            viewModel.fetchReflection(date: selectedDate)
+            reflections = viewModel.reflectionList!
+            tableView.reloadData()
         }
     }
 }
@@ -250,7 +242,6 @@ extension ViewController: UITableViewDataSource {
             self.reflections.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .automatic)
               viewModel.deleteReflection(indexPath: indexPath)
-            updateReflectionList()
           }
     }
 }
