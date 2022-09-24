@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:Reflection+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:Reflection+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
+      location = "group:Myrror.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Myrror/../Pods/Pods.xcodeproj">
+   </FileRef>
+</Workspace>

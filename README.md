@@ -5,6 +5,9 @@
 </div>
 
 <h2>About the project</h2>
+<div align="center">
+    <img src="./.images/myrror_screens.png" height=260>
+</div>
 <p>Myrror is a work in a progress for Apple Developer Academy Details Matter Challenge</p>
 
 <h3>Built with</h3>
