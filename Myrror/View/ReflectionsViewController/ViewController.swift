@@ -134,32 +134,36 @@ class ViewController: UIViewController {
         let haptics = UIImpactFeedbackGenerator(style: .soft)
         haptics.impactOccurred(intensity: 0.5)
         self.collectionView?.frame = CGRect(x: -self.view.bounds.width, y: 55, width: self.view.bounds.width, height: (self.view.bounds.width/8*6)+2)
+        screen?.reflectionsContainer.frame = CGRect(x: -self.view.bounds.width, y: 55, width: self.view.bounds.width, height: (self.view.bounds.width/8*6)+2)
+        screen?.scrollView.frame = CGRect(x: -self.view.bounds.width, y: 55, width: self.view.bounds.width, height: (self.view.bounds.width/8*6)+2)
         
-        UIView.animate(withDuration: 1) {
+        UIView.animate(withDuration: 0.75) { [self] in
             self.collectionView?.frame = CGRect(x: 0, y: 55, width: self.view.bounds.width, height: (self.view.bounds.width/8*7))
+            screen?.reflectionsContainer.frame = CGRect(x: 0, y: 55, width: self.view.bounds.width, height: (self.view.bounds.width/8*7))
+            screen?.scrollView.frame = CGRect(x: 0, y: 55, width: self.view.bounds.width, height: (self.view.bounds.width/8*7))
         }
         selectedDate = CalendarHelper().minusMonth(date: selectedDate)
         self.screen?.pageTitle.text = CalendarHelper().getDateAsString(date: selectedDate)
         setMonthView()
-        viewModel.fetchReflection(date: selectedDate)
-        reflections = viewModel.reflectionList!
-        tableView.reloadData()
+        updateReflectionList()
     }
     
     @objc func nextMonth() {
         let haptics = UIImpactFeedbackGenerator(style: .soft)
         haptics.impactOccurred(intensity: 0.5)
         self.collectionView?.frame = CGRect(x: self.view.bounds.width, y: 55, width: self.view.bounds.width, height: (self.view.bounds.width/8*6)+2)
+        screen?.reflectionsContainer.frame = CGRect(x: self.view.bounds.width, y: 55, width: self.view.bounds.width, height: (self.view.bounds.width/8*6)+2)
+        screen?.scrollView.frame = CGRect(x: self.view.bounds.width, y: 55, width: self.view.bounds.width, height: (self.view.bounds.width/8*6)+2)
         
-        UIView.animate(withDuration: 1) {
+        UIView.animate(withDuration: 0.75) { [self] in
             self.collectionView?.frame = CGRect(x: 0, y: 55, width: self.view.bounds.width, height: (self.view.bounds.width/8*7))
+            screen?.reflectionsContainer.frame = CGRect(x: 0, y: 55, width: self.view.bounds.width, height: (self.view.bounds.width/8*7))
+            screen?.scrollView.frame = CGRect(x: 0, y: 55, width: self.view.bounds.width, height: (self.view.bounds.width/8*7))
         }
         selectedDate = CalendarHelper().plusMonth(date: selectedDate)
         self.screen?.pageTitle.text = CalendarHelper().getDateAsString(date: selectedDate)
         setMonthView()
-        viewModel.fetchReflection(date: selectedDate)
-        reflections = viewModel.reflectionList!
-        tableView.reloadData()
+        updateReflectionList()
     }
     
     @objc func navigate() {
@@ -168,7 +172,6 @@ class ViewController: UIViewController {
     }
     
     func updateReflectionList() {
-        //        self.reflections = []
         viewModel.fetchReflection(date: selectedDate)
         
         self.reflections = viewModel.reflectionList!
@@ -178,7 +181,6 @@ class ViewController: UIViewController {
         } else {
             screen!.scrollView.isHidden = false
         }
-        
     }
     
     func updateCollectionView() {
