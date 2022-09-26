@@ -29,6 +29,7 @@
 		11692D7D416A900D9AF63267 /* Pods_Myrror.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41E5A9F2BF1B183F48A999D1 /* Pods_Myrror.framework */; };
 		143298B528DB47930076FC24 /* UnitTestreflectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143298B428DB47930076FC24 /* UnitTestreflectionViewModel.swift */; };
 		143298B928DB524A0076FC24 /* UnitTestCalendarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143298B828DB524A0076FC24 /* UnitTestCalendarItem.swift */; };
+		1479B6B728E1C86700F34AA8 /* UnitTestReflectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1479B6B628E1C86700F34AA8 /* UnitTestReflectionModel.swift */; };
 		14BF426928DB353D0080294C /* empty.json in Resources */ = {isa = PBXBuildFile; fileRef = 14BF425C28DB353D0080294C /* empty.json */; };
 		14BF426A28DB353D0080294C /* feliz-cinza.json in Resources */ = {isa = PBXBuildFile; fileRef = 14BF425D28DB353D0080294C /* feliz-cinza.json */; };
 		14BF426B28DB353D0080294C /* feliz.json in Resources */ = {isa = PBXBuildFile; fileRef = 14BF425E28DB353D0080294C /* feliz.json */; };
@@ -102,6 +103,7 @@
 		0BFD56B928D4B243009C99E8 /* ChooseTopicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTopicView.swift; sourceTree = "<group>"; };
 		143298B428DB47930076FC24 /* UnitTestreflectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTestreflectionViewModel.swift; sourceTree = "<group>"; };
 		143298B828DB524A0076FC24 /* UnitTestCalendarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTestCalendarItem.swift; sourceTree = "<group>"; };
+		1479B6B628E1C86700F34AA8 /* UnitTestReflectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTestReflectionModel.swift; sourceTree = "<group>"; };
 		14BF425C28DB353D0080294C /* empty.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = empty.json; sourceTree = "<group>"; };
 		14BF425D28DB353D0080294C /* feliz-cinza.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "feliz-cinza.json"; sourceTree = "<group>"; };
 		14BF425E28DB353D0080294C /* feliz.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = feliz.json; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				0B4B7EE328DB30D1004F2906 /* UnitTestCalendarHelper.swift */,
+				1479B6B628E1C86700F34AA8 /* UnitTestReflectionModel.swift */,
 				143298B828DB524A0076FC24 /* UnitTestCalendarItem.swift */,
 				143298B428DB47930076FC24 /* UnitTestreflectionViewModel.swift */,
 				0B4B7EE428DB30D1004F2906 /* UnitTestViewController.swift */,
@@ -581,6 +584,7 @@
 				0B4B7EEB28DB30D1004F2906 /* UnitTestNewReflectionViewController.swift in Sources */,
 				143298B928DB524A0076FC24 /* UnitTestCalendarItem.swift in Sources */,
 				0B4B7EEC28DB30D1004F2906 /* UnitTestEmojiViewController.swift in Sources */,
+				1479B6B728E1C86700F34AA8 /* UnitTestReflectionModel.swift in Sources */,
 				0B4B7EE928DB30D1004F2906 /* UnitTestCalendarHelper.swift in Sources */,
 				143298B528DB47930076FC24 /* UnitTestreflectionViewModel.swift in Sources */,
 			);

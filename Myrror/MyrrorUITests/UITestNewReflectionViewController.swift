@@ -34,9 +34,27 @@ class UITestNewReflectionViewController: XCTestCase {
     }
     func testButtonEmojis() throws {
 
-        let buttonEmoijsName = app.buttons.element
+        let buttonEmojiFeliz = app.buttons["feliz"]
+        let buttonEmojiFelizCinza = app.buttons["feliz-cinza"]
+        let buttonEmojiTriste = app.buttons["triste"]
+        let buttonEmojiTristeCinza = app.buttons["triste-cinza"]
+        let buttonEmojiIndiferente = app.buttons["indiferente"]
+        let buttonEmojiIndiferenteCinza = app.buttons["indiferente-cinza"]
+        let buttonEmojiConfiante = app.buttons["confiante"]
+        let buttonEmojiConfianteCinza = app.buttons["confiante-cinza"]
+        let buttonEmojiDesespero = app.buttons["desespero"]
+        let buttonEmojiDesesperoCinza = app.buttons["desespero-cinza"]
 
-        XCTAssertTrue(buttonEmoijsName.exists)
+        XCTAssertNotNil(buttonEmojiFeliz.exists)
+        XCTAssertNotNil(buttonEmojiFelizCinza.exists)
+        XCTAssertNotNil(buttonEmojiTriste.exists)
+        XCTAssertNotNil(buttonEmojiTristeCinza.exists)
+        XCTAssertNotNil(buttonEmojiIndiferente.exists)
+        XCTAssertNotNil(buttonEmojiIndiferenteCinza.exists)
+        XCTAssertNotNil(buttonEmojiConfiante.exists)
+        XCTAssertNotNil(buttonEmojiConfianteCinza.exists)
+        XCTAssertNotNil(buttonEmojiDesespero.exists)
+        XCTAssertNotNil(buttonEmojiDesesperoCinza.exists)
 
     }
 
