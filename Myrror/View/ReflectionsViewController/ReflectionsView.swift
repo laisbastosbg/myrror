@@ -32,6 +32,7 @@ class ReflectionsView: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(toggleCalendar), for: .touchUpInside)
         button.setImage(UIImage(systemName: "calendar"), for: .normal)
+        button.contentHorizontalAlignment = .right
         return button
     }()
     
@@ -216,8 +217,12 @@ class ReflectionsView: UIView {
             pageTitle.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             pageTitle.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
             
+//            calendarButton.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             calendarButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
+            calendarButton.widthAnchor.constraint(equalToConstant: 70),
+            calendarButton.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
             calendarButton.centerYAnchor.constraint(equalTo: pageTitle.centerYAnchor),
+            calendarButton.bottomAnchor.constraint(equalTo: calendarContainer.topAnchor),
             
             calendarContainer.topAnchor.constraint(equalTo: self.pageTitle.bottomAnchor, constant: 8),
             calendarContainer.leadingAnchor.constraint(equalTo: self.leadingAnchor),
