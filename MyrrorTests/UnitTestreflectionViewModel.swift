@@ -11,17 +11,25 @@ import XCTest
 class UnitTestreflectionViewModel: XCTestCase {
 
     let sut = ReflectionViewModel()
+    let date = Date()
+    let indexPath = IndexPath()
 
     func testAddReflection() throws {
 
-        let testAddReflection: () = sut.addReflection(subject: "subject", textoReflection: "text", emoji: "emoji")
+        let testAddReflection: () = sut.addReflection(date: date, subject: "subject", textoReflection: "text", emoji: "emoji")
 
         XCTAssertNotNil(testAddReflection)
     }
     func testfetchReflection() throws {
 
-        let testFetchReflection = sut.fetchReflection()
+        let testFetchReflection: () = sut.fetchReflection(date: date)
 
         XCTAssertNotNil(testFetchReflection)
+    }
+    func testDeleteReflection() throws {
+
+        let testDeleteReflection: () = sut.deleteReflection(indexPath: indexPath)
+
+        XCTAssertNotNil(testDeleteReflection)
     }
 }
