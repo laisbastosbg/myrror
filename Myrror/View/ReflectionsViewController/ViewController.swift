@@ -29,6 +29,14 @@ class ViewController: UIViewController {
         screen?.nextMonthButton.addTarget(self, action: #selector(nextMonth), for: .touchUpInside)
         screen?.navigationButton.addTarget(self, action: #selector(self.navigate), for: .touchUpInside)
         
+        let openCalendarGesture = UISwipeGestureRecognizer(target: screen, action: #selector(ReflectionsView.toggleCalendar))
+        openCalendarGesture.direction = .down
+        screen?.addGestureRecognizer(openCalendarGesture)
+        
+        let closeCalendarGesture = UISwipeGestureRecognizer(target: screen, action: #selector(ReflectionsView.toggleCalendar))
+        closeCalendarGesture.direction = .up
+        screen?.calendarContainer.addGestureRecognizer(closeCalendarGesture)
+        
         let swipeNext = UISwipeGestureRecognizer(target: self, action: #selector(nextMonth))
         swipeNext.direction = .left
         screen?.calendarContainer.addGestureRecognizer(swipeNext)

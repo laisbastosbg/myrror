@@ -16,7 +16,6 @@ class ReflectionsView: UIView {
     
     let pageTitle: UILabel = {
         let label = UILabel()
-        
         let today = CalendarHelper().getDateAsString(date: Date.now)
         
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -32,6 +31,7 @@ class ReflectionsView: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(toggleCalendar), for: .touchUpInside)
         button.setImage(UIImage(systemName: "calendar"), for: .normal)
+        button.contentHorizontalAlignment = .right
         return button
     }()
     
@@ -190,7 +190,6 @@ class ReflectionsView: UIView {
         pageContentStack.addArrangedSubview(emptyScreenImage)
         pageContentStack.addArrangedSubview(emptyScreenLabel)
         self.addSubview(navigationButton)
-//        pageContentStack.addArrangedSubview(navigationButton)
         self.addSubview(calendarContainer)
         calendarContainer.addSubview(currentMonth)
         calendarContainer.addSubview(previousMonthButton)
@@ -217,7 +216,10 @@ class ReflectionsView: UIView {
             pageTitle.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
             
             calendarButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
+            calendarButton.widthAnchor.constraint(equalToConstant: 70),
+            calendarButton.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
             calendarButton.centerYAnchor.constraint(equalTo: pageTitle.centerYAnchor),
+            calendarButton.bottomAnchor.constraint(equalTo: calendarContainer.topAnchor),
             
             calendarContainer.topAnchor.constraint(equalTo: self.pageTitle.bottomAnchor, constant: 8),
             calendarContainer.leadingAnchor.constraint(equalTo: self.leadingAnchor),
@@ -267,10 +269,7 @@ class ReflectionsView: UIView {
     func toggleCalendar() {
         UIView.animate(withDuration: 0.75) {
             self.calendarContainerHeightConstraint.constant = self.calendarContainerHeightConstraint.constant == 0 ? (self.weekDayStack.frame.height + self.bounds.width/8*7) : 0
-
             self.layoutIfNeeded()
-            
-            
         }
         
         if self.pageContentStack.subviews.contains(self.emptyScreenImage) {
@@ -278,9 +277,6 @@ class ReflectionsView: UIView {
             self.emptyScreenImage.removeFromSuperview()
         } else {
             self.pageContentStack.insertArrangedSubview(self.emptyScreenImage, at: 0)
-            
         }
-        
-        
     }
 }
