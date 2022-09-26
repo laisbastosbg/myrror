@@ -68,7 +68,6 @@ class ViewController: UIViewController {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -87,16 +86,27 @@ class ViewController: UIViewController {
         screen.calendarContainer.addSubview(collectionView)
         collectionView.backgroundColor = .clear
         collectionView.frame = CGRect(x: 0, y: screen.weekDayStack.frame.maxY, width: view.bounds.width, height: (screen.bounds.width/8*7))
-        
+
         //        tableView = UITableView()
         
         screen.reflectionsContainer.addSubview(tableView)
         tableView.register(ReflectionTableViewCell.self, forCellReuseIdentifier: ReflectionTableViewCell.identifier)
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.frame = screen.reflectionsContainer.bounds
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        setTableViewConstraints()
+//        tableView.frame = screen.reflectionsContainer.bounds
         tableView.backgroundColor = .clear
         tableView.separatorStyle = .none
+    }
+    
+    func setTableViewConstraints() {
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: screen!.reflectionsContainer.topAnchor),
+            tableView.bottomAnchor.constraint(equalTo: screen!.reflectionsContainer.bottomAnchor),
+            tableView.leadingAnchor.constraint(equalTo: screen!.reflectionsContainer.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: screen!.reflectionsContainer.trailingAnchor),
+        ])
     }
     
     func setMonthView() {
