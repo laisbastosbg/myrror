@@ -38,7 +38,7 @@ class UITestChooseTopicViewController: XCTestCase {
 
     func testButtonFlowAtChooseView2() {
 
-        let buttonOQueNaoGostei = app.buttons["O não gostei"]
+        let buttonOQueNaoGostei = app.buttons["O que não gostei"]
         let imageButtonONaoGostei = app.images["upset"]
         let imageButtonONaoGosteiNav = app.images["chevron.right"]
 
@@ -49,7 +49,7 @@ class UITestChooseTopicViewController: XCTestCase {
 
     func testButtonFlowAtChooseView3() {
 
-        let buttonOQuePossoMelhorar = app.buttons["O posso melhorar"]
+        let buttonOQuePossoMelhorar = app.buttons["O que posso melhorar"]
         let imageButtonOQuePossoMelhorarNav = app.images["chevron.right"]
         let imageButtonOQuePossoMelhorar = app.images["plant"]
 
@@ -65,6 +65,17 @@ class UITestChooseTopicViewController: XCTestCase {
 
         XCTAssertFalse(buttonVoltar.exists)
         XCTAssertFalse(imageButtonVoltar.exists)
+    }
+
+    func testButtonFlowAtChooseView5() {
+
+        let buttonVoltar = app.buttons["Tema livre"]
+        let imageButtonVoltarNav = app.images["chevron.rigth"]
+        let imageButtonVoltar = app.images["writing"]
+
+        XCTAssertFalse(buttonVoltar.exists)
+        XCTAssertFalse(imageButtonVoltar.exists)
+        XCTAssertFalse(imageButtonVoltarNav.exists)
     }
 }
 
