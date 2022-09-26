@@ -45,6 +45,7 @@ class ViewController: UIViewController {
         self.totalSquares.removeAll()
         updateReflectionList()
         setMonthView()
+        
 //        guard let screen = screen else {
 //            return
 //        }
