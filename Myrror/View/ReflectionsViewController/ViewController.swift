@@ -12,6 +12,16 @@ class ViewController: UIViewController {
     
     var screen: ReflectionsView?
     var viewModel = ReflectionViewModel()
+    
+//    lazy var exportButton: UIButton = {
+//        let button = UIButton(frame: CGRectMake(self.screen?.bounds, <#T##y: CGFloat##CGFloat#>, <#T##width: CGFloat##CGFloat#>, <#T##height: CGFloat##CGFloat#>))
+//        button.translatesAutoresizingMaskIntoConstraints = false
+////        button.addTarget(self, action: #selector(toggleCalendar), for: .touchUpInside)
+//        button.setImage(UIImage(systemName: "square.and.arrow.up"), for: .normal)
+//        button.contentHorizontalAlignment = .right
+//        return button
+//    }()
+    
     var reflections: [Reflection] = []
     
     var collectionView: UICollectionView?
@@ -52,6 +62,18 @@ class ViewController: UIViewController {
         self.totalSquares.removeAll()
         updateReflectionList()
         setMonthView()
+        
+//        guard let screen = self.screen else {
+//            return
+//        }
+        
+//        if reflections.count > 0 {
+//            screen.addSubview(exportButton)
+//            NSLayoutConstraint.activate([
+//                exportButton.topAnchor.constraint(equalTo: screen.calendarContainer.bottomAnchor),
+//                exportButton.trailingAnchor.constraint(equalTo: screen.trailingAnchor, constant: -8),
+//            ])
+//        }
         //        guard let screen = screen else {
         //            return
         //        }
@@ -255,6 +277,28 @@ extension ViewController: UITableViewDataSource {
             self.tableView.deleteRows(at: [indexPath], with: .automatic)
             viewModel.deleteReflection(indexPath: indexPath)
             updateReflectionList()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let frame: CGRect = tableView.frame
+        
+
+        let exportButton: UIButton = UIButton(frame: CGRectMake(tableView.bounds.maxX-30, 0, 25, 25)) //frame.size.width - 60
+//        exportButton.setTitle("Done", for: .normal)
+        exportButton.setImage(UIImage(systemName: "square.and.arrow.up"), for: .normal)
+//        exportButton.backgroundColor = UIColor.red
+        
+        let headerView: UIView = UIView(frame: CGRectMake(0, 0, frame.size.width, frame.size.height))
+        headerView.addSubview(exportButton)
+        return headerView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if self.tableView(tableView, numberOfRowsInSection: section) == 0 {
+            return 0
+        } else {
+            return 25
         }
     }
 }
