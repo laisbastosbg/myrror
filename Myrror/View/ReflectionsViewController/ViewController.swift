@@ -47,18 +47,10 @@ class ViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        //        tableView.reloadData()
         self.totalSquares = []
         self.totalSquares.removeAll()
         updateReflectionList()
         setMonthView()
-        //        guard let screen = screen else {
-        //            return
-        //        }
-        //
-        //        if reflections.count > 0 {
-        //            screen.scrollView.removeFromSuperview()
-        //        }
     }
     
     override func viewDidLoad() {
@@ -86,8 +78,6 @@ class ViewController: UIViewController {
         screen.calendarContainer.addSubview(collectionView)
         collectionView.backgroundColor = .clear
         collectionView.frame = CGRect(x: 0, y: screen.weekDayStack.frame.maxY, width: view.bounds.width, height: (screen.bounds.width/8*7))
-
-        //        tableView = UITableView()
         
         screen.reflectionsContainer.addSubview(tableView)
         tableView.register(ReflectionTableViewCell.self, forCellReuseIdentifier: ReflectionTableViewCell.identifier)
@@ -95,7 +85,6 @@ class ViewController: UIViewController {
         tableView.dataSource = self
         tableView.translatesAutoresizingMaskIntoConstraints = false
         setTableViewConstraints()
-//        tableView.frame = screen.reflectionsContainer.bounds
         tableView.backgroundColor = .clear
         tableView.separatorStyle = .none
     }
