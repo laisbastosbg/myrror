@@ -78,14 +78,15 @@ class CalendarCollectionViewCell: UICollectionViewCell {
         let isCurrentDate = selectedDateComponents == currentDateComponents && day == String(currentDay.day!)
         let isSelectedDate = day == String(selectedDay.day!)
         
-        if isCurrentDate {
-//            dayOfMonth.textColor = .tintColor
-            moodOfTheDay.backgroundColor = .tintColor
+        if isCurrentDate && !isSelectedDate {
+            dayOfMonth.textColor = .tintColor
+//            moodOfTheDay.backgroundColor = .tintColor
         }
         
-        if !isCurrentDate && isSelectedDate {
+        if isSelectedDate {
 //            dayOfMonth.textColor = UIColor.black
-            moodOfTheDay.backgroundColor = .systemGray3
+            moodOfTheDay.backgroundColor = .tintColor
+//            moodOfTheDay.backgroundColor = .systemGray3
         }
         
         if !isCurrentDate && !isSelectedDate {
