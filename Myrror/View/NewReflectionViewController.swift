@@ -239,6 +239,9 @@ class NewReflectionViewController: UIViewController{
         guard let viewController = navigationController?.viewControllers[0] as? ViewController else {return}
         
         if selectedEmoji != ""  || reflectionText.text != "Insira aqui uma descrição" {
+            if (reflectionText.text == "Insira aqui uma descrição"){
+                reflectionText.text = ""
+            }
             viewModel.addReflection(date: viewController.selectedDate ,subject: navigationTitle, textoReflection: reflectionText.text, emoji: selectedEmoji)
             navigationController?.popToRootViewController(animated: true)
 //            self.dismiss(animated: true, completion: nil)
