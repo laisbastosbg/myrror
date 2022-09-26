@@ -237,6 +237,7 @@ extension ViewController: UITableViewDataSource {
         myCell.mood.animation = Animation.named(reflections[indexPath.item].emoji!)
         myCell.title.text = reflections[indexPath.item].subject
         myCell.reflectionText.text = reflections[indexPath.item].text_reflection
+        myCell.selectionStyle = .none
         return myCell
     }
     
