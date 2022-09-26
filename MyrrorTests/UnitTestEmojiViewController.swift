@@ -14,6 +14,7 @@ class UnitTestEmojiViewController: XCTestCase {
 
 
     let sut = EmojiViewController()
+    var emojiName: String = "sad2"
 
     func testEmojiName() throws {
 
@@ -31,5 +32,14 @@ class UnitTestEmojiViewController: XCTestCase {
         let setupAnimation = sut.setupAnimation
 
         XCTAssertNotNil(setupAnimation)
+    }
+    func testAnimationView() throws {
+
+        let test = sut.animationView
+
+        XCTAssertNil(test.backgroundColor)
+        XCTAssertEqual(test.contentMode, UIView.ContentMode.scaleAspectFit)
+        XCTAssertNotNil(test.frame)
+
     }
 }
