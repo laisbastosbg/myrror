@@ -26,7 +26,7 @@ class ChooseTopicView: UIView {
     let option1Image: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
-        image.image = UIImage(named: "book")
+        image.image = UIImage(named: "brain")
         return image
     }()
     
