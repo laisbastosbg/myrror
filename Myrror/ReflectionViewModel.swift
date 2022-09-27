@@ -33,6 +33,19 @@ class ReflectionViewModel: ObservableObject {
         }
     }
     
+    // MARK: Update
+    func updateReflection(index: Int, subject: String, text: String, emoji: String) {
+        let reflection = reflectionList![index]
+        reflection.subject = subject
+        reflection.text_reflection = text
+        reflection.emoji = emoji
+        do {
+            try self.context.save()
+        } catch {
+            print("Deu errado atualizar")
+        }
+    }
+    
     // MARK: READ
     func fetchReflection(date: Date) {
         let fetchRequest = Reflection.fetchRequest()

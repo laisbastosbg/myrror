@@ -239,6 +239,10 @@ extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return reflections.count
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presentMenuSheet(indexPath: indexPath)
+    }
 }
 
 extension ViewController: UITableViewDataSource {
@@ -247,7 +251,7 @@ extension ViewController: UITableViewDataSource {
         myCell.mood.animation = Animation.named(reflections[indexPath.item].emoji!)
         myCell.title.text = reflections[indexPath.item].subject
         myCell.reflectionText.text = reflections[indexPath.item].text_reflection
-        myCell.selectionStyle = .none
+        myCell.selectionStyle = .gray
         return myCell
     }
     
