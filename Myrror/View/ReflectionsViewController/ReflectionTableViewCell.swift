@@ -42,6 +42,7 @@ class ReflectionTableViewCell: UITableViewCell {
         view.axis = .vertical
         view.alignment = .top
         view.distribution = .fill
+        view.isUserInteractionEnabled = false
         return view
     }()
     
@@ -52,6 +53,7 @@ class ReflectionTableViewCell: UITableViewCell {
         text.font = .preferredFont(forTextStyle: .title3)
         text.backgroundColor = .clear
         text.isScrollEnabled = false
+        text.isUserInteractionEnabled = false
         return text
     }()
     
@@ -64,6 +66,7 @@ class ReflectionTableViewCell: UITableViewCell {
         label.textColor = UIColor(named: "SecondaryText")
         label.isScrollEnabled = false
         label.textAlignment = .justified
+        label.isUserInteractionEnabled = false
         return label
     }()
     

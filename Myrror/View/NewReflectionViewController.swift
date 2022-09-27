@@ -12,13 +12,13 @@ class NewReflectionViewController: UIViewController{
     var navigationTitle : String = ""
     var viewModel = ReflectionViewModel()
     var selectedEmoji = ""
+    var reflectionIndex:Int? = nil
     
-    lazy var pageTitle : UILabel = {
-       let label = UILabel()
+    lazy var pageTitle : UITextField = {
+        let label = UITextField()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = navigationTitle
         label.font = UIFont.systemFont(ofSize: 32, weight: .bold)
-        label.numberOfLines = 2
         return label
     }()
     
@@ -44,53 +44,56 @@ class NewReflectionViewController: UIViewController{
         return subTitle
     }()
     
-    let emojiView : UIStackView = {
-       let stackView = UIStackView()
-       stackView.layer.cornerRadius = 8
-       stackView.distribution = .equalCentering
-       stackView.backgroundColor = .systemFill
-       stackView.translatesAutoresizingMaskIntoConstraints = false
 
-       let emojisName : [String] = ["desesperado", "triste", "indiferente", "feliz", "confiante"]
-       let tapRecognizer = UITapGestureRecognizer(target: NewReflectionViewController.self, action: #selector(handleEmojiTap(sender:)))
-       tapRecognizer.numberOfTapsRequired = 1
-       tapRecognizer.numberOfTouchesRequired = 1
-       stackView.addGestureRecognizer(tapRecognizer)
-       stackView.isUserInteractionEnabled = true
+    lazy var emojiView : UIStackView = {
+        let stackView = UIStackView()
+        stackView.layer.cornerRadius = 8
+        stackView.distribution = .equalCentering
+        stackView.backgroundColor = .systemFill
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        let emojisName : [String] = ["desesperado", "triste", "indiferente", "feliz", "confiante"]
+        let tapRecognizer = UITapGestureRecognizer(target: NewReflectionViewController.self, action: #selector(handleEmojiTap(sender:)))
+        tapRecognizer.numberOfTapsRequired = 1
+        tapRecognizer.numberOfTouchesRequired = 1
+        stackView.addGestureRecognizer(tapRecognizer)
+        stackView.isUserInteractionEnabled = true
+
        
-       // MARK: Não esquecer de configurar!!!
-       for i in 0...4 {
-           let animationView = AnimationView()
+        // MARK: Não esquecer de configurar!!!
+        for i in 0...4 {
+            let animationView = AnimationView()
            
-           animationView.animation = Animation.named("\(emojisName[i])-cinza")
+            if (selectedEmoji == emojisName[i]){
+                animationView.animation = Animation.named("\(emojisName[i])")
+            } else {
+                animationView.animation = Animation.named("\(emojisName[i])-cinza")
+            }
            
-           animationView.contentMode = .scaleAspectFit
-           animationView.layer.cornerRadius = 8
-           animationView.loopMode = .repeat(1)
-           animationView.accessibilityLabel = emojisName[i]
-           animationView.isAccessibilityElement = true
-           
-           stackView.addArrangedSubview(animationView)
-           animationView.translatesAutoresizingMaskIntoConstraints = false
-           animationView.widthAnchor.constraint(equalTo: animationView.heightAnchor).isActive = true
-           stackView.isUserInteractionEnabled = true
-       }
-       
-       return stackView
-   }()
+            animationView.contentMode = .scaleAspectFit
+            animationView.layer.cornerRadius = 8
+            animationView.loopMode = .repeat(1)
+            animationView.accessibilityLabel = emojisName[i]
+            animationView.isAccessibilityElement = true
+            stackView.addArrangedSubview(animationView)
+            animationView.translatesAutoresizingMaskIntoConstraints = false
+            animationView.widthAnchor.constraint(equalTo: animationView.heightAnchor).isActive = true
+            stackView.isUserInteractionEnabled = true
+        }
+        return stackView
+    }()
     
-    let saveReflectionButton : UIButton = {
+    lazy var saveReflectionButton : UIButton = {
         var configButton = UIButton.Configuration.filled()
         configButton.image = UIImage(systemName: "square.and.arrow.down")
         configButton.title = "Finalizar"
         configButton.imagePadding = 150
-                
+        
         let button = UIButton(type: .system)
         button.configuration = configButton
         button.translatesAutoresizingMaskIntoConstraints = false
         button.semanticContentAttribute = .forceRightToLeft
         button.addTarget(self, action: #selector(saveReflection), for: .touchUpInside)
-
+        
         return button
     }()
     
@@ -98,7 +101,7 @@ class NewReflectionViewController: UIViewController{
         super.viewDidLoad()
         
         view.backgroundColor = UIColor(named: "Primary")
-        navigationController?.navigationBar.items?[1].backBarButtonItem = UIBarButtonItem(title: "Voltar", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Voltar", style: .plain, target: nil, action: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(NewReflectionViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(NewReflectionViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -111,7 +114,7 @@ class NewReflectionViewController: UIViewController{
         view.addSubview(reflectionText)
         view.addSubview(subTitle)
         view.addSubview(emojiView)
-
+        
         setConstraints()
     }
     
@@ -176,7 +179,7 @@ class NewReflectionViewController: UIViewController{
                 self.reflectionTextHeightConstraint.constant = self.view.bounds.height/3 - 170 > 50 ? self.view.bounds.height/3 - 170 : 50
             }
         }
-
+        
         
         if (reflectionText.textColor == UIColor(named: "SecondaryText")) {
             reflectionText.text = ""
@@ -199,7 +202,7 @@ class NewReflectionViewController: UIViewController{
         let gesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(gesture)
     }
-
+    
     func configEmojiTapGesture(){
         for emoji in emojiView.arrangedSubviews {
             let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleEmojiTap(sender: )))
@@ -227,7 +230,7 @@ class NewReflectionViewController: UIViewController{
                     selectedEmoji = animationView.accessibilityLabel!
                     animationView.play()
                 }
-                    
+                
             }
         }
     }
@@ -238,16 +241,32 @@ class NewReflectionViewController: UIViewController{
         
         guard let viewController = navigationController?.viewControllers[0] as? ViewController else {return}
         
-        if selectedEmoji != ""  || reflectionText.text != "Insira aqui uma descrição" {
-            viewModel.addReflection(date: viewController.selectedDate ,subject: navigationTitle, textoReflection: reflectionText.text, emoji: selectedEmoji)
+        guard let title = pageTitle.text else {
+            return
+        }
+        
+        if title == "" {
+            let alert = UIAlertController(title: "Título não informado", message: "Dê um título a sua reflection de tema livre", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Click", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        
+        if (selectedEmoji != ""  || reflectionText.text != "Insira aqui uma descrição") && title != ""  {
+            if (reflectionText.text == "Insira aqui uma descrição"){
+                reflectionText.text = ""
+            }
+            if reflectionIndex != nil {
+                viewModel.updateReflection(index: reflectionIndex!, subject: title, text: reflectionText.text, emoji: selectedEmoji)
+            } else{
+                viewModel.addReflection(date: viewController.selectedDate ,subject: title, textoReflection: reflectionText.text, emoji: selectedEmoji)
+            }
             navigationController?.popToRootViewController(animated: true)
-//            self.dismiss(animated: true, completion: nil)
         }else{
             let alert = UIAlertController(title: "Nenhuma informação!", message: "Adicione alguma informação para a sua reflection!", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "Click", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
-        
-
     }
+    
 }

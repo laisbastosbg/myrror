@@ -29,6 +29,7 @@
 		11692D7D416A900D9AF63267 /* Pods_Myrror.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41E5A9F2BF1B183F48A999D1 /* Pods_Myrror.framework */; };
 		143298B528DB47930076FC24 /* UnitTestreflectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143298B428DB47930076FC24 /* UnitTestreflectionViewModel.swift */; };
 		143298B928DB524A0076FC24 /* UnitTestCalendarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143298B828DB524A0076FC24 /* UnitTestCalendarItem.swift */; };
+		1479B6B728E1C86700F34AA8 /* UnitTestReflectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1479B6B628E1C86700F34AA8 /* UnitTestReflectionModel.swift */; };
 		14BF426928DB353D0080294C /* empty.json in Resources */ = {isa = PBXBuildFile; fileRef = 14BF425C28DB353D0080294C /* empty.json */; };
 		14BF426A28DB353D0080294C /* feliz-cinza.json in Resources */ = {isa = PBXBuildFile; fileRef = 14BF425D28DB353D0080294C /* feliz-cinza.json */; };
 		14BF426B28DB353D0080294C /* feliz.json in Resources */ = {isa = PBXBuildFile; fileRef = 14BF425E28DB353D0080294C /* feliz.json */; };
@@ -45,6 +46,7 @@
 		ED55FE5028D4BB3200715D6F /* ReflectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED55FE4F28D4BB3200715D6F /* ReflectionViewModel.swift */; };
 		ED55FE5828D4BE5800715D6F /* ReflectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED55FE5728D4BE5800715D6F /* ReflectionModel.swift */; };
 		ED75100728D22268000207F2 /* EmojiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED75100628D22268000207F2 /* EmojiViewController.swift */; };
+		FFAEE68628E32DBB00DE1411 /* ActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAEE68528E32DBB00DE1411 /* ActionSheet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +104,7 @@
 		0BFD56B928D4B243009C99E8 /* ChooseTopicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTopicView.swift; sourceTree = "<group>"; };
 		143298B428DB47930076FC24 /* UnitTestreflectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTestreflectionViewModel.swift; sourceTree = "<group>"; };
 		143298B828DB524A0076FC24 /* UnitTestCalendarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTestCalendarItem.swift; sourceTree = "<group>"; };
+		1479B6B628E1C86700F34AA8 /* UnitTestReflectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTestReflectionModel.swift; sourceTree = "<group>"; };
 		14BF425C28DB353D0080294C /* empty.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = empty.json; sourceTree = "<group>"; };
 		14BF425D28DB353D0080294C /* feliz-cinza.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "feliz-cinza.json"; sourceTree = "<group>"; };
 		14BF425E28DB353D0080294C /* feliz.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = feliz.json; sourceTree = "<group>"; };
@@ -124,6 +127,7 @@
 		ED75100628D22268000207F2 /* EmojiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiViewController.swift; sourceTree = "<group>"; };
 		FF5EF8B028D3417D00C6DEA8 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = ../Pods/Pods.xcodeproj; sourceTree = "<group>"; };
 		FF5EF8C228D342AB00C6DEA8 /* MyrrorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyrrorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFAEE68528E32DBB00DE1411 /* ActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				0B4B7EE328DB30D1004F2906 /* UnitTestCalendarHelper.swift */,
+				1479B6B628E1C86700F34AA8 /* UnitTestReflectionModel.swift */,
 				143298B828DB524A0076FC24 /* UnitTestCalendarItem.swift */,
 				143298B428DB47930076FC24 /* UnitTestreflectionViewModel.swift */,
 				0B4B7EE428DB30D1004F2906 /* UnitTestViewController.swift */,
@@ -286,6 +291,7 @@
 				0B9F82BE28D35589000D848B /* ReflectionsView.swift */,
 				0B45266028CA0EEA00D4083C /* ViewController.swift */,
 				0B4B7E6728D8AAAC004F2906 /* ReflectionTableViewCell.swift */,
+				FFAEE68528E32DBB00DE1411 /* ActionSheet.swift */,
 			);
 			path = ReflectionsViewController;
 			sourceTree = "<group>";
@@ -548,6 +554,7 @@
 				0B45267528CA369100D4083C /* NewReflectionViewController.swift in Sources */,
 				ED55FE5828D4BE5800715D6F /* ReflectionModel.swift in Sources */,
 				ED55FE4C28D4B9AB00715D6F /* MyrrorData.xcdatamodeld in Sources */,
+				FFAEE68628E32DBB00DE1411 /* ActionSheet.swift in Sources */,
 				0B45266128CA0EEA00D4083C /* ViewController.swift in Sources */,
 				0B4B7E6828D8AAAC004F2906 /* ReflectionTableViewCell.swift in Sources */,
 				0B9F82BF28D35589000D848B /* ReflectionsView.swift in Sources */,
@@ -581,6 +588,7 @@
 				0B4B7EEB28DB30D1004F2906 /* UnitTestNewReflectionViewController.swift in Sources */,
 				143298B928DB524A0076FC24 /* UnitTestCalendarItem.swift in Sources */,
 				0B4B7EEC28DB30D1004F2906 /* UnitTestEmojiViewController.swift in Sources */,
+				1479B6B728E1C86700F34AA8 /* UnitTestReflectionModel.swift in Sources */,
 				0B4B7EE928DB30D1004F2906 /* UnitTestCalendarHelper.swift in Sources */,
 				143298B528DB47930076FC24 /* UnitTestreflectionViewModel.swift in Sources */,
 			);
@@ -663,7 +671,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -717,7 +725,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -741,7 +749,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -769,7 +777,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -789,9 +797,9 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7P3G4Y9CSP;
+				DEVELOPMENT_TEAM = KDV83NBV8H;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Marcelo-de-Arau-jo.MyrrorUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -808,9 +816,9 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7P3G4Y9CSP;
+				DEVELOPMENT_TEAM = KDV83NBV8H;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Marcelo-de-Arau-jo.MyrrorUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -828,9 +836,9 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = NTS86MKTBV;
+				DEVELOPMENT_TEAM = KDV83NBV8H;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.beatrizlds.MyrrorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -848,9 +856,9 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = NTS86MKTBV;
+				DEVELOPMENT_TEAM = KDV83NBV8H;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.beatrizlds.MyrrorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
