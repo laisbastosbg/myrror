@@ -46,6 +46,7 @@
 		ED55FE5028D4BB3200715D6F /* ReflectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED55FE4F28D4BB3200715D6F /* ReflectionViewModel.swift */; };
 		ED55FE5828D4BE5800715D6F /* ReflectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED55FE5728D4BE5800715D6F /* ReflectionModel.swift */; };
 		ED75100728D22268000207F2 /* EmojiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED75100628D22268000207F2 /* EmojiViewController.swift */; };
+		FFAEE68628E32DBB00DE1411 /* ActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAEE68528E32DBB00DE1411 /* ActionSheet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +127,7 @@
 		ED75100628D22268000207F2 /* EmojiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiViewController.swift; sourceTree = "<group>"; };
 		FF5EF8B028D3417D00C6DEA8 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = ../Pods/Pods.xcodeproj; sourceTree = "<group>"; };
 		FF5EF8C228D342AB00C6DEA8 /* MyrrorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyrrorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFAEE68528E32DBB00DE1411 /* ActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,6 +291,7 @@
 				0B9F82BE28D35589000D848B /* ReflectionsView.swift */,
 				0B45266028CA0EEA00D4083C /* ViewController.swift */,
 				0B4B7E6728D8AAAC004F2906 /* ReflectionTableViewCell.swift */,
+				FFAEE68528E32DBB00DE1411 /* ActionSheet.swift */,
 			);
 			path = ReflectionsViewController;
 			sourceTree = "<group>";
@@ -551,6 +554,7 @@
 				0B45267528CA369100D4083C /* NewReflectionViewController.swift in Sources */,
 				ED55FE5828D4BE5800715D6F /* ReflectionModel.swift in Sources */,
 				ED55FE4C28D4B9AB00715D6F /* MyrrorData.xcdatamodeld in Sources */,
+				FFAEE68628E32DBB00DE1411 /* ActionSheet.swift in Sources */,
 				0B45266128CA0EEA00D4083C /* ViewController.swift in Sources */,
 				0B4B7E6828D8AAAC004F2906 /* ReflectionTableViewCell.swift in Sources */,
 				0B9F82BF28D35589000D848B /* ReflectionsView.swift in Sources */,

@@ -37,8 +37,7 @@ class ChooseTopicViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        navigationController?.navigationBar.items?[0].backBarButtonItem = UIBarButtonItem(title: "Voltar", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Voltar", style: .plain, target: nil, action: nil)
     }
     
     @objc func navigate(sender: UITapGestureRecognizer) {
