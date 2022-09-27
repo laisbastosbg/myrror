@@ -49,6 +49,7 @@ class ChooseTopicViewController: UIViewController {
             return
         }
         nextPage.navigationTitle = screen.option1Label.text!
+        nextPage.pageTitle.allowsEditingTextAttributes = false
         self.navigationController?.pushViewController(nextPage, animated: true)
     }
     
@@ -60,6 +61,7 @@ class ChooseTopicViewController: UIViewController {
             return
         }
         nextPage.navigationTitle = screen.option2Label.text!
+        nextPage.pageTitle.allowsEditingTextAttributes = false
         self.navigationController?.pushViewController(nextPage, animated: true)
     }
     
@@ -71,6 +73,7 @@ class ChooseTopicViewController: UIViewController {
             return
         }
         nextPage.navigationTitle = screen.option3Label.text!
+        nextPage.pageTitle.allowsEditingTextAttributes = false
         self.navigationController?.pushViewController(nextPage, animated: true)
     }
     
@@ -78,10 +81,9 @@ class ChooseTopicViewController: UIViewController {
         let haptics = UISelectionFeedbackGenerator()
         haptics.selectionChanged()
         let nextPage = NewReflectionViewController()
-        guard let screen = screen else {
-            return
-        }
-        nextPage.navigationTitle = screen.option4Label.text!
+
+        nextPage.navigationTitle = "Insira um título"
+        nextPage.pageTitle.clearButtonMode = .unlessEditing
         self.navigationController?.pushViewController(nextPage, animated: true)
     }
 
