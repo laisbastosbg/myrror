@@ -257,9 +257,9 @@ class NewReflectionViewController: UIViewController{
                 reflectionText.text = ""
             }
             if reflectionIndex != nil {
-                viewModel.updateReflection(index: reflectionIndex!, subject: navigationTitle, text: reflectionText.text, emoji: selectedEmoji)
+                viewModel.updateReflection(index: reflectionIndex!, subject: title, text: reflectionText.text, emoji: selectedEmoji)
             } else{
-                viewModel.addReflection(date: viewController.selectedDate ,subject: navigationTitle, textoReflection: reflectionText.text, emoji: selectedEmoji)
+                viewModel.addReflection(date: viewController.selectedDate ,subject: title, textoReflection: reflectionText.text, emoji: selectedEmoji)
             }
             navigationController?.popToRootViewController(animated: true)
         }else{
