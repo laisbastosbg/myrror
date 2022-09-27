@@ -287,6 +287,7 @@ extension ViewController: UITableViewDataSource {
         let exportButton: UIButton = UIButton(frame: CGRectMake(tableView.bounds.maxX-30, 0, 25, 25)) //frame.size.width - 60
 //        exportButton.setTitle("Done", for: .normal)
         exportButton.setImage(UIImage(systemName: "square.and.arrow.up"), for: .normal)
+        exportButton.addTarget(self, action: #selector(share), for: .touchUpInside)
 //        exportButton.backgroundColor = UIColor.red
         
         let headerView: UIView = UIView(frame: CGRectMake(0, 0, frame.size.width, frame.size.height))
@@ -300,5 +301,21 @@ extension ViewController: UITableViewDataSource {
         } else {
             return 25
         }
+    }
+    
+    @objc func share() {
+        var activityItem = ""
+        
+        for reflection in reflections {
+            let title = "**\(reflection.subject!)**"
+            activityItem += title
+            if let text = reflection.text_reflection {
+                activityItem += "\n\(text)\n"
+            }
+        }
+        let activityViewController = UIActivityViewController(activityItems: [activityItem], applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.screen
+        
+        self.present(activityViewController, animated: true, completion: nil)
     }
 }
