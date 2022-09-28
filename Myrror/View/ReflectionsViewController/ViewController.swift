@@ -181,19 +181,25 @@ class ViewController: UIViewController {
     }
     
     @objc func share() {
-        var activityItem = ""
-        
-        for reflection in reflections {
-            let title = "**\(reflection.subject!)**"
-            activityItem += title
-            if let text = reflection.text_reflection {
-                activityItem += "\n\(text)\n"
+        if reflections.count > 0 {
+            var activityItem = ""
+            
+            for reflection in reflections {
+                let title = "**\(reflection.subject!)**"
+                activityItem += title
+                if let text = reflection.text_reflection {
+                    activityItem += "\n\(text)\n"
+                }
             }
+            let activityViewController = UIActivityViewController(activityItems: [activityItem], applicationActivities: nil)
+            activityViewController.popoverPresentationController?.sourceView = self.screen
+            
+            self.present(activityViewController, animated: true, completion: nil)
+        } else {
+            let alert = UIAlertController(title: "Ops...", message: "Parece que você não tem nada para compartilhar. Faça uma reflection primeiro!", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }
-        let activityViewController = UIActivityViewController(activityItems: [activityItem], applicationActivities: nil)
-        activityViewController.popoverPresentationController?.sourceView = self.screen
-        
-        self.present(activityViewController, animated: true, completion: nil)
     }
     
 }
