@@ -247,7 +247,7 @@ class NewReflectionViewController: UIViewController{
         
         if title == "" {
             let alert = UIAlertController(title: "Título não informado", message: "Dê um título a sua reflection de tema livre", preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "Click", style: UIAlertAction.Style.default, handler: nil))
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
             return
         }
@@ -264,7 +264,7 @@ class NewReflectionViewController: UIViewController{
             navigationController?.popToRootViewController(animated: true)
         }else{
             let alert = UIAlertController(title: "Nenhuma informação!", message: "Adicione alguma informação para a sua reflection!", preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "Click", style: UIAlertAction.Style.default, handler: nil))
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
     }
