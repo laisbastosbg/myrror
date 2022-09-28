@@ -27,7 +27,7 @@ class NewReflectionViewController: UIViewController{
         textView.frame = CGRect(x: 10, y: 10, width: 30, height: 10)
         textView.contentInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         textView.font = UIFont.preferredFont(forTextStyle: .body)
-        textView.textAlignment = .justified
+        textView.textAlignment = .natural
         textView.backgroundColor = .systemFill
         textView.layer.cornerRadius = 8
         textView.text = "Insira aqui uma descrição"

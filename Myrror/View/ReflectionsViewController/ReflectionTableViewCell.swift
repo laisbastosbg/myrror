@@ -65,7 +65,7 @@ class ReflectionTableViewCell: UITableViewCell {
         label.backgroundColor = .clear
         label.textColor = UIColor(named: "SecondaryText")
         label.isScrollEnabled = false
-        label.textAlignment = .justified
+        label.textAlignment = .natural
         label.isUserInteractionEnabled = false
         return label
     }()
