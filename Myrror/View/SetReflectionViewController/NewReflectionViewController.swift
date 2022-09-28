@@ -82,19 +82,26 @@ class NewReflectionViewController: UIViewController{
         return stackView
     }()
     
-    lazy var saveReflectionButton : UIButton = {
-        var configButton = UIButton.Configuration.filled()
-        configButton.image = UIImage(systemName: "square.and.arrow.down")
-        configButton.title = "Finalizar"
-        configButton.imagePadding = 150
-        
-        let button = UIButton(type: .system)
-        button.configuration = configButton
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.semanticContentAttribute = .forceRightToLeft
-        button.addTarget(self, action: #selector(saveReflection), for: .touchUpInside)
-        
-        return button
+//    lazy var saveReflectionButton : UIButton = {
+//        var configButton = UIButton.Configuration.filled()
+//        configButton.image = UIImage(systemName: "square.and.arrow.down")
+//        configButton.title = "Finalizar"
+//        configButton.imagePadding = 150
+//
+//        let button = UIButton(type: .system)
+//        button.configuration = configButton
+//        button.translatesAutoresizingMaskIntoConstraints = false
+//        button.semanticContentAttribute = .forceRightToLeft
+//        button.addTarget(self, action: #selector(saveReflection), for: .touchUpInside)
+//
+//        return button
+//    }()
+    
+    var saveReflectionButton : SaveButtonView = {
+        let buttonView = SaveButtonView()
+        buttonView.layer.cornerRadius = 8
+        buttonView.translatesAutoresizingMaskIntoConstraints = false
+        return buttonView
     }()
     
     override func viewDidLoad() {
@@ -106,6 +113,7 @@ class NewReflectionViewController: UIViewController{
         NotificationCenter.default.addObserver(self, selector: #selector(NewReflectionViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(NewReflectionViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
+        configSaveTapGesture()
         configKeyBoardTapGesture()
         configEmojiTapGesture()
         
@@ -235,7 +243,19 @@ class NewReflectionViewController: UIViewController{
         }
     }
     
-    @objc func saveReflection() {
+    func configSaveTapGesture(){
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(self.saveReflection))
+        saveReflectionButton.addGestureRecognizer(gesture)
+        saveReflectionButton.isUserInteractionEnabled = true
+    }
+    
+    @objc func save(){
+        guard let button = saveReflectionButton as? SaveButtonView else{return}
+        button.textView.isHidden = true
+        button.animationView.play()
+    }
+    
+    @objc func saveReflection(sender: UITapGestureRecognizer) {
         let haptics = UINotificationFeedbackGenerator()
         haptics.notificationOccurred(.success)
         
@@ -261,7 +281,14 @@ class NewReflectionViewController: UIViewController{
             } else{
                 viewModel.addReflection(date: viewController.selectedDate ,subject: title, textoReflection: reflectionText.text, emoji: selectedEmoji)
             }
-            navigationController?.popToRootViewController(animated: true)
+            
+            saveReflectionButton.textView.isHidden = true
+            saveReflectionButton.animationView.play()
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1){
+                self.navigationController?.popToRootViewController(animated: true)
+            }
+            
         }else{
             let alert = UIAlertController(title: "Nenhuma informação!", message: "Adicione alguma informação para a sua reflection!", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "Click", style: UIAlertAction.Style.default, handler: nil))
