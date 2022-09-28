@@ -82,21 +82,6 @@ class NewReflectionViewController: UIViewController{
         return stackView
     }()
     
-//    lazy var saveReflectionButton : UIButton = {
-//        var configButton = UIButton.Configuration.filled()
-//        configButton.image = UIImage(systemName: "square.and.arrow.down")
-//        configButton.title = "Finalizar"
-//        configButton.imagePadding = 150
-//
-//        let button = UIButton(type: .system)
-//        button.configuration = configButton
-//        button.translatesAutoresizingMaskIntoConstraints = false
-//        button.semanticContentAttribute = .forceRightToLeft
-//        button.addTarget(self, action: #selector(saveReflection), for: .touchUpInside)
-//
-//        return button
-//    }()
-    
     var saveReflectionButton : SaveButtonView = {
         let buttonView = SaveButtonView()
         buttonView.layer.cornerRadius = 8
@@ -188,7 +173,6 @@ class NewReflectionViewController: UIViewController{
             }
         }
         
-        
         if (reflectionText.textColor == UIColor(named: "SecondaryText")) {
             reflectionText.text = ""
             reflectionText.textColor = UIColor(named: "TextColor")
@@ -247,12 +231,6 @@ class NewReflectionViewController: UIViewController{
         let gesture = UITapGestureRecognizer(target: self, action: #selector(self.saveReflection))
         saveReflectionButton.addGestureRecognizer(gesture)
         saveReflectionButton.isUserInteractionEnabled = true
-    }
-    
-    @objc func save(){
-        guard let button = saveReflectionButton as? SaveButtonView else{return}
-        button.textView.isHidden = true
-        button.animationView.play()
     }
     
     @objc func saveReflection(sender: UITapGestureRecognizer) {
