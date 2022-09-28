@@ -29,6 +29,7 @@ class ViewController: UIViewController {
         screen?.previousMonthButton.addTarget(self, action: #selector(previousMonth), for: .touchUpInside)
         screen?.nextMonthButton.addTarget(self, action: #selector(nextMonth), for: .touchUpInside)
         screen?.navigationButton.addTarget(self, action: #selector(self.navigate), for: .touchUpInside)
+        screen?.optionsButton.addTarget(self, action: #selector(self.share), for: .touchUpInside)
         
         let openCalendarGesture = UISwipeGestureRecognizer(target: screen, action: #selector(ReflectionsView.toggleCalendar))
         openCalendarGesture.direction = .down
@@ -179,6 +180,22 @@ class ViewController: UIViewController {
         setMonthView()
     }
     
+    @objc func share() {
+        var activityItem = ""
+        
+        for reflection in reflections {
+            let title = "**\(reflection.subject!)**"
+            activityItem += title
+            if let text = reflection.text_reflection {
+                activityItem += "\n\(text)\n"
+            }
+        }
+        let activityViewController = UIActivityViewController(activityItems: [activityItem], applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.screen
+        
+        self.present(activityViewController, animated: true, completion: nil)
+    }
+    
 }
 
 extension ViewController: UICollectionViewDataSource {
@@ -264,20 +281,20 @@ extension ViewController: UITableViewDataSource {
         }
     }
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let frame: CGRect = tableView.frame
-        
-
-        let exportButton: UIButton = UIButton(frame: CGRectMake(tableView.bounds.maxX-30, 0, 25, 25)) //frame.size.width - 60
-//        exportButton.setTitle("Done", for: .normal)
-        exportButton.setImage(UIImage(systemName: "square.and.arrow.up"), for: .normal)
-        exportButton.addTarget(self, action: #selector(share), for: .touchUpInside)
-//        exportButton.backgroundColor = UIColor.red
-        
-        let headerView: UIView = UIView(frame: CGRectMake(0, 0, frame.size.width, frame.size.height))
-        headerView.addSubview(exportButton)
-        return headerView
-    }
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        let frame: CGRect = tableView.frame
+//        
+//
+//        let exportButton: UIButton = UIButton(frame: CGRectMake(tableView.bounds.maxX-30, 0, 25, 25)) //frame.size.width - 60
+////        exportButton.setTitle("Done", for: .normal)
+//        exportButton.setImage(UIImage(systemName: "square.and.arrow.up"), for: .normal)
+//        exportButton.addTarget(self, action: #selector(share), for: .touchUpInside)
+////        exportButton.backgroundColor = UIColor.red
+//        
+//        let headerView: UIView = UIView(frame: CGRectMake(0, 0, frame.size.width, frame.size.height))
+//        headerView.addSubview(exportButton)
+//        return headerView
+//    }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if self.tableView(tableView, numberOfRowsInSection: section) == 0 {
@@ -285,21 +302,5 @@ extension ViewController: UITableViewDataSource {
         } else {
             return 25
         }
-    }
-    
-    @objc func share() {
-        var activityItem = ""
-        
-        for reflection in reflections {
-            let title = "**\(reflection.subject!)**"
-            activityItem += title
-            if let text = reflection.text_reflection {
-                activityItem += "\n\(text)\n"
-            }
-        }
-        let activityViewController = UIActivityViewController(activityItems: [activityItem], applicationActivities: nil)
-        activityViewController.popoverPresentationController?.sourceView = self.screen
-        
-        self.present(activityViewController, animated: true, completion: nil)
     }
 }
