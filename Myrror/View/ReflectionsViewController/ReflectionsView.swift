@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Lottie
 
 class ReflectionsView: UIView {
     let scrollView: UIScrollView = {
@@ -54,11 +55,21 @@ class ReflectionsView: UIView {
         return view
     }()
     
-    let emptyScreenImage: UIImageView = {
-        let image = UIImageView()
-        
+    let emptyScreenImage: AnimationView = {
+        let image = AnimationView()
+        image.contentMode = .scaleAspectFit
+        image.layer.cornerRadius = 8
+//        image.loopMode = .repeat(1)
+        image.animation = Animation.named("nothing")
+//        image.accessibilityLabel = emojisName[i]
+//        image.isAccessibilityElement = true
+//        stackView.addArrangedSubview(image)
         image.translatesAutoresizingMaskIntoConstraints = false
-        image.image = UIImage(named: "empty_home")
+//        image.widthAnchor.constraint(equalTo: image.heightAnchor).isActive = true
+//        stackView.isUserInteractionEnabled = true
+        
+//        image.translatesAutoresizingMaskIntoConstraints = false
+//        image.image = UIImage(named: "empty_home")
         return image
     }()
     
@@ -214,6 +225,11 @@ class ReflectionsView: UIView {
         weekDayStack.addArrangedSubview(fridayLabel)
         weekDayStack.addArrangedSubview(saturdayLabel)
         setupConstraints()
+    }
+    
+    override func layoutSubviews() {
+        emptyScreenImage.play()
+        emptyScreenImage.loopMode = .autoReverse
     }
     
     required init?(coder: NSCoder) {
