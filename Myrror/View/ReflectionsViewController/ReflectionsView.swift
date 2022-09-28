@@ -26,11 +26,21 @@ class ReflectionsView: UIView {
         return label
     }()
     
+    lazy var optionsButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage(systemName: "square.and.arrow.up"), for: .normal)
+        button.contentHorizontalAlignment = .right
+        button.imageView?.contentMode = .scaleAspectFit
+        return button
+    }()
+    
     lazy var calendarButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(toggleCalendar), for: .touchUpInside)
         button.setImage(UIImage(systemName: "calendar"), for: .normal)
+        button.imageView?.contentMode = .scaleAspectFit
         button.contentHorizontalAlignment = .right
         return button
     }()
@@ -185,6 +195,7 @@ class ReflectionsView: UIView {
         self.addSubview(scrollView)
         self.addSubview(pageTitle)
         self.addSubview(calendarButton)
+        self.addSubview(optionsButton)
         scrollView.addSubview(pageContentStack)
         self.addSubview(reflectionsContainer)
         pageContentStack.addArrangedSubview(emptyScreenImage)
@@ -215,8 +226,16 @@ class ReflectionsView: UIView {
             pageTitle.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             pageTitle.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
             
-            calendarButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
-            calendarButton.widthAnchor.constraint(equalToConstant: 70),
+            optionsButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
+            optionsButton.widthAnchor.constraint(equalToConstant: 35),
+            optionsButton.heightAnchor.constraint(equalTo: optionsButton.widthAnchor),
+            optionsButton.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
+            optionsButton.centerYAnchor.constraint(equalTo: pageTitle.centerYAnchor),
+            optionsButton.bottomAnchor.constraint(equalTo: calendarContainer.topAnchor),
+            
+            calendarButton.trailingAnchor.constraint(equalTo: optionsButton.leadingAnchor),
+            calendarButton.widthAnchor.constraint(equalTo: optionsButton.widthAnchor),
+            calendarButton.heightAnchor.constraint(equalTo: optionsButton.heightAnchor),
             calendarButton.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
             calendarButton.centerYAnchor.constraint(equalTo: pageTitle.centerYAnchor),
             calendarButton.bottomAnchor.constraint(equalTo: calendarContainer.topAnchor),
