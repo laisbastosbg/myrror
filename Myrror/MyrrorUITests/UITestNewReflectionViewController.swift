@@ -6,6 +6,7 @@
 //
 
 import XCTest
+@testable import Myrror
 
 class UITestNewReflectionViewController: XCTestCase {
 
