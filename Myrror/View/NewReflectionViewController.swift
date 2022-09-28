@@ -38,7 +38,7 @@ class NewReflectionViewController: UIViewController{
     
     let subTitle : UILabel = {
         let subTitle = UILabel()
-        subTitle.text = "Como isso te faz se sentir?"
+        subTitle.text = "Como isso te faz sentir?"
         subTitle.font = UIFont.boldSystemFont(ofSize: 20)
         subTitle.translatesAutoresizingMaskIntoConstraints = false
         return subTitle
