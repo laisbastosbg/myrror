@@ -127,7 +127,7 @@ class ViewController: UIViewController {
         screen?.reflectionsContainer.frame = CGRect(x: -self.view.bounds.width, y: 55, width: self.view.bounds.width, height: (self.view.bounds.width/8*6)+2)
         screen?.scrollView.frame = CGRect(x: -self.view.bounds.width, y: 55, width: self.view.bounds.width, height: (self.view.bounds.width/8*6)+2)
         
-        UIView.animate(withDuration: 0.75) { [self] in
+        UIView.animate(withDuration: 0.5) { [self] in
             self.collectionView?.frame = CGRect(x: 0, y: 55, width: self.view.bounds.width, height: (self.view.bounds.width/8*7))
             screen?.reflectionsContainer.frame = CGRect(x: 0, y: 55, width: self.view.bounds.width, height: (self.view.bounds.width/8*7))
             screen?.scrollView.frame = CGRect(x: 0, y: 55, width: self.view.bounds.width, height: (self.view.bounds.width/8*7))
@@ -145,7 +145,7 @@ class ViewController: UIViewController {
         screen?.reflectionsContainer.frame = CGRect(x: self.view.bounds.width, y: 55, width: self.view.bounds.width, height: (self.view.bounds.width/8*6)+2)
         screen?.scrollView.frame = CGRect(x: self.view.bounds.width, y: 55, width: self.view.bounds.width, height: (self.view.bounds.width/8*6)+2)
         
-        UIView.animate(withDuration: 0.75) { [self] in
+        UIView.animate(withDuration: 0.5) { [self] in
             self.collectionView?.frame = CGRect(x: 0, y: 55, width: self.view.bounds.width, height: (self.view.bounds.width/8*7))
             screen?.reflectionsContainer.frame = CGRect(x: 0, y: 55, width: self.view.bounds.width, height: (self.view.bounds.width/8*7))
             screen?.scrollView.frame = CGRect(x: 0, y: 55, width: self.view.bounds.width, height: (self.view.bounds.width/8*7))
