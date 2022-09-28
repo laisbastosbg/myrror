@@ -45,4 +45,11 @@ class UITestMyrror: XCTestCase {
         buttonCalendar.tap()
         XCTAssertTrue(buttonCalendar.exists)
     }
+    func testButtonCompartilharFlow() throws {
+
+        let buttonCompartilhar = app.buttons["Share"]
+        XCTAssertTrue(buttonCompartilhar.exists)
+        buttonCompartilhar.tap()
+        XCTAssertTrue(buttonCompartilhar.exists)
+    }
 }

@@ -22,18 +22,18 @@ class UITestChooseTopicViewController: XCTestCase {
     func testTextFlowAtChooseView() {
 
         let textChooseTopicViewController = app.staticTexts["Sobre o que você gostaria de refletir?"]
-        XCTAssertFalse(textChooseTopicViewController.exists)
+        XCTAssertNotNil(textChooseTopicViewController.exists)
     }
 
     func testButtonFlowAtChooseView1() {
 
         let buttonOQueEuAprendi = app.buttons["O que aprendi"]
         let imageButtonOQueAprendiNav = app.images["chevro.rigth"]
-        let imageButtonOQueAprendi = app.images["book"]
+        let imageButtonOQueAprendi = app.images["brain"]
 
-        XCTAssertFalse(buttonOQueEuAprendi.exists)
-        XCTAssertFalse(imageButtonOQueAprendiNav.exists)
-        XCTAssertFalse(imageButtonOQueAprendi.exists)
+        XCTAssertNotNil(buttonOQueEuAprendi.exists)
+        XCTAssertNotNil(imageButtonOQueAprendiNav.exists)
+        XCTAssertNotNil(imageButtonOQueAprendi.exists)
     }
 
     func testButtonFlowAtChooseView2() {
@@ -42,9 +42,9 @@ class UITestChooseTopicViewController: XCTestCase {
         let imageButtonONaoGostei = app.images["upset"]
         let imageButtonONaoGosteiNav = app.images["chevron.right"]
 
-        XCTAssertFalse(buttonOQueNaoGostei.exists)
-        XCTAssertFalse(imageButtonONaoGosteiNav.exists)
-        XCTAssertFalse(imageButtonONaoGostei.exists)
+        XCTAssertNotNil(buttonOQueNaoGostei.exists)
+        XCTAssertNotNil(imageButtonONaoGosteiNav.exists)
+        XCTAssertNotNil(imageButtonONaoGostei.exists)
     }
 
     func testButtonFlowAtChooseView3() {
@@ -53,9 +53,9 @@ class UITestChooseTopicViewController: XCTestCase {
         let imageButtonOQuePossoMelhorarNav = app.images["chevron.right"]
         let imageButtonOQuePossoMelhorar = app.images["plant"]
 
-        XCTAssertFalse(buttonOQuePossoMelhorar.exists)
-        XCTAssertFalse(imageButtonOQuePossoMelhorarNav.exists)
-        XCTAssertFalse(imageButtonOQuePossoMelhorar.exists)
+        XCTAssertNotNil(buttonOQuePossoMelhorar.exists)
+        XCTAssertNotNil(imageButtonOQuePossoMelhorarNav.exists)
+        XCTAssertNotNil(imageButtonOQuePossoMelhorar.exists)
     }
 
     func testButtonFlowAtChooseView4() {
@@ -63,8 +63,8 @@ class UITestChooseTopicViewController: XCTestCase {
         let buttonVoltar = app.buttons["Voltar"]
         let imageButtonVoltar = app.images["chevron.left"]
 
-        XCTAssertFalse(buttonVoltar.exists)
-        XCTAssertFalse(imageButtonVoltar.exists)
+        XCTAssertNotNil(buttonVoltar.exists)
+        XCTAssertNotNil(imageButtonVoltar.exists)
     }
 
     func testButtonFlowAtChooseView5() {
@@ -73,9 +73,9 @@ class UITestChooseTopicViewController: XCTestCase {
         let imageButtonVoltarNav = app.images["chevron.rigth"]
         let imageButtonVoltar = app.images["writing"]
 
-        XCTAssertFalse(buttonVoltar.exists)
-        XCTAssertFalse(imageButtonVoltar.exists)
-        XCTAssertFalse(imageButtonVoltarNav.exists)
+        XCTAssertNotNil(buttonVoltar.exists)
+        XCTAssertNotNil(imageButtonVoltar.exists)
+        XCTAssertNotNil(imageButtonVoltarNav.exists)
     }
 }
 
