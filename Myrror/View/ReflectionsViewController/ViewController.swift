@@ -89,6 +89,7 @@ class ViewController: UIViewController {
         setTableViewConstraints()
         tableView.backgroundColor = .clear
         tableView.separatorStyle = .none
+        tableView.accessibilityLabel = "Nenhuma reflexão ainda"
     }
     
     func setTableViewConstraints() {

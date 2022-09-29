@@ -33,6 +33,7 @@ class ReflectionsView: UIView {
         button.setImage(UIImage(systemName: "square.and.arrow.up"), for: .normal)
         button.contentHorizontalAlignment = .right
         button.imageView?.contentMode = .scaleAspectFit
+        button.accessibilityLabel = "Compartilhar reflexões"
         return button
     }()
     
@@ -43,6 +44,7 @@ class ReflectionsView: UIView {
         button.setImage(UIImage(systemName: "calendar"), for: .normal)
         button.imageView?.contentMode = .scaleAspectFit
         button.contentHorizontalAlignment = .right
+        button.accessibilityLabel = "Calendário"
         return button
     }()
     
@@ -121,6 +123,7 @@ class ReflectionsView: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(systemName: "chevron.left"), for: .normal)
+        button.accessibilityLabel = "Ir para o mês anterior"
         return button
     }()
     
@@ -128,6 +131,7 @@ class ReflectionsView: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(systemName: "chevron.right"), for: .normal)
+        button.accessibilityLabel = "Ir para o próximo mês"
         return button
     }()
     
@@ -145,6 +149,7 @@ class ReflectionsView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .preferredFont(forTextStyle: .body)
         label.text = "Dom"
+        label.accessibilityLabel = "Domingo"
         return label
     }()
     
@@ -153,6 +158,7 @@ class ReflectionsView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .preferredFont(forTextStyle: .body)
         label.text = "Seg"
+        label.accessibilityLabel = "Segunda-feira"
         return label
     }()
     
@@ -161,6 +167,7 @@ class ReflectionsView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .preferredFont(forTextStyle: .body)
         label.text = "Ter"
+        label.accessibilityLabel = "Terça-feira"
         return label
     }()
     
@@ -169,6 +176,7 @@ class ReflectionsView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .preferredFont(forTextStyle: .body)
         label.text = "Qua"
+        label.accessibilityLabel = "Quarta-feira"
         return label
     }()
     
@@ -177,6 +185,7 @@ class ReflectionsView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .preferredFont(forTextStyle: .body)
         label.text = "Qui"
+        label.accessibilityLabel = "Quinta-feira"
         return label
     }()
     
@@ -185,6 +194,7 @@ class ReflectionsView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .preferredFont(forTextStyle: .body)
         label.text = "Sex"
+        label.accessibilityLabel = "Sexta-feira"
         return label
     }()
     
@@ -193,6 +203,7 @@ class ReflectionsView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .preferredFont(forTextStyle: .body)
         label.text = "Sab"
+        label.accessibilityLabel = "Sábado"
         return label
     }()
     
