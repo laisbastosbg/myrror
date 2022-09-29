@@ -12,6 +12,7 @@ class ReflectionsView: UIView {
     let scrollView: UIScrollView = {
         let view = UIScrollView()
         view.translatesAutoresizingMaskIntoConstraints = false
+//        view.accessibilityLabel = "Nenhuma reflexão ainda"
         return view
     }()
     
@@ -90,6 +91,7 @@ class ReflectionsView: UIView {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Nova Reflection", for: .normal)
+        button.accessibilityLabel = "Nova reflexão"
         button.configuration = .filled()
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .body)
