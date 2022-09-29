@@ -14,6 +14,9 @@ class UnitTestreflectionViewModel: XCTestCase {
     let date = Date()
     let indexPath = IndexPath()
 
+    // setup
+    // tearDown
+
     func testAddReflection() throws {
 
         let testAddReflection: () = sut.addReflection(date: date, subject: "subject", textoReflection: "text", emoji: "emoji")
