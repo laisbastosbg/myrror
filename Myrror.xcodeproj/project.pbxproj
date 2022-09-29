@@ -47,6 +47,8 @@
 		ED55FE5028D4BB3200715D6F /* ReflectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED55FE4F28D4BB3200715D6F /* ReflectionViewModel.swift */; };
 		ED55FE5828D4BE5800715D6F /* ReflectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED55FE5728D4BE5800715D6F /* ReflectionModel.swift */; };
 		ED75100728D22268000207F2 /* EmojiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED75100628D22268000207F2 /* EmojiViewController.swift */; };
+		FF9283E028E5199A00A2D142 /* SaveButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9283DF28E5199A00A2D142 /* SaveButtonView.swift */; };
+		FF9283E228E51AFD00A2D142 /* sucess.json in Resources */ = {isa = PBXBuildFile; fileRef = FF9283E128E51AFD00A2D142 /* sucess.json */; };
 		FFAEE68628E32DBB00DE1411 /* ActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAEE68528E32DBB00DE1411 /* ActionSheet.swift */; };
 /* End PBXBuildFile section */
 
@@ -129,6 +131,8 @@
 		ED75100628D22268000207F2 /* EmojiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiViewController.swift; sourceTree = "<group>"; };
 		FF5EF8B028D3417D00C6DEA8 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = ../Pods/Pods.xcodeproj; sourceTree = "<group>"; };
 		FF5EF8C228D342AB00C6DEA8 /* MyrrorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyrrorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF9283DF28E5199A00A2D142 /* SaveButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveButtonView.swift; sourceTree = "<group>"; };
+		FF9283E128E51AFD00A2D142 /* sucess.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sucess.json; sourceTree = "<group>"; };
 		FFAEE68528E32DBB00DE1411 /* ActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -219,9 +223,9 @@
 		0B45267228CA292200D4083C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FF9283DE28E5197500A2D142 /* SetReflectionViewController */,
 				0BFD56B828D4B203009C99E8 /* ChooseTopicViewController */,
 				0B9F82C828D35804000D848B /* ReflectionsViewController */,
-				0B45267428CA369100D4083C /* NewReflectionViewController.swift */,
 				ED75100628D22268000207F2 /* EmojiViewController.swift */,
 			);
 			path = View;
@@ -310,6 +314,7 @@
 		14BF425B28DB353D0080294C /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				FF9283E128E51AFD00A2D142 /* sucess.json */,
 				0BDB3E2528E48AB80070D9E8 /* nothing.json */,
 				14BF425C28DB353D0080294C /* empty.json */,
 				14BF425D28DB353D0080294C /* feliz-cinza.json */,
@@ -324,6 +329,15 @@
 				14BF426628DB353D0080294C /* confiante-cinza.json */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		FF9283DE28E5197500A2D142 /* SetReflectionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0B45267428CA369100D4083C /* NewReflectionViewController.swift */,
+				FF9283DF28E5199A00A2D142 /* SaveButtonView.swift */,
+			);
+			path = SetReflectionViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -462,6 +476,7 @@
 				0B45266928CA0EEC00D4083C /* LaunchScreen.storyboard in Resources */,
 				14BF426D28DB353D0080294C /* desesperado-cinza.json in Resources */,
 				14BF427128DB353D0080294C /* triste.json in Resources */,
+				FF9283E228E51AFD00A2D142 /* sucess.json in Resources */,
 				14BF426F28DB353D0080294C /* desesperado.json in Resources */,
 				14BF426A28DB353D0080294C /* feliz-cinza.json in Resources */,
 				14BF427228DB353D0080294C /* indiferente-cinza.json in Resources */,
@@ -563,6 +578,7 @@
 				0B4B7E6828D8AAAC004F2906 /* ReflectionTableViewCell.swift in Sources */,
 				0B9F82BF28D35589000D848B /* ReflectionsView.swift in Sources */,
 				0B45265D28CA0EEA00D4083C /* AppDelegate.swift in Sources */,
+				FF9283E028E5199A00A2D142 /* SaveButtonView.swift in Sources */,
 				ED75100728D22268000207F2 /* EmojiViewController.swift in Sources */,
 				ED19590128CB8539004E7045 /* ChooseTopicViewController.swift in Sources */,
 				ED55FE5028D4BB3200715D6F /* ReflectionViewModel.swift in Sources */,
@@ -747,7 +763,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = KDV83NBV8H;
+				DEVELOPMENT_TEAM = NTS86MKTBV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Myrror/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -775,7 +791,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = KDV83NBV8H;
+				DEVELOPMENT_TEAM = NTS86MKTBV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Myrror/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
