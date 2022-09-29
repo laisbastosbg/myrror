@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import Lottie
 
 class ReflectionsView: UIView {
     let scrollView: UIScrollView = {
         let view = UIScrollView()
         view.translatesAutoresizingMaskIntoConstraints = false
+//        view.accessibilityLabel = "Nenhuma reflexão ainda"
         return view
     }()
     
@@ -26,12 +28,24 @@ class ReflectionsView: UIView {
         return label
     }()
     
+    lazy var optionsButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage(systemName: "square.and.arrow.up"), for: .normal)
+        button.contentHorizontalAlignment = .right
+        button.imageView?.contentMode = .scaleAspectFit
+        button.accessibilityLabel = "Compartilhar reflexões"
+        return button
+    }()
+    
     lazy var calendarButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(toggleCalendar), for: .touchUpInside)
         button.setImage(UIImage(systemName: "calendar"), for: .normal)
+        button.imageView?.contentMode = .scaleAspectFit
         button.contentHorizontalAlignment = .right
+        button.accessibilityLabel = "Calendário"
         return button
     }()
     
@@ -44,11 +58,21 @@ class ReflectionsView: UIView {
         return view
     }()
     
-    let emptyScreenImage: UIImageView = {
-        let image = UIImageView()
-        
+    let emptyScreenImage: AnimationView = {
+        let image = AnimationView()
+        image.contentMode = .scaleAspectFit
+        image.layer.cornerRadius = 8
+//        image.loopMode = .repeat(1)
+        image.animation = Animation.named("nothing")
+//        image.accessibilityLabel = emojisName[i]
+//        image.isAccessibilityElement = true
+//        stackView.addArrangedSubview(image)
         image.translatesAutoresizingMaskIntoConstraints = false
-        image.image = UIImage(named: "empty_home")
+//        image.widthAnchor.constraint(equalTo: image.heightAnchor).isActive = true
+//        stackView.isUserInteractionEnabled = true
+        
+//        image.translatesAutoresizingMaskIntoConstraints = false
+//        image.image = UIImage(named: "empty_home")
         return image
     }()
     
@@ -67,6 +91,7 @@ class ReflectionsView: UIView {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Nova Reflection", for: .normal)
+        button.accessibilityLabel = "Nova reflexão"
         button.configuration = .filled()
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .body)
@@ -100,6 +125,7 @@ class ReflectionsView: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(systemName: "chevron.left"), for: .normal)
+        button.accessibilityLabel = "Ir para o mês anterior"
         return button
     }()
     
@@ -107,6 +133,7 @@ class ReflectionsView: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(systemName: "chevron.right"), for: .normal)
+        button.accessibilityLabel = "Ir para o próximo mês"
         return button
     }()
     
@@ -124,6 +151,7 @@ class ReflectionsView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .preferredFont(forTextStyle: .body)
         label.text = "Dom"
+        label.accessibilityLabel = "Domingo"
         return label
     }()
     
@@ -132,6 +160,7 @@ class ReflectionsView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .preferredFont(forTextStyle: .body)
         label.text = "Seg"
+        label.accessibilityLabel = "Segunda-feira"
         return label
     }()
     
@@ -140,6 +169,7 @@ class ReflectionsView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .preferredFont(forTextStyle: .body)
         label.text = "Ter"
+        label.accessibilityLabel = "Terça-feira"
         return label
     }()
     
@@ -148,6 +178,7 @@ class ReflectionsView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .preferredFont(forTextStyle: .body)
         label.text = "Qua"
+        label.accessibilityLabel = "Quarta-feira"
         return label
     }()
     
@@ -156,6 +187,7 @@ class ReflectionsView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .preferredFont(forTextStyle: .body)
         label.text = "Qui"
+        label.accessibilityLabel = "Quinta-feira"
         return label
     }()
     
@@ -164,6 +196,7 @@ class ReflectionsView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .preferredFont(forTextStyle: .body)
         label.text = "Sex"
+        label.accessibilityLabel = "Sexta-feira"
         return label
     }()
     
@@ -172,6 +205,7 @@ class ReflectionsView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .preferredFont(forTextStyle: .body)
         label.text = "Sab"
+        label.accessibilityLabel = "Sábado"
         return label
     }()
     
@@ -185,6 +219,7 @@ class ReflectionsView: UIView {
         self.addSubview(scrollView)
         self.addSubview(pageTitle)
         self.addSubview(calendarButton)
+        self.addSubview(optionsButton)
         scrollView.addSubview(pageContentStack)
         self.addSubview(reflectionsContainer)
         pageContentStack.addArrangedSubview(emptyScreenImage)
@@ -205,6 +240,11 @@ class ReflectionsView: UIView {
         setupConstraints()
     }
     
+    override func layoutSubviews() {
+        emptyScreenImage.play()
+        emptyScreenImage.loopMode = .autoReverse
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -215,8 +255,16 @@ class ReflectionsView: UIView {
             pageTitle.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             pageTitle.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
             
-            calendarButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
-            calendarButton.widthAnchor.constraint(equalToConstant: 70),
+            optionsButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
+            optionsButton.widthAnchor.constraint(equalToConstant: 35),
+            optionsButton.heightAnchor.constraint(equalTo: optionsButton.widthAnchor),
+            optionsButton.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
+            optionsButton.centerYAnchor.constraint(equalTo: pageTitle.centerYAnchor),
+            optionsButton.bottomAnchor.constraint(equalTo: calendarContainer.topAnchor),
+            
+            calendarButton.trailingAnchor.constraint(equalTo: optionsButton.leadingAnchor),
+            calendarButton.widthAnchor.constraint(equalTo: optionsButton.widthAnchor),
+            calendarButton.heightAnchor.constraint(equalTo: optionsButton.heightAnchor),
             calendarButton.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
             calendarButton.centerYAnchor.constraint(equalTo: pageTitle.centerYAnchor),
             calendarButton.bottomAnchor.constraint(equalTo: calendarContainer.topAnchor),

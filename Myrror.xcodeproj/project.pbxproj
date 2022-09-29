@@ -25,6 +25,7 @@
 		0B9F82C228D355DC000D848B /* CalendarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9F82C128D355DC000D848B /* CalendarHelper.swift */; };
 		0B9F82C428D35613000D848B /* CalendarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9F82C328D35613000D848B /* CalendarItem.swift */; };
 		0B9F82C628D3563B000D848B /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9F82C528D3563B000D848B /* CalendarCollectionViewCell.swift */; };
+		0BDB3E2628E48AB80070D9E8 /* nothing.json in Resources */ = {isa = PBXBuildFile; fileRef = 0BDB3E2528E48AB80070D9E8 /* nothing.json */; };
 		0BFD56BA28D4B243009C99E8 /* ChooseTopicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFD56B928D4B243009C99E8 /* ChooseTopicView.swift */; };
 		11692D7D416A900D9AF63267 /* Pods_Myrror.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41E5A9F2BF1B183F48A999D1 /* Pods_Myrror.framework */; };
 		143298B528DB47930076FC24 /* UnitTestreflectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143298B428DB47930076FC24 /* UnitTestreflectionViewModel.swift */; };
@@ -46,6 +47,8 @@
 		ED55FE5028D4BB3200715D6F /* ReflectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED55FE4F28D4BB3200715D6F /* ReflectionViewModel.swift */; };
 		ED55FE5828D4BE5800715D6F /* ReflectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED55FE5728D4BE5800715D6F /* ReflectionModel.swift */; };
 		ED75100728D22268000207F2 /* EmojiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED75100628D22268000207F2 /* EmojiViewController.swift */; };
+		FF9283E028E5199A00A2D142 /* SaveButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9283DF28E5199A00A2D142 /* SaveButtonView.swift */; };
+		FF9283E228E51AFD00A2D142 /* sucess.json in Resources */ = {isa = PBXBuildFile; fileRef = FF9283E128E51AFD00A2D142 /* sucess.json */; };
 		FFAEE68628E32DBB00DE1411 /* ActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAEE68528E32DBB00DE1411 /* ActionSheet.swift */; };
 /* End PBXBuildFile section */
 
@@ -101,6 +104,7 @@
 		0B9F82C128D355DC000D848B /* CalendarHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHelper.swift; sourceTree = "<group>"; };
 		0B9F82C328D35613000D848B /* CalendarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarItem.swift; sourceTree = "<group>"; };
 		0B9F82C528D3563B000D848B /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
+		0BDB3E2528E48AB80070D9E8 /* nothing.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = nothing.json; sourceTree = "<group>"; };
 		0BFD56B928D4B243009C99E8 /* ChooseTopicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTopicView.swift; sourceTree = "<group>"; };
 		143298B428DB47930076FC24 /* UnitTestreflectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTestreflectionViewModel.swift; sourceTree = "<group>"; };
 		143298B828DB524A0076FC24 /* UnitTestCalendarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTestCalendarItem.swift; sourceTree = "<group>"; };
@@ -127,6 +131,8 @@
 		ED75100628D22268000207F2 /* EmojiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiViewController.swift; sourceTree = "<group>"; };
 		FF5EF8B028D3417D00C6DEA8 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = ../Pods/Pods.xcodeproj; sourceTree = "<group>"; };
 		FF5EF8C228D342AB00C6DEA8 /* MyrrorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyrrorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF9283DF28E5199A00A2D142 /* SaveButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveButtonView.swift; sourceTree = "<group>"; };
+		FF9283E128E51AFD00A2D142 /* sucess.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sucess.json; sourceTree = "<group>"; };
 		FFAEE68528E32DBB00DE1411 /* ActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -217,9 +223,9 @@
 		0B45267228CA292200D4083C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FF9283DE28E5197500A2D142 /* SetReflectionViewController */,
 				0BFD56B828D4B203009C99E8 /* ChooseTopicViewController */,
 				0B9F82C828D35804000D848B /* ReflectionsViewController */,
-				0B45267428CA369100D4083C /* NewReflectionViewController.swift */,
 				ED75100628D22268000207F2 /* EmojiViewController.swift */,
 			);
 			path = View;
@@ -308,6 +314,8 @@
 		14BF425B28DB353D0080294C /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				FF9283E128E51AFD00A2D142 /* sucess.json */,
+				0BDB3E2528E48AB80070D9E8 /* nothing.json */,
 				14BF425C28DB353D0080294C /* empty.json */,
 				14BF425D28DB353D0080294C /* feliz-cinza.json */,
 				14BF425E28DB353D0080294C /* feliz.json */,
@@ -321,6 +329,15 @@
 				14BF426628DB353D0080294C /* confiante-cinza.json */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		FF9283DE28E5197500A2D142 /* SetReflectionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0B45267428CA369100D4083C /* NewReflectionViewController.swift */,
+				FF9283DF28E5199A00A2D142 /* SaveButtonView.swift */,
+			);
+			path = SetReflectionViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -459,6 +476,7 @@
 				0B45266928CA0EEC00D4083C /* LaunchScreen.storyboard in Resources */,
 				14BF426D28DB353D0080294C /* desesperado-cinza.json in Resources */,
 				14BF427128DB353D0080294C /* triste.json in Resources */,
+				FF9283E228E51AFD00A2D142 /* sucess.json in Resources */,
 				14BF426F28DB353D0080294C /* desesperado.json in Resources */,
 				14BF426A28DB353D0080294C /* feliz-cinza.json in Resources */,
 				14BF427228DB353D0080294C /* indiferente-cinza.json in Resources */,
@@ -468,6 +486,7 @@
 				14BF426C28DB353D0080294C /* triste-cinza.json in Resources */,
 				14BF427028DB353D0080294C /* confiante.json in Resources */,
 				14BF427328DB353D0080294C /* confiante-cinza.json in Resources */,
+				0BDB3E2628E48AB80070D9E8 /* nothing.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -559,6 +578,7 @@
 				0B4B7E6828D8AAAC004F2906 /* ReflectionTableViewCell.swift in Sources */,
 				0B9F82BF28D35589000D848B /* ReflectionsView.swift in Sources */,
 				0B45265D28CA0EEA00D4083C /* AppDelegate.swift in Sources */,
+				FF9283E028E5199A00A2D142 /* SaveButtonView.swift in Sources */,
 				ED75100728D22268000207F2 /* EmojiViewController.swift in Sources */,
 				ED19590128CB8539004E7045 /* ChooseTopicViewController.swift in Sources */,
 				ED55FE5028D4BB3200715D6F /* ReflectionViewModel.swift in Sources */,
@@ -742,7 +762,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = KDV83NBV8H;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Myrror/Info.plist;
@@ -754,12 +774,15 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 0.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.lais.Myrror;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -770,7 +793,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = KDV83NBV8H;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Myrror/Info.plist;
@@ -782,12 +805,15 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 0.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.lais.Myrror;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

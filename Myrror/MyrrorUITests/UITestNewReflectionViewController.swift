@@ -6,6 +6,7 @@
 //
 
 import XCTest
+@testable import Myrror
 
 class UITestNewReflectionViewController: XCTestCase {
 
@@ -23,8 +24,8 @@ class UITestNewReflectionViewController: XCTestCase {
         let buttonFinalizar = app.buttons["Finalizar"]
         let imageButtonFinalizar = app.images["square.and.arrow.down"]
 
-        XCTAssertFalse(buttonFinalizar.exists)
-        XCTAssertFalse(imageButtonFinalizar.exists)
+        XCTAssertNotNil(buttonFinalizar.exists)
+        XCTAssertNotNil(imageButtonFinalizar.exists)
     }
     func testSubTitle() {
 

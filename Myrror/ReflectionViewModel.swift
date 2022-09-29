@@ -27,6 +27,7 @@ class ReflectionViewModel: ObservableObject {
         
         do {
             try self.context.save()
+            reflectionList?.append(newReflection)
             print("Deucertoooo \(newReflection)")
         } catch {
             print("deu errado")
@@ -34,8 +35,8 @@ class ReflectionViewModel: ObservableObject {
     }
     
     // MARK: Update
-    func updateReflection(index: Int, subject: String, text: String, emoji: String) {
-        let reflection = reflectionList![index]
+    func updateReflection(index: Int?, subject: String, text: String, emoji: String) {
+        let reflection = reflectionList![index!]
         reflection.subject = subject
         reflection.text_reflection = text
         reflection.emoji = emoji

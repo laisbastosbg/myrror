@@ -34,6 +34,7 @@ class ChooseTopicView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "O que aprendi"
+        label.accessibilityHint = "botão"
         label.font = .preferredFont(forTextStyle: .body)
         return label
     }()
@@ -97,6 +98,7 @@ class ChooseTopicView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "O que não gostei"
+        label.accessibilityHint = "botão"
         label.font = .preferredFont(forTextStyle: .body)
         return label
     }()
@@ -125,6 +127,7 @@ class ChooseTopicView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "O que posso melhorar"
+        label.accessibilityHint = "botão"
         label.font = .preferredFont(forTextStyle: .body)
         return label
     }()
@@ -153,6 +156,7 @@ class ChooseTopicView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Tema livre"
+        label.accessibilityHint = "botão"
         label.font = .preferredFont(forTextStyle: .body)
         return label
     }()
