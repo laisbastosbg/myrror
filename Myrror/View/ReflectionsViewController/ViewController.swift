@@ -89,6 +89,7 @@ class ViewController: UIViewController {
         setTableViewConstraints()
         tableView.backgroundColor = .clear
         tableView.separatorStyle = .none
+        tableView.accessibilityLabel = ""
     }
     
     func setTableViewConstraints() {
@@ -196,7 +197,7 @@ class ViewController: UIViewController {
             
             self.present(activityViewController, animated: true, completion: nil)
         } else {
-            let alert = UIAlertController(title: "Ops...", message: "Parece que você não tem nada para compartilhar. Faça uma reflection primeiro!", preferredStyle: UIAlertController.Style.alert)
+            let alert = UIAlertController(title: "Parece que você não tem nada para compartilhar", message: "Faça uma reflection primeiro!", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
@@ -275,6 +276,7 @@ extension ViewController: UITableViewDataSource {
         myCell.title.text = reflections[indexPath.item].subject
         myCell.reflectionText.text = reflections[indexPath.item].text_reflection
         myCell.selectionStyle = .gray
+        myCell.mood.accessibilityLabel = reflections[indexPath.item].emoji
         return myCell
     }
     

@@ -251,6 +251,8 @@ class NewReflectionViewController: UIViewController{
             return
         }
         
+        reflectionText.accessibilityHint = "Toque para editar"
+        
         if (selectedEmoji != ""  || reflectionText.text != "Insira aqui uma descrição") && title != ""  {
             if (reflectionText.text == "Insira aqui uma descrição"){
                 reflectionText.text = ""
