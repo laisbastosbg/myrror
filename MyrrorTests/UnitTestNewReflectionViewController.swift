@@ -17,14 +17,14 @@ class UnitTestNewReflectionViewController: XCTestCase {
         XCTAssertEqual(sut.navigationTitle, "")
     }
 
-    func testConfirmationButton() throws {
-
-        let button = sut.saveReflectionButton
-
-        XCTAssertEqual(button.configuration?.image, UIImage(systemName:"square.and.arrow.down"))
-        XCTAssertFalse(button.translatesAutoresizingMaskIntoConstraints)
-        XCTAssertEqual(button.configuration?.imagePadding, 150)
-    }
+//    func testConfirmationButton() throws {
+//
+//        let button = sut.saveReflectionButton
+//
+//        XCTAssertEqual(button.configuration?.image, UIImage(systemName:"square.and.arrow.down"))
+//        XCTAssertFalse(button.translatesAutoresizingMaskIntoConstraints)
+//        XCTAssertEqual(button.configuration?.imagePadding, 150)
+//    }
 
     func testReflectionText() throws {
 
