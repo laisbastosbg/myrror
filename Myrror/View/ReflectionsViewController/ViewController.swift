@@ -62,6 +62,7 @@ class ViewController: UIViewController {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        tableView.allowsMultipleSelection
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -265,7 +266,11 @@ extension ViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presentMenuSheet(indexPath: indexPath)
+        tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+    }
+
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        tableView.cellForRow(at: indexPath)?.accessoryType = .none
     }
 }
 
@@ -279,30 +284,50 @@ extension ViewController: UITableViewDataSource {
         myCell.mood.accessibilityLabel = reflections[indexPath.item].emoji
         return myCell
     }
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
+    //
+    //    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    //        if editingStyle == .delete {
+    //            self.reflections.remove(at: indexPath.row)
+    //            self.tableView.deleteRows(at: [indexPath], with: .automatic)
+    //            viewModel.deleteReflection(indexPath: indexPath)
+    //            updateReflectionList()
+    //        }
+    //
+    //
+    //    }
+
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let delete = UIContextualAction(style: .destructive, title: "Delete") {  (contextualAction, view, boolValue) in
             self.reflections.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .automatic)
-            viewModel.deleteReflection(indexPath: indexPath)
-            updateReflectionList()
+            self.viewModel.deleteReflection(indexPath: indexPath)
+            self.updateReflectionList()
         }
+
+        let edit = UIContextualAction(style: .normal, title: "Edit") {  (contextualAction, view, boolValue) in
+            self.presentMenuSheet(indexPath: indexPath)
+        }
+
+        edit.backgroundColor = .systemTeal
+        let swipeActions = UISwipeActionsConfiguration(actions: [delete, edit])
+
+        return swipeActions
     }
     
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let frame: CGRect = tableView.frame
-//        
-//
-//        let exportButton: UIButton = UIButton(frame: CGRectMake(tableView.bounds.maxX-30, 0, 25, 25)) //frame.size.width - 60
-////        exportButton.setTitle("Done", for: .normal)
-//        exportButton.setImage(UIImage(systemName: "square.and.arrow.up"), for: .normal)
-//        exportButton.addTarget(self, action: #selector(share), for: .touchUpInside)
-////        exportButton.backgroundColor = UIColor.red
-//        
-//        let headerView: UIView = UIView(frame: CGRectMake(0, 0, frame.size.width, frame.size.height))
-//        headerView.addSubview(exportButton)
-//        return headerView
-//    }
+    //    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    //        let frame: CGRect = tableView.frame
+    //
+    //
+    //        let exportButton: UIButton = UIButton(frame: CGRectMake(tableView.bounds.maxX-30, 0, 25, 25)) //frame.size.width - 60
+    ////        exportButton.setTitle("Done", for: .normal)
+    //        exportButton.setImage(UIImage(systemName: "square.and.arrow.up"), for: .normal)
+    //        exportButton.addTarget(self, action: #selector(share), for: .touchUpInside)
+    ////        exportButton.backgroundColor = UIColor.red
+    //        
+    //        let headerView: UIView = UIView(frame: CGRectMake(0, 0, frame.size.width, frame.size.height))
+    //        headerView.addSubview(exportButton)
+    //        return headerView
+    //    }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if self.tableView(tableView, numberOfRowsInSection: section) == 0 {
