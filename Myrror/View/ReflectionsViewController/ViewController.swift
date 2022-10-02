@@ -159,9 +159,12 @@ class ViewController: UIViewController {
     }
     
     @objc func navigate() {
+        
         let nextPage = ChooseTopicViewController()
         self.navigationController?.pushViewController(nextPage, animated: true)
     }
+    
+    
     
     func updateReflectionList() {
         viewModel.fetchReflection(date: selectedDate)

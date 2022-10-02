@@ -88,6 +88,9 @@ class ReflectionsView: UIView {
     }()
     
     let navigationButton: UIButton = {
+        
+        
+        
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Nova Reflection", for: .normal)
@@ -96,8 +99,19 @@ class ReflectionsView: UIView {
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .body)
         
+        button.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+        
+        UIButton.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 6, options: .allowUserInteraction, animations: {
+            button.transform = CGAffineTransform.identity
+        },completion: nil)
+        
         return button
     }()
+    
+    
+        
+    
+    
     
     lazy var calendarContainer: UIView = {
         let view = UIView()
