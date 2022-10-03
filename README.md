@@ -13,5 +13,23 @@
 <h3>Built with</h3>
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original-wordmark.svg" height=60 />
 
+<h2>Contributing</h2>
+
+1. Fork this repositore
+
+2. Create a feature or bug branch
+
+```
+git branch feature/[your-feature]
+```
+3. Commit your changes 🎉
+
+4. Push to the branch
+
+```
+git push origin feature/[your-feature]
+```
+5.📌 Create pull request to laisbastosbg/myrror at branch develop!
+
 <h2>License</h2>
 Distributed under the MIT License. See `LICENSE.txt` for more information.
