@@ -30,7 +30,7 @@ class NewReflectionViewController: UIViewController{
         textView.textAlignment = .natural
         textView.backgroundColor = .systemFill
         textView.layer.cornerRadius = 8
-        textView.text = "Insira aqui uma descrição"
+        textView.text = NSLocalizedString("Insira aqui uma descrição", comment: "")
         textView.textColor = UIColor(named: "SecondaryText")
         textView.translatesAutoresizingMaskIntoConstraints = false
         return textView
@@ -38,7 +38,7 @@ class NewReflectionViewController: UIViewController{
     
     let subTitle : UILabel = {
         let subTitle = UILabel()
-        subTitle.text = "Como isso te faz sentir?"
+        subTitle.text = NSLocalizedString("Como isso te faz sentir?", comment: "")
         subTitle.font = UIFont.boldSystemFont(ofSize: 20)
         subTitle.translatesAutoresizingMaskIntoConstraints = false
         return subTitle
@@ -93,7 +93,7 @@ class NewReflectionViewController: UIViewController{
         super.viewDidLoad()
         
         view.backgroundColor = UIColor(named: "Primary")
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Voltar", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Voltar", comment: "Back button"), style: .plain, target: nil, action: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(NewReflectionViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(NewReflectionViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -187,7 +187,7 @@ class NewReflectionViewController: UIViewController{
         }
         if (reflectionText.text == "") {
             reflectionText.textColor = UIColor(named: "SecondaryText")
-            reflectionText.text = "Insira aqui uma descrição"
+            reflectionText.text = NSLocalizedString("Insira aqui uma descrição", comment: "input description")
         }
     }
     
@@ -245,16 +245,16 @@ class NewReflectionViewController: UIViewController{
         }
         
         if title == "" {
-            let alert = UIAlertController(title: "Título não informado", message: "Dê um título a sua reflection de tema livre", preferredStyle: UIAlertController.Style.alert)
+            let alert = UIAlertController(title: NSLocalizedString("Título não informado", comment: "When the title is not informed"), message: NSLocalizedString("Dê um título a sua reflection de tema livre", comment: ""), preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
             return
         }
         
-        reflectionText.accessibilityHint = "Toque para editar"
+        reflectionText.accessibilityHint = NSLocalizedString("Toque para editar", comment: "Tap to edit accessibility")
         
-        if (selectedEmoji != ""  || reflectionText.text != "Insira aqui uma descrição") && title != ""  {
-            if (reflectionText.text == "Insira aqui uma descrição"){
+        if (selectedEmoji != ""  || reflectionText.text != NSLocalizedString("Insira aqui uma descrição", comment: "input description")) && title != ""  {
+            if (reflectionText.text == NSLocalizedString("Insira aqui uma descrição", comment: "input description")){
                 reflectionText.text = ""
             }
             if reflectionIndex != nil {
@@ -269,7 +269,7 @@ class NewReflectionViewController: UIViewController{
                 self.navigationController?.popToRootViewController(animated: true)
             }
         }else{
-            let alert = UIAlertController(title: "Nenhuma informação!", message: "Adicione alguma informação para a sua reflection!", preferredStyle: UIAlertController.Style.alert)
+            let alert = UIAlertController(title: NSLocalizedString("Nenhuma informação!", comment: "No information displayed"), message: NSLocalizedString("Adicione alguma informação para a sua reflection!", comment: "information to reflection"), preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
