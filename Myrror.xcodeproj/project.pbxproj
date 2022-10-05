@@ -296,6 +296,13 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		0B5D344328EDB82400F8B24A /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		0B9F82C028D355CF000D848B /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -321,6 +328,7 @@
 		0BFD56B828D4B203009C99E8 /* ChooseTopicViewController */ = {
 			isa = PBXGroup;
 			children = (
+				0B5D344328EDB82400F8B24A /* Components */,
 				ED19590028CB8539004E7045 /* ChooseTopicViewController.swift */,
 				0BFD56B928D4B243009C99E8 /* ChooseTopicView.swift */,
 			);
@@ -794,7 +802,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
-				DEVELOPMENT_TEAM = 44U668YQTW;
+				DEVELOPMENT_TEAM = KDV83NBV8H;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Myrror/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -825,7 +833,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
-				DEVELOPMENT_TEAM = 44U668YQTW;
+				DEVELOPMENT_TEAM = KDV83NBV8H;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Myrror/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
