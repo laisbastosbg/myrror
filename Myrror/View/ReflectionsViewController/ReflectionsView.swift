@@ -146,68 +146,19 @@ class ReflectionsView: UIView {
         return stackView
     }()
     
-    lazy var sundayLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .preferredFont(forTextStyle: .body)
-        label.text = "Dom"
-        label.accessibilityLabel = "Domingo"
-        return label
-    }()
+    lazy var sundayLabel: UILabel = weekDayLabel(text: "Dom", accessibilityLabel: "Domingo")
     
-    lazy var mondayLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .preferredFont(forTextStyle: .body)
-        label.text = "Seg"
-        label.accessibilityLabel = "Segunda-feira"
-        return label
-    }()
+    lazy var mondayLabel: UILabel = weekDayLabel(text: "Seg", accessibilityLabel: "Segunda-feira")
     
-    lazy var tuesdayLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .preferredFont(forTextStyle: .body)
-        label.text = "Ter"
-        label.accessibilityLabel = "Terça-feira"
-        return label
-    }()
+    lazy var tuesdayLabel: UILabel = weekDayLabel(text: "Ter", accessibilityLabel: "Terça-feira")
     
-    lazy var wednesdayLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .preferredFont(forTextStyle: .body)
-        label.text = "Qua"
-        label.accessibilityLabel = "Quarta-feira"
-        return label
-    }()
+    lazy var wednesdayLabel: UILabel = weekDayLabel(text: "Qua", accessibilityLabel: "Quarta-feira")
     
-    lazy var thursdayLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .preferredFont(forTextStyle: .body)
-        label.text = "Qui"
-        label.accessibilityLabel = "Quinta-feira"
-        return label
-    }()
+    lazy var thursdayLabel: UILabel = weekDayLabel(text: "Qui", accessibilityLabel: "Quinta-feira")
     
-    lazy var fridayLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .preferredFont(forTextStyle: .body)
-        label.text = "Sex"
-        label.accessibilityLabel = "Sexta-feira"
-        return label
-    }()
+    lazy var fridayLabel: UILabel = weekDayLabel(text: "Sex", accessibilityLabel: "Sexta-feira")
     
-    lazy var saturdayLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .preferredFont(forTextStyle: .body)
-        label.text = "Sab"
-        label.accessibilityLabel = "Sábado"
-        return label
-    }()
+    lazy var saturdayLabel: UILabel = weekDayLabel(text: "Sab", accessibilityLabel: "Sábado")
     
     lazy var calendarContainerHeightConstraint: NSLayoutConstraint = {
         self.calendarContainer.heightAnchor.constraint(equalToConstant: 0)
