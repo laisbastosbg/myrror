@@ -34,7 +34,7 @@ class ReflectionsView: UIView {
         button.setImage(UIImage(systemName: "square.and.arrow.up"), for: .normal)
         button.contentHorizontalAlignment = .right
         button.imageView?.contentMode = .scaleAspectFit
-        button.accessibilityLabel = "Compartilhar reflexões"
+        button.accessibilityLabel = NSLocalizedString("Compartilhar reflexões", comment: "")
         return button
     }()
     
@@ -45,7 +45,7 @@ class ReflectionsView: UIView {
         button.setImage(UIImage(systemName: "calendar"), for: .normal)
         button.imageView?.contentMode = .scaleAspectFit
         button.contentHorizontalAlignment = .right
-        button.accessibilityLabel = "Calendário"
+        button.accessibilityLabel = NSLocalizedString("Calendário", comment: "")
         return button
     }()
     
@@ -80,7 +80,7 @@ class ReflectionsView: UIView {
         let label = UILabel()
         
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Nada aqui ainda 😕"
+        label.text = NSLocalizedString("Nada aqui ainda 😕", comment: "")
         label.font = UIFont.preferredFont(forTextStyle: .body)
         label.textColor = UIColor(named: "TextColor")
         
@@ -90,8 +90,8 @@ class ReflectionsView: UIView {
     let navigationButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Nova Reflection", for: .normal)
-        button.accessibilityLabel = "Nova reflexão"
+        button.setTitle(NSLocalizedString("Nova Reflection", comment: ""), for: .normal)
+        button.accessibilityLabel = NSLocalizedString("Nova reflexão", comment: "")
         button.configuration = .filled()
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .body)
@@ -125,7 +125,7 @@ class ReflectionsView: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(systemName: "chevron.left"), for: .normal)
-        button.accessibilityLabel = "Ir para o mês anterior"
+        button.accessibilityLabel = NSLocalizedString("Ir para o mês anterior", comment: "")
         return button
     }()
     
@@ -133,7 +133,7 @@ class ReflectionsView: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(systemName: "chevron.right"), for: .normal)
-        button.accessibilityLabel = "Ir para o próximo mês"
+        button.accessibilityLabel = NSLocalizedString("Ir para o próximo mês", comment: "")
         return button
     }()
     
@@ -150,8 +150,8 @@ class ReflectionsView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .preferredFont(forTextStyle: .body)
-        label.text = "Dom"
-        label.accessibilityLabel = "Domingo"
+        label.text = NSLocalizedString("Dom", comment: "3-letter day-1")
+        label.accessibilityLabel = NSLocalizedString("Domingo", comment: "day-1 full name")
         return label
     }()
     
@@ -159,8 +159,8 @@ class ReflectionsView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .preferredFont(forTextStyle: .body)
-        label.text = "Seg"
-        label.accessibilityLabel = "Segunda-feira"
+        label.text = NSLocalizedString("Seg", comment: "3-letter day-2 ")
+        label.accessibilityLabel = NSLocalizedString("Segunda", comment: "day-2 full name")
         return label
     }()
     
@@ -168,8 +168,8 @@ class ReflectionsView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .preferredFont(forTextStyle: .body)
-        label.text = "Ter"
-        label.accessibilityLabel = "Terça-feira"
+        label.text = NSLocalizedString("Ter", comment: "3-letter day-3")
+        label.accessibilityLabel = NSLocalizedString("Terça-feira", comment: "day-3 full name")
         return label
     }()
     
@@ -177,8 +177,8 @@ class ReflectionsView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .preferredFont(forTextStyle: .body)
-        label.text = "Qua"
-        label.accessibilityLabel = "Quarta-feira"
+        label.text = NSLocalizedString("Qua", comment: "3-letter day-4")
+        label.accessibilityLabel = NSLocalizedString("Quarta-feira", comment: "day-4 full name")
         return label
     }()
     
@@ -186,8 +186,8 @@ class ReflectionsView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .preferredFont(forTextStyle: .body)
-        label.text = "Qui"
-        label.accessibilityLabel = "Quinta-feira"
+        label.text = NSLocalizedString("Qui", comment: "3-letter day-5")
+        label.accessibilityLabel = NSLocalizedString("Quinta-feira", comment: "day-5 full name")
         return label
     }()
     
@@ -195,8 +195,8 @@ class ReflectionsView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .preferredFont(forTextStyle: .body)
-        label.text = "Sex"
-        label.accessibilityLabel = "Sexta-feira"
+        label.text = NSLocalizedString("Sex", comment: "3-letter day-6")
+        label.accessibilityLabel = NSLocalizedString("Sexta-feira", comment: "day-6 full name")
         return label
     }()
     
@@ -204,8 +204,8 @@ class ReflectionsView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .preferredFont(forTextStyle: .body)
-        label.text = "Sab"
-        label.accessibilityLabel = "Sábado"
+        label.text = NSLocalizedString("Sab", comment: "3-letter day-7")
+        label.accessibilityLabel = NSLocalizedString("Sábado", comment: "day-7 full name")
         return label
     }()
     

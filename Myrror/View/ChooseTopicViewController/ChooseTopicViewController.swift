@@ -37,7 +37,7 @@ class ChooseTopicViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Voltar", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Voltar", comment: "Back button"), style: .plain, target: nil, action: nil)
     }
     
     @objc func navigate(sender: UITapGestureRecognizer) {
@@ -81,7 +81,7 @@ class ChooseTopicViewController: UIViewController {
         haptics.selectionChanged()
         let nextPage = NewReflectionViewController()
 
-        nextPage.navigationTitle = "Insira um título"
+        nextPage.navigationTitle = NSLocalizedString("Insira um título", comment: "")
         nextPage.pageTitle.clearButtonMode = .unlessEditing
         self.navigationController?.pushViewController(nextPage, animated: true)
     }

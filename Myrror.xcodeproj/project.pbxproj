@@ -42,6 +42,7 @@
 		14BF427128DB353D0080294C /* triste.json in Resources */ = {isa = PBXBuildFile; fileRef = 14BF426428DB353D0080294C /* triste.json */; };
 		14BF427228DB353D0080294C /* indiferente-cinza.json in Resources */ = {isa = PBXBuildFile; fileRef = 14BF426528DB353D0080294C /* indiferente-cinza.json */; };
 		14BF427328DB353D0080294C /* confiante-cinza.json in Resources */ = {isa = PBXBuildFile; fileRef = 14BF426628DB353D0080294C /* confiante-cinza.json */; };
+		7E2FADAA28EC707E00B1225F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7E2FADAC28EC707E00B1225F /* Localizable.strings */; };
 		ED19590128CB8539004E7045 /* ChooseTopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED19590028CB8539004E7045 /* ChooseTopicViewController.swift */; };
 		ED55FE4C28D4B9AB00715D6F /* MyrrorData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ED55FE4828D4B9AB00715D6F /* MyrrorData.xcdatamodeld */; };
 		ED55FE5028D4BB3200715D6F /* ReflectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED55FE4F28D4BB3200715D6F /* ReflectionViewModel.swift */; };
@@ -123,6 +124,9 @@
 		14DE6D2428D398CB007DDC98 /* MyrrorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyrrorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		34B50F66514E866AA4C13C1C /* Pods-Myrror.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Myrror.debug.xcconfig"; path = "Target Support Files/Pods-Myrror/Pods-Myrror.debug.xcconfig"; sourceTree = "<group>"; };
 		41E5A9F2BF1B183F48A999D1 /* Pods_Myrror.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Myrror.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E2FADAB28EC707E00B1225F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7E2FADAD28EC748100B1225F /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		7E2FADAE28EC748200B1225F /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		B8C07356207383980F69158D /* Pods-Myrror.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Myrror.release.xcconfig"; path = "Target Support Files/Pods-Myrror/Pods-Myrror.release.xcconfig"; sourceTree = "<group>"; };
 		ED19590028CB8539004E7045 /* ChooseTopicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTopicViewController.swift; sourceTree = "<group>"; };
 		ED55FE4928D4B9AB00715D6F /* MyrrorData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyrrorData.xcdatamodel; sourceTree = "<group>"; };
@@ -203,6 +207,7 @@
 				0B45265C28CA0EEA00D4083C /* AppDelegate.swift */,
 				0B45265E28CA0EEA00D4083C /* SceneDelegate.swift */,
 				0B45266728CA0EEC00D4083C /* LaunchScreen.storyboard */,
+				7E2FADAC28EC707E00B1225F /* Localizable.strings */,
 				ED55FE4828D4B9AB00715D6F /* MyrrorData.xcdatamodeld */,
 				0B45266A28CA0EEC00D4083C /* Info.plist */,
 				0B45266528CA0EEC00D4083C /* Assets.xcassets */,
@@ -429,6 +434,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"pt-BR",
 			);
 			mainGroup = 0B45265028CA0EEA00D4083C;
 			productRefGroup = 0B45265A28CA0EEA00D4083C /* Products */;
@@ -485,6 +491,7 @@
 				14BF426B28DB353D0080294C /* feliz.json in Resources */,
 				14BF426C28DB353D0080294C /* triste-cinza.json in Resources */,
 				14BF427028DB353D0080294C /* confiante.json in Resources */,
+				7E2FADAA28EC707E00B1225F /* Localizable.strings in Resources */,
 				14BF427328DB353D0080294C /* confiante-cinza.json in Resources */,
 				0BDB3E2628E48AB80070D9E8 /* nothing.json in Resources */,
 			);
@@ -634,8 +641,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				0B45266828CA0EEC00D4083C /* Base */,
+				7E2FADAD28EC748100B1225F /* pt-BR */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		7E2FADAC28EC707E00B1225F /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7E2FADAB28EC707E00B1225F /* en */,
+				7E2FADAE28EC748200B1225F /* pt-BR */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -645,6 +662,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -705,6 +723,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -763,7 +782,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
-				DEVELOPMENT_TEAM = KDV83NBV8H;
+				DEVELOPMENT_TEAM = 44U668YQTW;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Myrror/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -794,7 +813,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
-				DEVELOPMENT_TEAM = KDV83NBV8H;
+				DEVELOPMENT_TEAM = 44U668YQTW;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Myrror/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

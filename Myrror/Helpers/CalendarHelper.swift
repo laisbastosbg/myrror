@@ -28,7 +28,7 @@ class CalendarHelper {
     func monthString(date: Date) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMMM"
-        dateFormatter.locale = Locale.init(identifier: "pt-br")
+        dateFormatter.locale = Locale.init(identifier: NSLocalizedString("pt-br", comment: "xx-xx formatter"))
         return dateFormatter.string(from: date).capitalized
     }
     
@@ -66,10 +66,10 @@ class CalendarHelper {
         
         let monthFormatter = DateFormatter()
         monthFormatter.dateFormat = "MMMM"
-        monthFormatter.locale = Locale.init(identifier: "pt-br")
+        monthFormatter.locale = Locale.init(identifier: NSLocalizedString("pt-br", comment: "xx-xx formatter"))
         let month = monthFormatter.string(from: date)
         
-        let today = "\(day) de \(month)"
+        let today = "\(day)\(NSLocalizedString("de", comment: "")) \(month)"
         
         return today
     }

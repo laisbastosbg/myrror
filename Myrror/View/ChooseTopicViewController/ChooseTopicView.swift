@@ -11,7 +11,7 @@ class ChooseTopicView: UIView {
     lazy var pageTitle : UILabel = {
        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Sobre o que você gostaria de refletir?"
+        label.text = NSLocalizedString("Sobre o que você gostaria de refletir?", comment: "")
         label.font = UIFont.systemFont(ofSize: 32, weight: .bold)
         label.numberOfLines = 2
         return label
@@ -33,7 +33,7 @@ class ChooseTopicView: UIView {
     let option1Label: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "O que aprendi"
+        label.text = NSLocalizedString("O que aprendi", comment: "")
         label.accessibilityHint = "botão"
         label.font = .preferredFont(forTextStyle: .body)
         return label
@@ -97,8 +97,8 @@ class ChooseTopicView: UIView {
     let option2Label: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "O que não gostei"
-        label.accessibilityHint = "botão"
+        label.text = NSLocalizedString("O que não gostei", comment: "")
+        label.accessibilityHint = NSLocalizedString("botão", comment: "")
         label.font = .preferredFont(forTextStyle: .body)
         return label
     }()
@@ -126,8 +126,8 @@ class ChooseTopicView: UIView {
     let option3Label: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "O que posso melhorar"
-        label.accessibilityHint = "botão"
+        label.text = NSLocalizedString("O que posso melhorar", comment: "")
+        label.accessibilityHint = NSLocalizedString("botão", comment: "")
         label.font = .preferredFont(forTextStyle: .body)
         return label
     }()
@@ -155,8 +155,8 @@ class ChooseTopicView: UIView {
     let option4Label: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Tema livre"
-        label.accessibilityHint = "botão"
+        label.text = NSLocalizedString("Tema livre", comment: "")
+        label.accessibilityHint = NSLocalizedString("botão", comment: "")
         label.font = .preferredFont(forTextStyle: .body)
         return label
     }()

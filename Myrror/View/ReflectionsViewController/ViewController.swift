@@ -57,7 +57,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.items?[0].backBarButtonItem = UIBarButtonItem(title: "Voltar", style: .plain, target: nil, action: nil)
+        navigationController?.navigationBar.items?[0].backBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Voltar", comment: "Back button"), style: .plain, target: nil, action: nil)
         view.backgroundColor = UIColor(named: "Primary")
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -197,7 +197,7 @@ class ViewController: UIViewController {
             
             self.present(activityViewController, animated: true, completion: nil)
         } else {
-            let alert = UIAlertController(title: "Parece que você não tem nada para compartilhar", message: "Faça uma reflection primeiro!", preferredStyle: UIAlertController.Style.alert)
+            let alert = UIAlertController(title: NSLocalizedString("Parece que você não tem nada para compartilhar", comment: ""), message: NSLocalizedString("Faça uma reflection primeiro!", comment: ""), preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }

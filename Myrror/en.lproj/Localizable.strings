@@ -1,0 +1,68 @@
+/* 
+  Localizable.strings
+  Myrror
+
+  Created by Luciana Adrião on 04/10/22.
+  
+*/
+// MARK: Components
+
+// Button
+"Cancelar" = "Cancel";
+"Excluir" = "Delete";
+"Editar" = "Edit";
+"Voltar" = "Back";
+"Concluir" = "Done";
+"Nova Reflection" = "New Reflection";
+//Text & Labels
+"Título não informado" = "Title has not been informed";
+"Dê um título a sua reflection de tema livre" = "Give your reflection a title of any subject";
+"Nenhuma informação!" = "No information!";
+"Adicione alguma informação para a sua reflection!" = "Add information to your reflection!";
+
+"Insira um título" = "Insert title";
+"Insira aqui uma descrição" = "Insert description here";
+"Sobre o que você gostaria de refletir?" = "What would you like to reflect about?";
+
+"O que aprendi" = "What I learned?";
+"O que não gostei" = "What I didn't like ?";
+"O que posso melhorar" = "What can I improve ?";
+"Como isso te faz sentir?" = "How does that make you feel?";
+
+"Tema livre" = "free subject";
+"Faça uma reflection primeiro!" = "Make a reflection first!";
+"Nada aqui ainda 😕" = "Nothing here yet 😕";
+"Parece que você não tem nada para compartilhar" = "Looks like you have nothing to share";
+
+"Dom" = "Sun";
+"Seg"= "Mon";
+"Ter"= "Tue";
+"Qua"= "Wed";
+"Qui" = "Thu";
+"Sex" = "Fri";
+"Sab" = "Sat";
+
+"pt-br" = "en-us";
+"de" = "st ";
+
+
+// MARK: Accessibility
+// Button
+"Nova reflexão" = "New reflection";
+"Ir para o mês anterior" = "Go to previous month";
+"Ir para o próximo mês" = "Go to next month";
+"botão" = "button";
+"Compartilhar reflexões" = "Share reflections";
+"Calendário" = "Calendar";
+"Toque para editar" = "Tap to edit";
+// Label
+"Domingo" = "Sunday";
+"Segunda-feira" = "Monday";
+"Terça-feira" = "Tuesday";
+"Quarta-feira" = "Wednesday";
+"Quinta-feira" = "Thursday";
+"Sexta-feira" = "Friday";
+"Sábado" = "Saturday";
+
+
+// accessibility problem: animations with sameName as accessibilityLabel

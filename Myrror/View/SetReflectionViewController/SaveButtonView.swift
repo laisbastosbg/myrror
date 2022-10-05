@@ -21,8 +21,8 @@ class SaveButtonView: UIView {
 
      let textView : UILabel = {
          let title = UILabel()
-         title.text = "Concluir"
-         title.accessibilityHint = "botão"
+         title.text = NSLocalizedString("Concluir", comment: "Done button")
+         title.accessibilityHint = NSLocalizedString("botão", comment: "button")
          title.font = UIFont.preferredFont(forTextStyle: .body)
          title.translatesAutoresizingMaskIntoConstraints = false
          return title
