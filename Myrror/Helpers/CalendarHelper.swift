@@ -59,17 +59,12 @@ class CalendarHelper {
     }
     
     func getDateAsString(date: Date) -> String {
-        
-        let dayFormatter = DateFormatter()
-        dayFormatter.dateFormat = "dd"
-        let day = dayFormatter.string(from: date)
-        
-        let monthFormatter = DateFormatter()
-        monthFormatter.dateFormat = "MMMM"
-        monthFormatter.locale = Locale.init(identifier: NSLocalizedString("pt-br", comment: "xx-xx formatter"))
-        let month = monthFormatter.string(from: date)
-        
-        let today = "\(day)\(NSLocalizedString("de", comment: "")) \(month)"
+        print(date)
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale.current
+        dateFormatter.setLocalizedDateFormatFromTemplate("MMMMd")
+        let today = dateFormatter.string(from: date)
+        print("today: \(today)")
         
         return today
     }
