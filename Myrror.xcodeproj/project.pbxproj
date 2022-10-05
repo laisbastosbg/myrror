@@ -21,6 +21,7 @@
 		0B4B7EF128DB30DB004F2906 /* UITestChooseTopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4B7EEE28DB30DB004F2906 /* UITestChooseTopicViewController.swift */; };
 		0B4B7EF228DB30DB004F2906 /* UITestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4B7EEF28DB30DB004F2906 /* UITestViewController.swift */; };
 		0B4B7EF328DB30DB004F2906 /* UITestNewReflectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4B7EF028DB30DB004F2906 /* UITestNewReflectionViewController.swift */; };
+		0B5D343F28EDB3CA00F8B24A /* WeekDayLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5D343E28EDB3CA00F8B24A /* WeekDayLabel.swift */; };
 		0B9F82BF28D35589000D848B /* ReflectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9F82BE28D35589000D848B /* ReflectionsView.swift */; };
 		0B9F82C228D355DC000D848B /* CalendarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9F82C128D355DC000D848B /* CalendarHelper.swift */; };
 		0B9F82C428D35613000D848B /* CalendarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9F82C328D35613000D848B /* CalendarItem.swift */; };
@@ -101,6 +102,7 @@
 		0B4B7EEE28DB30DB004F2906 /* UITestChooseTopicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITestChooseTopicViewController.swift; sourceTree = "<group>"; };
 		0B4B7EEF28DB30DB004F2906 /* UITestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITestViewController.swift; sourceTree = "<group>"; };
 		0B4B7EF028DB30DB004F2906 /* UITestNewReflectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITestNewReflectionViewController.swift; sourceTree = "<group>"; };
+		0B5D343E28EDB3CA00F8B24A /* WeekDayLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDayLabel.swift; sourceTree = "<group>"; };
 		0B9F82BE28D35589000D848B /* ReflectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflectionsView.swift; sourceTree = "<group>"; };
 		0B9F82C128D355DC000D848B /* CalendarHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHelper.swift; sourceTree = "<group>"; };
 		0B9F82C328D35613000D848B /* CalendarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarItem.swift; sourceTree = "<group>"; };
@@ -286,6 +288,14 @@
 			path = Myrror/MyrrorUITests;
 			sourceTree = SOURCE_ROOT;
 		};
+		0B5D343B28EDB39200F8B24A /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				0B5D343E28EDB3CA00F8B24A /* WeekDayLabel.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		0B9F82C028D355CF000D848B /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -297,6 +307,7 @@
 		0B9F82C828D35804000D848B /* ReflectionsViewController */ = {
 			isa = PBXGroup;
 			children = (
+				0B5D343B28EDB39200F8B24A /* Components */,
 				0B9F82C328D35613000D848B /* CalendarItem.swift */,
 				0B9F82C528D3563B000D848B /* CalendarCollectionViewCell.swift */,
 				0B9F82BE28D35589000D848B /* ReflectionsView.swift */,
@@ -586,6 +597,7 @@
 				0B9F82BF28D35589000D848B /* ReflectionsView.swift in Sources */,
 				0B45265D28CA0EEA00D4083C /* AppDelegate.swift in Sources */,
 				FF9283E028E5199A00A2D142 /* SaveButtonView.swift in Sources */,
+				0B5D343F28EDB3CA00F8B24A /* WeekDayLabel.swift in Sources */,
 				ED75100728D22268000207F2 /* EmojiViewController.swift in Sources */,
 				ED19590128CB8539004E7045 /* ChooseTopicViewController.swift in Sources */,
 				ED55FE5028D4BB3200715D6F /* ReflectionViewModel.swift in Sources */,
