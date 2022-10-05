@@ -10,6 +10,13 @@
 </div>
 <p>Myrror is a work in a progress for Apple Developer Academy Details Matter Challenge</p>
 
+<h2>Features</h2>
+<ul>
+<li>Create Reflections</li>
+<li>View reflections from previous days</li>
+<li>Share reflections</li>
+</ul>
+
 <h3>Built with</h3>
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original-wordmark.svg" height=60 />
 
