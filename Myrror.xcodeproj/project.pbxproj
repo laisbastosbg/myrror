@@ -22,6 +22,7 @@
 		0B4B7EF228DB30DB004F2906 /* UITestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4B7EEF28DB30DB004F2906 /* UITestViewController.swift */; };
 		0B4B7EF328DB30DB004F2906 /* UITestNewReflectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4B7EF028DB30DB004F2906 /* UITestNewReflectionViewController.swift */; };
 		0B5D343F28EDB3CA00F8B24A /* WeekDayLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5D343E28EDB3CA00F8B24A /* WeekDayLabel.swift */; };
+		0B5D344728EDC06400F8B24A /* ChooseSubjectItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5D344628EDC06400F8B24A /* ChooseSubjectItemView.swift */; };
 		0B9F82BF28D35589000D848B /* ReflectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9F82BE28D35589000D848B /* ReflectionsView.swift */; };
 		0B9F82C228D355DC000D848B /* CalendarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9F82C128D355DC000D848B /* CalendarHelper.swift */; };
 		0B9F82C428D35613000D848B /* CalendarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9F82C328D35613000D848B /* CalendarItem.swift */; };
@@ -103,6 +104,7 @@
 		0B4B7EEF28DB30DB004F2906 /* UITestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITestViewController.swift; sourceTree = "<group>"; };
 		0B4B7EF028DB30DB004F2906 /* UITestNewReflectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITestNewReflectionViewController.swift; sourceTree = "<group>"; };
 		0B5D343E28EDB3CA00F8B24A /* WeekDayLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDayLabel.swift; sourceTree = "<group>"; };
+		0B5D344628EDC06400F8B24A /* ChooseSubjectItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseSubjectItemView.swift; sourceTree = "<group>"; };
 		0B9F82BE28D35589000D848B /* ReflectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflectionsView.swift; sourceTree = "<group>"; };
 		0B9F82C128D355DC000D848B /* CalendarHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHelper.swift; sourceTree = "<group>"; };
 		0B9F82C328D35613000D848B /* CalendarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarItem.swift; sourceTree = "<group>"; };
@@ -296,6 +298,14 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		0B5D344328EDB82400F8B24A /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				0B5D344628EDC06400F8B24A /* ChooseSubjectItemView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		0B9F82C028D355CF000D848B /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -321,6 +331,7 @@
 		0BFD56B828D4B203009C99E8 /* ChooseTopicViewController */ = {
 			isa = PBXGroup;
 			children = (
+				0B5D344328EDB82400F8B24A /* Components */,
 				ED19590028CB8539004E7045 /* ChooseTopicViewController.swift */,
 				0BFD56B928D4B243009C99E8 /* ChooseTopicView.swift */,
 			);
@@ -592,6 +603,7 @@
 				ED55FE5828D4BE5800715D6F /* ReflectionModel.swift in Sources */,
 				ED55FE4C28D4B9AB00715D6F /* MyrrorData.xcdatamodeld in Sources */,
 				FFAEE68628E32DBB00DE1411 /* ActionSheet.swift in Sources */,
+				0B5D344728EDC06400F8B24A /* ChooseSubjectItemView.swift in Sources */,
 				0B45266128CA0EEA00D4083C /* ViewController.swift in Sources */,
 				0B4B7E6828D8AAAC004F2906 /* ReflectionTableViewCell.swift in Sources */,
 				0B9F82BF28D35589000D848B /* ReflectionsView.swift in Sources */,
@@ -794,12 +806,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
-				DEVELOPMENT_TEAM = 44U668YQTW;
+				DEVELOPMENT_TEAM = KDV83NBV8H;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Myrror/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -825,12 +838,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
-				DEVELOPMENT_TEAM = 44U668YQTW;
+				DEVELOPMENT_TEAM = KDV83NBV8H;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Myrror/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

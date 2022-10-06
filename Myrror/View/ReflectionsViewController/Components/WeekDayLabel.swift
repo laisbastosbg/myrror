@@ -12,7 +12,7 @@ func weekDayLabel(text: String, accessibilityLabel: String) -> UILabel {
     let label = UILabel()
     label.translatesAutoresizingMaskIntoConstraints = false
     label.font = .preferredFont(forTextStyle: .body)
-    label.text = text
-    label.accessibilityLabel = accessibilityLabel
+    label.text = NSLocalizedString(text, comment: "")
+    label.accessibilityLabel = NSLocalizedString(accessibilityLabel, comment: "")
     return label
 }
