@@ -15,11 +15,11 @@ class CalendarHelper {
         return calendar.date(byAdding: .month, value: 1, to: date)!
     }
     
-        func setDay(date: Date, day: Int) -> Date {
-            var dateComponents = calendar.dateComponents([.day, .month, .year], from: date)
-            dateComponents.day = day
-            return calendar.date(from: dateComponents)!
-        }
+    func setDay(date: Date, day: Int) -> Date {
+        var dateComponents = calendar.dateComponents([.day, .month, .year], from: date)
+        dateComponents.day = day
+        return calendar.date(from: dateComponents)!
+    }
     
     func minusMonth(date: Date) -> Date{
         return calendar.date(byAdding: .month, value: -1, to: date)!
@@ -59,13 +59,10 @@ class CalendarHelper {
     }
     
     func getDateAsString(date: Date) -> String {
-        print(date)
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale.current
         dateFormatter.setLocalizedDateFormatFromTemplate("MMMMd")
         let today = dateFormatter.string(from: date)
-        print("today: \(today)")
-        
         return today
     }
 }
